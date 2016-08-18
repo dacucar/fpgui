@@ -1,0 +1,6 @@
+[submodule "fenixlib"]
+	path = Lib/fenixlib
+	url = https://github.com/dacucar/fenixlib
+[submodule "xwt"]
+	path = Lib/xwt
+	url = https://github.com/dacucar/xwt
