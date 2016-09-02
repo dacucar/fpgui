@@ -1,7 +1,0 @@
-/home/dacucar/Proyectos/fpgui/Src/FpgUI/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/home/dacucar/Proyectos/fpgui/Src/FpgUI/bin/Debug/FpgUI.dll.mdb
-/home/dacucar/Proyectos/fpgui/Src/FpgUI/bin/Debug/FpgUI.dll
-/home/dacucar/Proyectos/fpgui/Src/FpgUI/obj/Debug/FpgUI.dll
-/home/dacucar/Proyectos/fpgui/Src/FpgUI/obj/Debug/FpgUI.dll.mdb
-/home/dacucar/Proyectos/fpgui/Src/FpgUI/bin/Debug/Xwt.dll
-/home/dacucar/Proyectos/fpgui/Src/FpgUI/bin/Debug/Xwt.dll.mdb
