@@ -31,17 +31,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="Xwt">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Xwt.Gtk">
-      <Private>True</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FpgUI\FpgUI.csproj">
       <Project>{8D8666EE-60E3-4106-8829-F591F4656C44}</Project>
       <Name>FpgUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Lib\xwt\Xwt\Xwt.csproj">
+      <Project>{92494904-35FA-4DC9-BDE9-3A3E87AC49D3}</Project>
+      <Name>Xwt</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Lib\xwt\Xwt.Gtk\Xwt.Gtk.csproj">
+      <Project>{C3887A93-B2BD-4097-8E2F-3A063EFF32FD}</Project>
+      <Name>Xwt.Gtk</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
