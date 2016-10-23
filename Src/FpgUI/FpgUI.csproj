@@ -40,5 +40,9 @@
       <Project>{92494904-35FA-4DC9-BDE9-3A3E87AC49D3}</Project>
       <Name>Xwt</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Lib\fenixlib\FenixLib\FenixLib\FenixLib.csproj">
+      <Project>{E110DF41-CAE8-4DCC-9A41-09864E5651DD}</Project>
+      <Name>FenixLib</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>
