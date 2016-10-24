@@ -31,8 +31,17 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainWindow.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="IFpgEditor.cs" />
+    <Compile Include="IFpgEditorActionsHandler.cs" />
+    <Compile Include="IGraphicActionsHandler.cs" />
+    <Compile Include="IEditActionsHandler.cs" />
+    <Compile Include="IPaletteActionsHandler.cs" />
+    <Compile Include="ISystemActionsHandler.cs" />
+    <Compile Include="XwtFileActionsHandler.cs" />
+    <Compile Include="IFileActionsHandler.cs" />
+    <Compile Include="FpgEditorActionsHandler.cs" />
+    <Compile Include="FpgEditorWindow.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

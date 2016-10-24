@@ -10,7 +10,7 @@ namespace FpgUI.Gtk2
         {
             Application.Initialize ( ToolkitType.Gtk );
 
-            MainWindow w = new MainWindow ();
+            FpgEditorWindow w = new FpgEditorWindow ();
             w.Show ();
 
             Application.Run ();
