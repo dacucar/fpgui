@@ -42,15 +42,26 @@ namespace FpgUI
 			var fileMenu = new MenuItem ( "_File" );
 			fileMenu.SubMenu = new Menu ();
 
+			var newFile = new MenuItem ( "_New" );
+			newFile.Clicked += (sender, e) => 
+				((IFpgEditor)this).ActionsHandler.FpgActionsHandler.New(this);
 			var openFile = new MenuItem ( "_Open" );
 			openFile.Clicked += (sender, e) =>  
 				((IFpgEditor)this).ActionsHandler.FpgActionsHandler.Open(this);
-			
 			fileMenu.SubMenu.Items.Add ( openFile );
-			fileMenu.SubMenu.Items.Add ( new MenuItem ( "_New" ) );
-			MenuItem mi = new MenuItem ( "_Close" );
-			mi.Clicked += (sender, e ) => Close ();
-			fileMenu.SubMenu.Items.Add ( mi );
+			var saveFile = new MenuItem("_Save...");
+			saveFile.Clicked += (sender, e) => 
+				((IFpgEditor)this).ActionsHandler.FpgActionsHandler.Save(this);
+			var saveFileAs = new MenuItem("Save As...");
+			saveFileAs.Clicked += (sender, e) => 
+				((IFpgEditor)this).ActionsHandler.FpgActionsHandler.SaveAs(this);
+			var closeFile = new MenuItem ( "_Close" );
+			closeFile.Clicked += (sender, e ) => Close ();
+
+			fileMenu.SubMenu.Items.Add ( newFile );
+			fileMenu.SubMenu.Items.Add ( saveFile );
+			fileMenu.SubMenu.Items.Add ( saveFileAs );
+			fileMenu.SubMenu.Items.Add ( closeFile );
 
 			var editMenu = new MenuItem ( "_Edit" );
 			var cutEdit = new MenuItem ( "_Cut" );
