@@ -15,6 +15,8 @@ namespace FpgUI
 
 		string IFpgEditor.FileName { get; set; }
 
+		bool IFpgEditor.IsNewFile => ((IFpgEditor)this).FileName == null;
+
 		public FpgEditorWindow ()
 		{
 			BuildUI ();
