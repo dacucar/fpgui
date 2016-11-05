@@ -61,6 +61,8 @@ namespace FpgUI.Ui
 		}
 
 		private FpgWidget fpgWidget;
+		private Label statusLabel;
+		private Label depthLabel;
 
 		private IFpgEditorActionsHandler actions => fpgEditor.ActionsHandler;
 
@@ -162,7 +164,21 @@ namespace FpgUI.Ui
 
 			//var sampleLabel = new Label ( "Lalala" );
 			fpgWidget = new FpgWidget();
-			Content = fpgWidget;			
+
+			statusLabel = new Label("No Label");
+			depthLabel = new Label("8bpp");
+			var statusFrame = new Frame (statusLabel);
+			var depthFrame = new Frame(depthLabel);
+
+			var statusContainer = new HBox();
+			statusContainer.PackStart(statusFrame, true);
+			statusContainer.PackStart(depthFrame);
+
+			var vbox = new VBox();
+			vbox.PackStart(fpgWidget, true);
+			vbox.PackStart(statusContainer);
+
+			Content = vbox;
 		}
 	}
 }
