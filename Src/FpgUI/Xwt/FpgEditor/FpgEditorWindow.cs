@@ -57,17 +57,17 @@ namespace FpgUI.Xwt.FpgEditor
 
 			var newFile = new MenuItem ( "_New" );
 			newFile.Clicked += (sender, e) => 
-				((IFpgEditor)this).ActionsHandler.FileActionsHandler.New(this);
+				fpgEditor.ActionsHandler.FileActionsHandler.New(this);
 			var openFile = new MenuItem ( "_Open" );
 			openFile.Clicked += (sender, e) =>  
-				((IFpgEditor)this).ActionsHandler.FileActionsHandler.Open(this);
+				fpgEditor.ActionsHandler.FileActionsHandler.Open(this);
 			fileMenu.SubMenu.Items.Add ( openFile );
 			var saveFile = new MenuItem("_Save...");
 			saveFile.Clicked += (sender, e) => 
-				((IFpgEditor)this).ActionsHandler.FileActionsHandler.Save(this);
+				fpgEditor.ActionsHandler.FileActionsHandler.Save(this);
 			var saveFileAs = new MenuItem("Save As...");
 			saveFileAs.Clicked += (sender, e) => 
-				((IFpgEditor)this).ActionsHandler.FileActionsHandler.SaveAs(this);
+				fpgEditor.ActionsHandler.FileActionsHandler.SaveAs(this);
 			var closeFile = new MenuItem ( "_Close" );
 			closeFile.Clicked += (sender, e ) => Close ();
 
@@ -78,8 +78,14 @@ namespace FpgUI.Xwt.FpgEditor
 
 			var editMenu = new MenuItem ( "_Edit" );
 			var cutEdit = new MenuItem ( "_Cut" );
+			cutEdit.Clicked += (sender, e) => 
+				fpgEditor.ActionsHandler.EditActionsHandler.Copy(this);
 			var copyEdit = new MenuItem ( "_Copy" );
+			copyEdit.Clicked+= (sender, e) => 
+				fpgEditor.ActionsHandler.EditActionsHandler.Copy(this);
 			var pasteEdit = new MenuItem ( "_Paste" );
+			pasteEdit.Clicked += (sender, e) => 
+				fpgEditor.ActionsHandler.EditActionsHandler.Paste ( this );
 
 			editMenu.SubMenu = new Menu ();
 			editMenu.SubMenu.Items.Add ( cutEdit );
@@ -129,10 +135,15 @@ namespace FpgUI.Xwt.FpgEditor
 			var sampleLabel = new Label ( "Lalala" );
 			Content = sampleLabel;			
 		}
+
+		private IFpgEditor fpgEditor
+		{
+			get
+			{
+				return this;
+			}
+		}
 	}
-
-
-
 }
 
 
