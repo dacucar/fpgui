@@ -14,6 +14,8 @@ namespace FpgUI.Core.FpgEditor
 		string FileName { get; set; }
 
 		bool IsNewFile { get; }
+
+		event EventHandler FpgChanged;
 	}
 }
 

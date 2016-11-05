@@ -19,7 +19,7 @@ namespace FpgUI.Xwt.FpgEditor
 			set
 			{
 				fpg = value;
-
+				fpgEditor.FpgChanged(EventArgs.Empty);
 			}
 		}
 
@@ -33,6 +33,12 @@ namespace FpgUI.Xwt.FpgEditor
 		public FpgEditorWindow ()
 		{
 			BuildUI ();
+			fpgEditor.FpgChanged += OnFpgChanged();
+		}
+
+		protected virtual void OnFpgChanged()
+		{
+			
 		}
 
 		protected override bool OnCloseRequested ()
