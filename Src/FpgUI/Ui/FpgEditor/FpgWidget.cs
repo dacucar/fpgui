@@ -2,17 +2,18 @@
 using Xwt.Drawing;
 using FenixLib.Core;
 
-namespace FpgUI.Xwt
+namespace FpgUI.Ui
 {
-    public class FpgWidget : ListView
-    {
-		DataField<string> name = new DataField<string> ();
-		DataField<Image> icon = new DataField<Image> ();
-		DataField<string> size = new DataField<string> ();
+	public class FpgWidget : ListView
+	{
+		DataField<string> name = new DataField<string>();
+		DataField<Image> icon = new DataField<Image>();
+		DataField<string> size = new DataField<string>();
 		DataField<string> center = new DataField<string>();
 		ListStore store;
 
 		private ISpriteAssortment fpg;
+
 		public ISpriteAssortment Fpg
 		{ 
 			get
@@ -28,20 +29,19 @@ namespace FpgUI.Xwt
 					var r = store.AddRow();
 					store.SetValue(r, name, s.Description);
 					store.SetValue(r, size, $"{s.Width}x{s.Height}");
+					store.SetValue(r, center, $"{s.Center.X}x{s.Center.Y}");
 				}
-				DataSource = store;
 			}
 		}
 
-        public FpgWidget()
-        {
-			store = new ListStore(name, size);
+		public FpgWidget()
+		{
+			store = new ListStore(name, size, center);
 			Columns.Add("Description", name);
 			Columns.Add("Size", size);
 			Columns.Add("Center", center);
 			DataSource = store;
-            //Content = new Label("Replace the label by custom content");
-        }
-    }
+		}
+	}
 }
 

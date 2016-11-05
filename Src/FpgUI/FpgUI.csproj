@@ -39,11 +39,10 @@
     <Compile Include="Core\FpgEditor\IGraphicActionsHandler.cs" />
     <Compile Include="Core\FpgEditor\IPaletteActionsHandler.cs" />
     <Compile Include="Core\FpgEditor\ISystemActionsHandler.cs" />
-    <Compile Include="Xwt\FpgEditor\FpgEditorWindow.cs" />
-    <Compile Include="Xwt\FpgEditor\FileActionsHandler.cs" />
-    <Compile Include="Xwt\FpgEditor\ActionsHandler.cs" />
-    <Compile Include="Xwt\FpgEditor\FpgWidget.cs" />
-    <Compile Include="Core\Fpg.cs" />
+    <Compile Include="Ui\FpgEditor\FpgEditorWindow.cs" />
+    <Compile Include="Ui\FpgEditor\FileActionsHandler.cs" />
+    <Compile Include="Ui\FpgEditor\ActionsHandler.cs" />
+    <Compile Include="Ui\FpgEditor\FpgWidget.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -60,8 +59,8 @@
     <Folder Include="Core\" />
     <Folder Include="Core\FpgEditor\" />
     <Folder Include="Core\MapEditor\" />
-    <Folder Include="Xwt\" />
-    <Folder Include="Xwt\FpgEditor\" />
+    <Folder Include="Ui\" />
+    <Folder Include="Ui\FpgEditor\" />
   </ItemGroup>
   <ProjectExtensions>
     <MonoDevelop>

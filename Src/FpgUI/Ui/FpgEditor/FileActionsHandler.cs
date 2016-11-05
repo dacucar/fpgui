@@ -3,7 +3,7 @@ using Xwt;
 using FpgUI.Core.FpgEditor;
 using FenixLib.Core;
 
-namespace FpgUI.Xwt.FpgEditor
+namespace FpgUI.Ui
 {
 	class FileActionsHandler : IFileActionsHandler
 	{

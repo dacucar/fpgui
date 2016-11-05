@@ -3,7 +3,7 @@ using FenixLib.Core;
 using System;
 using FpgUI.Core.FpgEditor;
 
-namespace FpgUI.Xwt.FpgEditor
+namespace FpgUI.Ui
 {		
 	public class FpgEditorWindow : Window, IFpgEditor
 	{
