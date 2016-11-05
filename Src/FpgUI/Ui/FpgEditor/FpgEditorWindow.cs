@@ -68,6 +68,8 @@ namespace FpgUI.Ui
 
 		private IFileActionsHandler fileActions => actions.FileActionsHandler;
 
+		private IPaletteActionsHandler paletteActions => actions.PaletteActionsHandler;
+
 		private void buildUI()
 		{
 			Title = "FpgUI";
@@ -119,6 +121,8 @@ namespace FpgUI.Ui
 			var paletteMenu = new MenuItem ( "_Palette" );
 			var viewEditPalette = new MenuItem ( "_View/Edit..." );
 			var exportPalette = new MenuItem ( "_Export to PAL..." );
+			exportPalette.Clicked += (sender, e) => 
+				paletteActions.ExportToPal(this);
 
 			paletteMenu.SubMenu = new Menu ();
 			paletteMenu.SubMenu.Items.Add ( viewEditPalette );

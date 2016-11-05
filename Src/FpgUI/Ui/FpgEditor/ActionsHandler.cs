@@ -11,7 +11,7 @@ namespace FpgUI.Ui
 		public IGraphicActionsHandler GraphicActionsHandler { get; }
 			= null;
 		public IPaletteActionsHandler PaletteActionsHandler { get; }
-			= null;
+			= new PaletteActionsHandler();
 		public IEditActionsHandler EditActionsHandler { get; }
 			= null;
 		public ISystemActionsHandler SystemActionsHandler { get; }
