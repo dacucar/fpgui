@@ -28,7 +28,20 @@ namespace FpgUI.Ui
 		IFpgEditorActionsHandler IFpgEditor.ActionsHandler { get; }
 			= new ActionsHandler ();
 
-		string IFpgEditor.FileName { get; set; }
+		private string filename;
+		string IFpgEditor.FileName
+		{ 
+			get
+			{
+				return filename;
+			}
+			set
+			{
+				filename = value;
+				statusLabel.Text = filename;
+				depthLabel.Text = $"{fpg.GraphicFormat.BitsPerPixel}bpp";
+			}
+		}
 
 		bool IFpgEditor.IsNewFile => ((IFpgEditor)this).FileName == null;
 
