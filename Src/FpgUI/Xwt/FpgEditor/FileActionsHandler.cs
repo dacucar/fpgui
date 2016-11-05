@@ -8,34 +8,35 @@ namespace FpgUI.Xwt.FpgEditor
 	class FileActionsHandler : IFileActionsHandler
 	{
 		private static FileDialogFilter fpgFilesFilter = 
-			new FileDialogFilter ( "Fpg Files (*.fpg)", "*.fpg" );
+			new FileDialogFilter("Fpg Files (*.fpg)", "*.fpg");
 		private static FileDialogFilter allFilesFilter =
-			new FileDialogFilter ( "All Files (*.*)", "*.*" );
+			new FileDialogFilter("All Files (*.*)", "*.*");
 
-		void IFileActionsHandler.New ( IFpgEditor editor )
+		void IFileActionsHandler.New(IFpgEditor editor)
 		{
 
 		}
 
-		void IFileActionsHandler.Open ( IFpgEditor editor )
+		void IFileActionsHandler.Open(IFpgEditor editor)
 		{
-			var w = ( Window ) editor.WindowBackend;
-			var dialog = new OpenFileDialog ();
-			dialog.Filters.Add ( fpgFilesFilter );
-			dialog.Filters.Add ( allFilesFilter );
+			var w = (Window)editor.WindowBackend;
+			var dialog = new OpenFileDialog();
+			dialog.Filters.Add(fpgFilesFilter);
+			dialog.Filters.Add(allFilesFilter);
 			dialog.Multiselect = false;
 			dialog.InitialFileName = "test";
-			if ( dialog.Run ( w ) )
+			if (dialog.Run(w))
 			{
 				ISpriteAssortment fpg;
 				try
 				{
-					fpg = FenixLib.IO.NativeFile.LoadFpg ( 
-						dialog.FileName );
-				} catch ( Exception e )
+					fpg = FenixLib.IO.NativeFile.LoadFpg(
+						dialog.FileName);
+				}
+				catch (Exception e)
 				{
-					MessageDialog.ShowError ( w, 
-						$"Could not open {dialog.FileName}", e.ToString());
+					MessageDialog.ShowError(w, 
+						$"Could not open {dialog.FileName}", e.ToString()); 
 
 					return;
 
@@ -46,55 +47,56 @@ namespace FpgUI.Xwt.FpgEditor
 			}
 		}
 
-		void IFileActionsHandler.Save ( IFpgEditor editor )
+		void IFileActionsHandler.Save(IFpgEditor editor)
 		{
-			if ( editor.IsNewFile )
+			if (editor.IsNewFile)
 			{
-				((IFileActionsHandler) this).SaveAs (editor);
-			} else
+				((IFileActionsHandler)this).SaveAs(editor);
+			}
+			else
 			{
 				try
 				{
-					FenixLib.IO.NativeFile.SaveToFpg ( editor.Fpg,
-						editor.FileName );
+					FenixLib.IO.NativeFile.SaveToFpg(editor.Fpg,
+						editor.FileName);
 				}
-				catch ( Exception e )
+				catch (Exception e)
 				{
-					var w = ( Window ) editor.WindowBackend;
-					MessageDialog.ShowError ( w,
-						$"Could not save {editor.FileName}", 
+					var w = (Window)editor.WindowBackend;
+					MessageDialog.ShowError(w,
+						$"Could not save {editor.FileName}",
 						e.ToString());
 				}
 			}
 		}
 
-		void IFileActionsHandler.SaveAs ( IFpgEditor editor )
+		void IFileActionsHandler.SaveAs(IFpgEditor editor)
 		{
-			var w = ( Window ) editor.WindowBackend;
-			var dialog = new SaveFileDialog ();
-			dialog.Filters.Add ( fpgFilesFilter );
-			dialog.Filters.Add ( allFilesFilter );
+			var w = (Window)editor.WindowBackend;
+			var dialog = new SaveFileDialog();
+			dialog.Filters.Add(fpgFilesFilter);
+			dialog.Filters.Add(allFilesFilter);
 			dialog.Multiselect = false;
 			dialog.Title = "Save Fpg";
 			dialog.InitialFileName = "Untitled.fpg";
 
-			if ( dialog.Run (w) )
+			if (dialog.Run(w))
 			{
 				try
 				{
-				FenixLib.IO.NativeFile.SaveToFpg ( editor.Fpg,
-					dialog.FileName );
+					FenixLib.IO.NativeFile.SaveToFpg(editor.Fpg,
+						dialog.FileName);
 				}
 				catch (Exception e)
 				{
-					MessageDialog.ShowError ( w,
-						$"Could not save {dialog.FileName}", 
+					MessageDialog.ShowError(w,
+						$"Could not save {dialog.FileName}",
 						e.ToString());					
 				}
 			}
 		}
 
-		void IFileActionsHandler.Duplicate ( IFpgEditor editor )
+		void IFileActionsHandler.Duplicate(IFpgEditor editor)
 		{
 
 		}

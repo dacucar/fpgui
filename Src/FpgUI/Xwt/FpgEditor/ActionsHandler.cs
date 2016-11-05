@@ -6,15 +6,15 @@ namespace FpgUI.Xwt.FpgEditor
 {
 	sealed class ActionsHandler : IFpgEditorActionsHandler
 	{
-		public IFileActionsHandler FileActionsHandler { get; } 
+		public IFileActionsHandler FileActionsHandler { get; }
 			= new FileActionsHandler();
-		public IGraphicActionsHandler GraphicActionsHandler { get; } 
+		public IGraphicActionsHandler GraphicActionsHandler { get; }
 			= null;
-		public IPaletteActionsHandler PaletteActionsHandler { get; } 
+		public IPaletteActionsHandler PaletteActionsHandler { get; }
 			= null;
-		public IEditActionsHandler EditActionsHandler { get; } 
+		public IEditActionsHandler EditActionsHandler { get; }
 			= null;
-		public ISystemActionsHandler SystemActionsHandler { get; } 
+		public ISystemActionsHandler SystemActionsHandler { get; }
 			= null;
 	}
 }

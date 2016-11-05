@@ -7,4 +7,3 @@ namespace FpgUI.Core.FpgEditor
 		void ViewEdit(IFpgEditor editor);
 	}
 }
-
