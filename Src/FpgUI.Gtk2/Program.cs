@@ -1,5 +1,6 @@
 ﻿using System;
 using Xwt;
+using FpgUI.Xwt.FpgEditor;
 
 namespace FpgUI.Gtk2
 {
@@ -10,7 +11,7 @@ namespace FpgUI.Gtk2
         {
             Application.Initialize ( ToolkitType.Gtk );
 
-            FpgEditorWindow w = new FpgEditorWindow ();
+            var w = new FpgEditorWindow ();
             w.Show ();
 
             Application.Run ();

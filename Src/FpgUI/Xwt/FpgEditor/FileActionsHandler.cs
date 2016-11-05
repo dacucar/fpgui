@@ -1,10 +1,11 @@
 ﻿using System;
 using Xwt;
+using FpgUI.Core.FpgEditor;
 using FenixLib.Core;
 
-namespace FpgUI
+namespace FpgUI.Xwt.FpgEditor
 {
-	class XwtFileActionsHandler : IFileActionsHandler
+	class FileActionsHandler : IFileActionsHandler
 	{
 		private static FileDialogFilter fpgFilesFilter = 
 			new FileDialogFilter ( "Fpg Files (*.fpg)", "*.fpg" );

@@ -1,12 +1,13 @@
 ﻿using System;
 using Xwt;
+using FpgUI.Core.FpgEditor;
 
-namespace FpgUI
+namespace FpgUI.Xwt.FpgEditor
 {
-	sealed class XwtFpgEditorActionsHandler : IFpgEditorActionsHandler
+	sealed class ActionsHandler : IFpgEditorActionsHandler
 	{
-		public IFileActionsHandler FpgActionsHandler { get; } 
-			= new XwtFileActionsHandler();
+		public IFileActionsHandler FileActionsHandler { get; } 
+			= new FileActionsHandler();
 		public IGraphicActionsHandler GraphicActionsHandler { get; } 
 			= null;
 		public IPaletteActionsHandler PaletteActionsHandler { get; } 

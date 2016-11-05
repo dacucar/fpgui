@@ -1,7 +1,7 @@
 ﻿using System;
 using FenixLib.Core;
 
-namespace FpgUI
+namespace FpgUI.Core.FpgEditor
 {
 	public interface IFpgEditor
 	{

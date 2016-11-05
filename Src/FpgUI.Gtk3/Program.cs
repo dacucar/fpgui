@@ -1,5 +1,6 @@
 ﻿using System;
 using Xwt;
+using FpgUI.Xwt.FpgEditor;
 
 namespace FpgUI.Gtk3
 {

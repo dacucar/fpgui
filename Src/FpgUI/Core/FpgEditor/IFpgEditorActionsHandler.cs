@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace FpgUI
+namespace FpgUI.Core.FpgEditor
 {
 	public interface IFpgEditorActionsHandler
 	{
-		IFileActionsHandler FpgActionsHandler { get; } 
+		IFileActionsHandler FileActionsHandler { get; } 
 		IGraphicActionsHandler GraphicActionsHandler { get; }
 		ISystemActionsHandler SystemActionsHandler { get; }
 		IEditActionsHandler EditActionsHandler { get; }

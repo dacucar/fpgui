@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FpgUI
+namespace FpgUI.Core.FpgEditor
 {
 	public interface IEditActionsHandler
 	{

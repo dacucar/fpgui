@@ -1,17 +1,30 @@
 ﻿using Xwt;
 using FenixLib.Core;
 using System;
+using FpgUI.Core.FpgEditor;
 
-namespace FpgUI
+namespace FpgUI.Xwt.FpgEditor
 {		
 	public class FpgEditorWindow : Window, IFpgEditor
 	{
 		object IFpgEditor.WindowBackend => this;
 
-		ISpriteAssortment IFpgEditor.Fpg { get; set; } = null;
+		private ISpriteAssortment fpg;
+		ISpriteAssortment IFpgEditor.Fpg
+		{ 
+			get
+			{
+				return fpg;
+			}
+			set
+			{
+				fpg = value;
+
+			}
+		}
 
 		IFpgEditorActionsHandler IFpgEditor.ActionsHandler { get; }
-			= new XwtFpgEditorActionsHandler ();
+			= new ActionsHandler ();
 
 		string IFpgEditor.FileName { get; set; }
 
@@ -44,17 +57,17 @@ namespace FpgUI
 
 			var newFile = new MenuItem ( "_New" );
 			newFile.Clicked += (sender, e) => 
-				((IFpgEditor)this).ActionsHandler.FpgActionsHandler.New(this);
+				((IFpgEditor)this).ActionsHandler.FileActionsHandler.New(this);
 			var openFile = new MenuItem ( "_Open" );
 			openFile.Clicked += (sender, e) =>  
-				((IFpgEditor)this).ActionsHandler.FpgActionsHandler.Open(this);
+				((IFpgEditor)this).ActionsHandler.FileActionsHandler.Open(this);
 			fileMenu.SubMenu.Items.Add ( openFile );
 			var saveFile = new MenuItem("_Save...");
 			saveFile.Clicked += (sender, e) => 
-				((IFpgEditor)this).ActionsHandler.FpgActionsHandler.Save(this);
+				((IFpgEditor)this).ActionsHandler.FileActionsHandler.Save(this);
 			var saveFileAs = new MenuItem("Save As...");
 			saveFileAs.Clicked += (sender, e) => 
-				((IFpgEditor)this).ActionsHandler.FpgActionsHandler.SaveAs(this);
+				((IFpgEditor)this).ActionsHandler.FileActionsHandler.SaveAs(this);
 			var closeFile = new MenuItem ( "_Close" );
 			closeFile.Clicked += (sender, e ) => Close ();
 
