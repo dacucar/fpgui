@@ -7,6 +7,8 @@ namespace FpgUI.Xwt.FpgEditor
 {		
 	public class FpgEditorWindow : Window, IFpgEditor
 	{
+		public event EventHandler FpgChanged;
+
 		object IFpgEditor.WindowBackend => this;
 
 		private ISpriteAssortment fpg;
@@ -19,10 +21,10 @@ namespace FpgUI.Xwt.FpgEditor
 			set
 			{
 				fpg = value;
-				fpgEditor.FpgChanged(EventArgs.Empty);
+				FpgChanged(this, EventArgs.Empty);
 			}
 		}
-
+			
 		IFpgEditorActionsHandler IFpgEditor.ActionsHandler { get; }
 			= new ActionsHandler ();
 
@@ -30,15 +32,9 @@ namespace FpgUI.Xwt.FpgEditor
 
 		bool IFpgEditor.IsNewFile => ((IFpgEditor)this).FileName == null;
 
-		public FpgEditorWindow ()
+		protected virtual void OnFpgChanged(object sender, EventArgs e)
 		{
-			BuildUI ();
-			fpgEditor.FpgChanged += OnFpgChanged();
-		}
-
-		protected virtual void OnFpgChanged()
-		{
-			
+			fpgWidget.Fpg = fpg;
 		}
 
 		protected override bool OnCloseRequested ()
@@ -50,7 +46,29 @@ namespace FpgUI.Xwt.FpgEditor
 			return allow_close;
 		}
 
-		protected virtual void BuildUI()
+		public FpgEditorWindow ()
+		{
+			buildUI ();
+			fpgEditor.FpgChanged += OnFpgChanged;
+		}
+
+		private IFpgEditor fpgEditor
+		{
+			get
+			{
+				return this;
+			}
+		}
+
+		private FpgWidget fpgWidget;
+
+		private IFpgEditorActionsHandler actions => fpgEditor.ActionsHandler;
+
+		private IEditActionsHandler editActions => actions.EditActionsHandler;
+
+		private IFileActionsHandler fileActions => actions.FileActionsHandler;
+
+		private void buildUI()
 		{
 			Title = "FpgUI";
 			Width = 400;
@@ -138,24 +156,10 @@ namespace FpgUI.Xwt.FpgEditor
 
 			MainMenu = mainMenu;
 
-			var sampleLabel = new Label ( "Lalala" );
-			Content = sampleLabel;			
+			//var sampleLabel = new Label ( "Lalala" );
+			fpgWidget = new FpgWidget();
+			Content = fpgWidget;			
 		}
-
-		private IFpgEditor fpgEditor
-		{
-			get
-			{
-				return this;
-			}
-		}
-
-		private IFpgEditorActionsHandler actions => fpgEditor.ActionsHandler;
-
-		private IEditActionsHandler editActions => actions.EditActionsHandler;
-
-		private IFileActionsHandler fileActions => actions.FileActionsHandler;
-
 	}
 }
 

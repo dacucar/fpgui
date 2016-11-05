@@ -42,6 +42,8 @@
     <Compile Include="Xwt\FpgEditor\FpgEditorWindow.cs" />
     <Compile Include="Xwt\FpgEditor\FileActionsHandler.cs" />
     <Compile Include="Xwt\FpgEditor\ActionsHandler.cs" />
+    <Compile Include="Xwt\FpgEditor\FpgWidget.cs" />
+    <Compile Include="Core\Fpg.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
