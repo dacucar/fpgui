@@ -7,7 +7,6 @@ namespace FpgUI.Ui
 	public class FpgWidget : ListView
 	{
 		DataField<string> name = new DataField<string>();
-		DataField<Image> icon = new DataField<Image>();
 		DataField<string> size = new DataField<string>();
 		DataField<string> center = new DataField<string>();
 		ListStore store;
