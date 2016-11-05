@@ -1,0 +1,98 @@
+From c0896b80c46cd484b58959e0a299069e0d65a56f Mon Sep 17 00:00:00 2001
+From: dacucar <dacucar@dacucar.com>
+Date: Thu, 18 Aug 2016 23:52:20 +0200
+Subject: [PATCH] Change Framework version 4.5
+
+---
+ TestApps/Gtk3Test/Gtk3Test.csproj | 9 +++++----
+ TestApps/Samples/Samples.csproj   | 1 +
+ Xwt.Gtk/Xwt.Gtk.csproj            | 3 +--
+ Xwt.Gtk/Xwt.Gtk3.csproj           | 1 +
+ Xwt/Xwt.csproj                    | 3 +--
+ 5 files changed, 9 insertions(+), 8 deletions(-)
+
+diff --git a/TestApps/Gtk3Test/Gtk3Test.csproj b/TestApps/Gtk3Test/Gtk3Test.csproj
+index 243c639..b3abbc6 100644
+--- a/TestApps/Gtk3Test/Gtk3Test.csproj
++++ b/TestApps/Gtk3Test/Gtk3Test.csproj
+@@ -7,6 +7,7 @@
+     <OutputType>Exe</OutputType>
+     <RootNamespace>Gtk3Test</RootNamespace>
+     <AssemblyName>Gtk3Test</AssemblyName>
++    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+   </PropertyGroup>
+   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+     <DebugSymbols>True</DebugSymbols>
+@@ -65,13 +66,13 @@
+       <Project>{92494904-35FA-4DC9-BDE9-3A3E87AC49D3}</Project>
+       <Name>Xwt</Name>
+     </ProjectReference>
+-    <ProjectReference Include="..\Samples\Samples.csproj">
+-      <Project>{88C04B85-B69B-47B4-AB9F-64F6DD4E0897}</Project>
+-      <Name>Samples</Name>
+-    </ProjectReference>
+     <ProjectReference Include="..\..\Xwt.Gtk\Xwt.Gtk3.csproj">
+       <Project>{3B25FD1F-CEBA-4450-8893-DC330FDB56A7}</Project>
+       <Name>Xwt.Gtk3</Name>
+     </ProjectReference>
++    <ProjectReference Include="..\Samples\Samples.csproj">
++      <Project>{88C04B85-B69B-47B4-AB9F-64F6DD4E0897}</Project>
++      <Name>Samples</Name>
++    </ProjectReference>
+   </ItemGroup>
+ </Project>
+diff --git a/TestApps/Samples/Samples.csproj b/TestApps/Samples/Samples.csproj
+index 071da1a..c36e329 100644
+--- a/TestApps/Samples/Samples.csproj
++++ b/TestApps/Samples/Samples.csproj
+@@ -7,6 +7,7 @@
+     <OutputType>Library</OutputType>
+     <RootNamespace>Samples</RootNamespace>
+     <AssemblyName>Samples</AssemblyName>
++    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+   </PropertyGroup>
+   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+     <DebugSymbols>True</DebugSymbols>
+diff --git a/Xwt.Gtk/Xwt.Gtk.csproj b/Xwt.Gtk/Xwt.Gtk.csproj
+index 0aa513a..4ca1eee 100644
+--- a/Xwt.Gtk/Xwt.Gtk.csproj
++++ b/Xwt.Gtk/Xwt.Gtk.csproj
+@@ -9,8 +9,7 @@
+     <AssemblyName>Xwt.Gtk</AssemblyName>
+     <SignAssembly>True</SignAssembly>
+     <AssemblyOriginatorKeyFile>..\xwt.snk</AssemblyOriginatorKeyFile>
+-    <ProductVersion>8.0.30703</ProductVersion>
+-    <SchemaVersion>2.0</SchemaVersion>
++    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+   </PropertyGroup>
+   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+     <DebugSymbols>True</DebugSymbols>
+diff --git a/Xwt.Gtk/Xwt.Gtk3.csproj b/Xwt.Gtk/Xwt.Gtk3.csproj
+index cd70147..000244b 100644
+--- a/Xwt.Gtk/Xwt.Gtk3.csproj
++++ b/Xwt.Gtk/Xwt.Gtk3.csproj
+@@ -9,6 +9,7 @@
+     <AssemblyName>Xwt.Gtk3</AssemblyName>
+     <SignAssembly>True</SignAssembly>
+     <AssemblyOriginatorKeyFile>..\xwt.snk</AssemblyOriginatorKeyFile>
++    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+   </PropertyGroup>
+   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+     <DebugSymbols>True</DebugSymbols>
+diff --git a/Xwt/Xwt.csproj b/Xwt/Xwt.csproj
+index b52e2e2..4323a30 100644
+--- a/Xwt/Xwt.csproj
++++ b/Xwt/Xwt.csproj
+@@ -9,8 +9,7 @@
+     <AssemblyName>Xwt</AssemblyName>
+     <SignAssembly>True</SignAssembly>
+     <AssemblyOriginatorKeyFile>..\xwt.snk</AssemblyOriginatorKeyFile>
+-    <ProductVersion>8.0.30703</ProductVersion>
+-    <SchemaVersion>2.0</SchemaVersion>
++    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+   </PropertyGroup>
+   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+     <DebugSymbols>True</DebugSymbols>
+-- 
+2.7.4
+
