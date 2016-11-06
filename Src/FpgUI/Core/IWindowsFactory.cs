@@ -4,11 +4,13 @@ namespace FpgUI.Core
 {
 	public interface IWindowsFactory
 	{
-		void NewFpgEditor();
+		void ShowFpgEditor(ApplicationContext context);
 
-		void NewPaletteEditor();
+		void ShowPaletteEditor();
 
-		void NewGraphicEditor();
+		void ShowGraphicEditor();
+
+		void ShowNewFpgDialog(ApplicationContext context);
 	}
 }
 

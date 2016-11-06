@@ -15,7 +15,7 @@ namespace FpgUI.Ui
 
 		void IFileActionsHandler.New(IFpgEditor editor)
 		{
-
+			editor.Context.NewFpgEditorNewDialog();
 		}
 
 		void IFileActionsHandler.Open(IFpgEditor editor)

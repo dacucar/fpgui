@@ -49,6 +49,7 @@
     <Compile Include="Core\ApplicationContext.cs" />
     <Compile Include="Core\IWindowsFactory.cs" />
     <Compile Include="Ui\WindowsFactory.cs" />
+    <Compile Include="Ui\NewFpg\NewFpgDialog.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

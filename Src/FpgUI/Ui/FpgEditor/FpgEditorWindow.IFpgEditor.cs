@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using FenixLib.Core;
+using FpgUI.Core;
 using FpgUI.Core.FpgEditor;
 
 namespace FpgUI.Ui
@@ -60,6 +61,8 @@ namespace FpgUI.Ui
 		}
 
 		public bool IsNewFile => ((IFpgEditor)this).FileName == null;
+
+		public ApplicationContext Context => this.context;
     }
 }
 

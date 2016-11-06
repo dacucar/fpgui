@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using FenixLib.Core;
 using System;
+using FpgUI.Core;
 using FpgUI.Core.FpgEditor;
 
 namespace FpgUI.Ui
@@ -13,8 +14,11 @@ namespace FpgUI.Ui
 		protected Label statusLabel;
 		protected Label depthLabel;
 
-		public FpgEditorWindow ()
+		private ApplicationContext context;
+
+		public FpgEditorWindow (ApplicationContext context)
 		{
+			this.context = context;
 			buildUI ();
 		}
 

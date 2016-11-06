@@ -21,6 +21,8 @@ namespace FpgUI.Core.FpgEditor
 		IEnumerable<int> SelectedGraphicsIds { get; }
 
 		void NotifyFpgChange();
+
+		ApplicationContext Context { get; }
 	}
 }
 

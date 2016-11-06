@@ -9,17 +9,22 @@ namespace FpgUI.Core
 
 		public void NewFpgEditorWindow()
 		{
-			this.windowsFactory.NewFpgEditor();
+			this.windowsFactory.ShowFpgEditor(this);
+		}
+
+		public void NewFpgEditorNewDialog()
+		{
+			this.windowsFactory.ShowNewFpgDialog(this);
 		}
 
 		public void NewPaletteEditorWindow(bool standalone = false)
 		{
-			this.windowsFactory.NewPaletteEditor();
+			this.windowsFactory.ShowPaletteEditor();
 		}
 
 		public void NewGraphicEditorWindow(bool standalone = false)
 		{
-			this.windowsFactory.NewGraphicEditor();
+			this.windowsFactory.ShowGraphicEditor();
 		}
 
 		public ApplicationContext(IWindowsFactory windowsFactory)
