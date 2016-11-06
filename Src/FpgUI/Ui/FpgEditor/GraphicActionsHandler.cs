@@ -72,7 +72,7 @@ namespace FpgUI
 				{
 					try
 					{
-						NativeFile.SaveToMap(s,	dialog.FileName);
+						s.SaveToMap(dialog.FileName);
 					}
 					catch (Exception e)
 					{

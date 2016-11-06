@@ -1,6 +1,7 @@
 ﻿using System;
 using FpgUI.Core.FpgEditor;
 using Xwt;
+using FenixLib.IO;
 
 namespace FpgUI
 {
@@ -37,8 +38,7 @@ namespace FpgUI
 			{
 				try
 				{
-					FenixLib.IO.NativeFile.SaveToPal(editor.Fpg.Palette,
-						dialog.FileName);
+					editor.Fpg.Palette.SaveToPal(dialog.FileName);
 				}
 				catch (Exception e)
 				{

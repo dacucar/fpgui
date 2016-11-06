@@ -2,6 +2,7 @@
 using Xwt;
 using FpgUI.Core.FpgEditor;
 using FenixLib.Core;
+using FenixLib.IO;
 
 namespace FpgUI.Ui
 {
@@ -57,8 +58,7 @@ namespace FpgUI.Ui
 			{
 				try
 				{
-					FenixLib.IO.NativeFile.SaveToFpg(editor.Fpg,
-						editor.FileName);
+					editor.Fpg.SaveToFpg(editor.FileName);
 				}
 				catch (Exception e)
 				{
@@ -84,8 +84,7 @@ namespace FpgUI.Ui
 			{
 				try
 				{
-					FenixLib.IO.NativeFile.SaveToFpg(editor.Fpg,
-						dialog.FileName);
+					editor.Fpg.SaveToFpg(dialog.FileName);
 				}
 				catch (Exception e)
 				{
