@@ -165,6 +165,8 @@ namespace FpgUI.Ui
 			var editGraphic = new MenuItem ( "_View/Edit" );
 			var extractGraphic = new MenuItem ( "_Extract" );
 			var extractToMap = new MenuItem ( "To _MAP file..." );
+			extractToMap.Clicked += (sender, e) => 
+				graphicActions.ExtractToMap(this);
 			var extractToPng = new MenuItem ( "To _PNG file..." );
 			var deleteGraphic = new MenuItem ( "_Delete" );
 			deleteGraphic.Clicked += (sender, e) => 
