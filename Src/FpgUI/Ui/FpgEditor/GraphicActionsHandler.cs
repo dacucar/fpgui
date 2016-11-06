@@ -26,7 +26,7 @@ namespace FpgUI
 
 		public void Add(IFpgEditor editor)
 		{
-			throw new NotImplementedException();
+			editor.Context.NewAddGraphicDialog();
 		}
 
 		public void Delete(IFpgEditor editor)

@@ -27,6 +27,11 @@ namespace FpgUI.Core
 			this.windowsFactory.CreateSpriteEditorWindow(this);
 		}
 
+		public void NewAddGraphicDialog()
+		{
+			this.windowsFactory.CreateAddGraphicDialog(this);
+		}
+
 		public ApplicationContext(IWindowsFactory windowsFactory)
 		{
 			this.windowsFactory = windowsFactory;

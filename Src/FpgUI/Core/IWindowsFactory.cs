@@ -13,6 +13,8 @@ namespace FpgUI.Core
 		void CreateSpriteEditorWindow(ApplicationContext context, ISprite map = null );
 
 		void CreateNewFpgDialog(ApplicationContext context);
+
+		void CreateAddGraphicDialog(ApplicationContext context);
 	}
 }
 

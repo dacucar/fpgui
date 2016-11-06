@@ -8,15 +8,15 @@ using FpgUI.Ui;
 namespace FpgUI.Ui
 {
 	public class WindowsFactory : IWindowsFactory
-    {
-        public WindowsFactory()
-        {
-        }
+	{
+		public WindowsFactory()
+		{
+		}
 
 		#region IWindowsFactory implementation
 
 		public IFpgEditor CreateFpgEditorWindow(ApplicationContext context, 
-			ISpriteAssortment fpg = null)
+		                                        ISpriteAssortment fpg = null)
 		{
 			var w = new FpgEditorWindow(context);
 			w.Show();
@@ -27,8 +27,10 @@ namespace FpgUI.Ui
 		{
 			var w = new NewFpgDialog();
 
-			w.CommandActivated += (sender, e) => {
-				if (e.Command == Command.Ok) {
+			w.CommandActivated += (sender, e) =>
+			{
+				if (e.Command == Command.Ok)
+				{
 					var editor = CreateFpgEditorWindow(context);
 					editor.Fpg = new SpriteAssortment(w.GraphicFormat, 
 						w.Palette);
@@ -36,6 +38,21 @@ namespace FpgUI.Ui
 				w.Close();
 			};
 				
+			w.Show();
+		}
+
+		public void CreateAddGraphicDialog(ApplicationContext context)
+		{
+			var w = new AddGraphicDialog();
+
+			w.CommandActivated += (sender, e) =>
+			{
+				if (e.Command == Command.Ok)
+				{
+				}
+				w.Close();
+			};
+
 			w.Show();
 		}
 
@@ -50,6 +67,6 @@ namespace FpgUI.Ui
 		}
 
 		#endregion
-    }
+	}
 }
 

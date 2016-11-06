@@ -99,6 +99,8 @@ namespace FpgUI.Ui
 
 			var graphicMenu = new MenuItem ( "_Graphic" );
 			var addGraphic = new MenuItem ( "_Add" );
+			addGraphic.Clicked += (sender, e) => 
+				Context.NewAddGraphicDialog();
 			var editGraphic = new MenuItem ( "_View/Edit" );
 			var extractGraphic = new MenuItem ( "_Extract" );
 			var extractToMap = new MenuItem ( "To _MAP file..." );

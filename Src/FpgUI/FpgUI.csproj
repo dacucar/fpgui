@@ -50,6 +50,7 @@
     <Compile Include="Core\IWindowsFactory.cs" />
     <Compile Include="Ui\WindowsFactory.cs" />
     <Compile Include="Ui\NewFpg\NewFpgDialog.cs" />
+    <Compile Include="Ui\AddGraphic\AddGraphicDialog.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -69,6 +70,7 @@
     <Folder Include="Ui\" />
     <Folder Include="Ui\FpgEditor\" />
     <Folder Include="Ui\NewFpg\" />
+    <Folder Include="Ui\AddGraphic\" />
   </ItemGroup>
   <ProjectExtensions>
     <MonoDevelop>

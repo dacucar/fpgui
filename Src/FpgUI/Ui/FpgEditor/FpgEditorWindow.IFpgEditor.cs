@@ -21,6 +21,7 @@ namespace FpgUI.Ui
 			set
 			{
 				fpgWidget.Fpg = value;
+				depthLabel.Text = $"{Fpg.GraphicFormat.BitsPerPixel}bpp";
 
 				if (FpgChanged != null)
 				{
@@ -43,7 +44,6 @@ namespace FpgUI.Ui
 			{
 				filename = value;
 				statusLabel.Text = filename;
-				depthLabel.Text = $"{Fpg.GraphicFormat.BitsPerPixel}bpp";
 			}
 		}
 
