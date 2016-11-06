@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using FenixLib.Core;
 
 namespace FpgUI.Core.FpgEditor
@@ -16,6 +17,10 @@ namespace FpgUI.Core.FpgEditor
 		bool IsNewFile { get; }
 
 		event EventHandler FpgChanged;
+
+		IEnumerable<int> SelectedGraphicsIds { get; }
+
+		void NotifyFpgChange();
 	}
 }
 

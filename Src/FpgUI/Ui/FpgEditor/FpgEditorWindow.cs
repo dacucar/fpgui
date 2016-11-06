@@ -1,4 +1,6 @@
 ﻿using Xwt;
+using System.Collections.Generic;
+using System.Linq;
 using FenixLib.Core;
 using System;
 using FpgUI.Core.FpgEditor;
@@ -43,6 +45,19 @@ namespace FpgUI.Ui
 			}
 		}
 
+		IEnumerable<int> IFpgEditor.SelectedGraphicsIds
+		{
+			get
+			{
+				return fpgWidget.SelectedIds;
+			}
+		}
+
+		public void NotifyFpgChange()
+		{
+			FpgChanged(this, EventArgs.Empty);
+		}
+
 		bool IFpgEditor.IsNewFile => ((IFpgEditor)this).FileName == null;
 
 		protected virtual void OnFpgChanged(object sender, EventArgs e)
@@ -84,6 +99,8 @@ namespace FpgUI.Ui
 		private IFileActionsHandler fileActions => actions.FileActionsHandler;
 
 		private IPaletteActionsHandler paletteActions => actions.PaletteActionsHandler;
+
+		private IGraphicActionsHandler graphicActions => actions.GraphicActionsHandler;
 
 		private void buildUI()
 		{
@@ -150,6 +167,8 @@ namespace FpgUI.Ui
 			var extractToMap = new MenuItem ( "To _MAP file..." );
 			var extractToPng = new MenuItem ( "To _PNG file..." );
 			var deleteGraphic = new MenuItem ( "_Delete" );
+			deleteGraphic.Clicked += (sender, e) => 
+				graphicActions.Delete(this);
 
 			extractGraphic.SubMenu = new Menu ();
 			extractGraphic.SubMenu.Items.Add ( extractToMap );

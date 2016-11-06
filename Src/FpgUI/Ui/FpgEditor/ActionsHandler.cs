@@ -9,7 +9,7 @@ namespace FpgUI.Ui
 		public IFileActionsHandler FileActionsHandler { get; }
 			= new FileActionsHandler();
 		public IGraphicActionsHandler GraphicActionsHandler { get; }
-			= null;
+			= new GraphicActionsHandler();
 		public IPaletteActionsHandler PaletteActionsHandler { get; }
 			= new PaletteActionsHandler();
 		public IEditActionsHandler EditActionsHandler { get; }

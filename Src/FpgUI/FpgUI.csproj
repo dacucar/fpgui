@@ -44,6 +44,7 @@
     <Compile Include="Ui\FpgEditor\ActionsHandler.cs" />
     <Compile Include="Ui\FpgEditor\FpgWidget.cs" />
     <Compile Include="Ui\FpgEditor\PaletteActionsHandler.cs" />
+    <Compile Include="Ui\FpgEditor\GraphicActionsHandler.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
