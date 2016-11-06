@@ -7,62 +7,15 @@ using FpgUI.Core.FpgEditor;
 
 namespace FpgUI.Ui
 {		
-	public class FpgEditorWindow : Window, IFpgEditor
+	public partial class FpgEditorWindow : Window, IFpgEditor
 	{
-		public event EventHandler FpgChanged;
+		protected FpgWidget fpgWidget;
+		protected Label statusLabel;
+		protected Label depthLabel;
 
-		object IFpgEditor.WindowBackend => this;
-
-		private ISpriteAssortment fpg;
-		ISpriteAssortment IFpgEditor.Fpg
-		{ 
-			get
-			{
-				return fpg;
-			}
-			set
-			{
-				fpg = value;
-				FpgChanged(this, EventArgs.Empty);
-			}
-		}
-			
-		IFpgEditorActionsHandler IFpgEditor.ActionsHandler { get; }
-			= new ActionsHandler ();
-
-		private string filename;
-		string IFpgEditor.FileName
-		{ 
-			get
-			{
-				return filename;
-			}
-			set
-			{
-				filename = value;
-				statusLabel.Text = filename;
-				depthLabel.Text = $"{fpg.GraphicFormat.BitsPerPixel}bpp";
-			}
-		}
-
-		IEnumerable<int> IFpgEditor.SelectedGraphicsIds
+		public FpgEditorWindow ()
 		{
-			get
-			{
-				return fpgWidget.SelectedIds;
-			}
-		}
-
-		public void NotifyFpgChange()
-		{
-			FpgChanged(this, EventArgs.Empty);
-		}
-
-		bool IFpgEditor.IsNewFile => ((IFpgEditor)this).FileName == null;
-
-		protected virtual void OnFpgChanged(object sender, EventArgs e)
-		{
-			fpgWidget.Fpg = fpg;
+			buildUI ();
 		}
 
 		protected override bool OnCloseRequested ()
@@ -74,33 +27,13 @@ namespace FpgUI.Ui
 			return allow_close;
 		}
 
-		public FpgEditorWindow ()
-		{
-			buildUI ();
-			fpgEditor.FpgChanged += OnFpgChanged;
-		}
+		private IEditActionsHandler editActions => ActionsHandler.EditActionsHandler;
 
-		private IFpgEditor fpgEditor
-		{
-			get
-			{
-				return this;
-			}
-		}
+		private IFileActionsHandler fileActions => ActionsHandler.FileActionsHandler;
 
-		private FpgWidget fpgWidget;
-		private Label statusLabel;
-		private Label depthLabel;
+		private IPaletteActionsHandler paletteActions => ActionsHandler.PaletteActionsHandler;
 
-		private IFpgEditorActionsHandler actions => fpgEditor.ActionsHandler;
-
-		private IEditActionsHandler editActions => actions.EditActionsHandler;
-
-		private IFileActionsHandler fileActions => actions.FileActionsHandler;
-
-		private IPaletteActionsHandler paletteActions => actions.PaletteActionsHandler;
-
-		private IGraphicActionsHandler graphicActions => actions.GraphicActionsHandler;
+		private IGraphicActionsHandler graphicActions => ActionsHandler.GraphicActionsHandler;
 
 		private void buildUI()
 		{
@@ -137,13 +70,13 @@ namespace FpgUI.Ui
 			var editMenu = new MenuItem ( "_Edit" );
 			var cutEdit = new MenuItem ( "_Cut" );
 			cutEdit.Clicked += (sender, e) => 
-				actions.EditActionsHandler.Copy(this);
+				editActions.Copy(this);
 			var copyEdit = new MenuItem ( "_Copy" );
 			copyEdit.Clicked+= (sender, e) => 
-				actions.EditActionsHandler.Copy(this);
+				editActions.Copy(this);
 			var pasteEdit = new MenuItem ( "_Paste" );
 			pasteEdit.Clicked += (sender, e) => 
-				actions.EditActionsHandler.Paste ( this );
+				editActions.Paste ( this );
 
 			editMenu.SubMenu = new Menu ();
 			editMenu.SubMenu.Items.Add ( cutEdit );

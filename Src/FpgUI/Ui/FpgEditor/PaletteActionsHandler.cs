@@ -44,7 +44,7 @@ namespace FpgUI
 				{
 					MessageDialog.ShowError(w,
 						$"Could not save {dialog.FileName}",
-						e.ToString());					
+						e.ToString());
 				}
 			}
 		}

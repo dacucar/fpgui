@@ -45,6 +45,7 @@
     <Compile Include="Ui\FpgEditor\FpgWidget.cs" />
     <Compile Include="Ui\FpgEditor\PaletteActionsHandler.cs" />
     <Compile Include="Ui\FpgEditor\GraphicActionsHandler.cs" />
+    <Compile Include="Ui\FpgEditor\FpgEditorWindow.IFpgEditor.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -63,6 +64,7 @@
     <Folder Include="Core\MapEditor\" />
     <Folder Include="Ui\" />
     <Folder Include="Ui\FpgEditor\" />
+    <Folder Include="Ui\NewFpg\" />
   </ItemGroup>
   <ProjectExtensions>
     <MonoDevelop>
