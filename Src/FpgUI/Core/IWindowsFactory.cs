@@ -1,16 +1,18 @@
 ﻿using System;
+using FenixLib.Core;
+using FpgUI.Core.FpgEditor;
 
 namespace FpgUI.Core
 {
 	public interface IWindowsFactory
 	{
-		void ShowFpgEditor(ApplicationContext context);
+		IFpgEditor CreateFpgEditorWindow(ApplicationContext context, ISpriteAssortment fpg = null);
 
-		void ShowPaletteEditor();
+		void CreatePaletteEditorWindow(ApplicationContext context, Palette pal = null);
 
-		void ShowGraphicEditor();
+		void CreateSpriteEditorWindow(ApplicationContext context, ISprite map = null );
 
-		void ShowNewFpgDialog(ApplicationContext context);
+		void CreateNewFpgDialog(ApplicationContext context);
 	}
 }
 
