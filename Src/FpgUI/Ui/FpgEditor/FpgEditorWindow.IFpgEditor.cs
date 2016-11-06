@@ -9,7 +9,7 @@ namespace FpgUI.Ui
     {
 		public event EventHandler FpgChanged;
 
-		public object WindowBackend => this.BackendHost.Backend.Window;
+		public object WindowBackend => this;
 
 		public ISpriteAssortment Fpg
 		{ 
@@ -20,7 +20,11 @@ namespace FpgUI.Ui
 			set
 			{
 				fpgWidget.Fpg = value;
-				FpgChanged(this, EventArgs.Empty);
+
+				if (FpgChanged != null)
+				{
+					FpgChanged(this, EventArgs.Empty);
+				}
 			}
 		}
 
