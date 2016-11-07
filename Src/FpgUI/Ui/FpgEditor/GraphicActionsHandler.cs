@@ -26,7 +26,7 @@ namespace FpgUI
 
 		public void Add(IFpgEditor editor)
 		{
-			editor.Context.NewAddGraphicDialog();
+			editor.Context.CreateAddGraphicDialog();
 		}
 
 		public void Delete(IFpgEditor editor)
