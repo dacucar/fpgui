@@ -7,34 +7,12 @@ namespace FpgUI.Core
 	{
 		private IWindowsFactory windowsFactory;
 
-		public void CreateNewFpgEditorWindow()
+		public void LoadConfiguration()
 		{
-			this.windowsFactory.CreateFpgEditorWindow(this);
 		}
 
-		public void CreateNewFpgDialog()
+		public void SaveConfiguration()
 		{
-			this.windowsFactory.CreateNewFpgDialog(this);
-		}
-
-		public void CreatePaletteEditorWindow(bool standalone = false)
-		{
-			this.windowsFactory.CreatePaletteEditorWindow(this);
-		}
-
-		public void CreateSpriteEditorWindow(bool standalone = false)
-		{
-			this.windowsFactory.CreateSpriteEditorWindow(this);
-		}
-
-		public void CreateAddGraphicDialog()
-		{
-			this.windowsFactory.CreateAddGraphicDialog(this);
-		}
-
-		public ApplicationContext(IWindowsFactory windowsFactory)
-		{
-			this.windowsFactory = windowsFactory;
 		}
 	}
 }
