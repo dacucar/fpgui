@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace FpgUI.Core
 {
-	public class ApplicationContext
+	class ApplicationContext
 	{
 		private IWindowsFactory windowsFactory;
 
