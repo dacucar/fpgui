@@ -6,8 +6,7 @@ namespace FpgUI.Core
 {
 	public interface IFpgEditorView : IView
 	{
-		event EventHandler FpgChanged;
-
+		#region user events
 		event EventHandler NewFpgClicked;
 		event EventHandler OpenClicked;
 		event EventHandler SaveClicked;
@@ -30,6 +29,7 @@ namespace FpgUI.Core
 		event EventHandler ExtractToPalClicked;
 
 		event EventHandler NewWindowClicked;
+		#endregion
 
 		FpgEditorModel Model { get; }
 

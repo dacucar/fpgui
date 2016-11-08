@@ -6,7 +6,7 @@ namespace FpgUI
 	public class FpgEditorModel
 	{
 		#region state change events
-		event EventHandler FpgChanged;
+		public event EventHandler FpgChanged;
 		#endregion
 
 		public FpgEditorModel()
@@ -22,7 +22,8 @@ namespace FpgUI
 			}
 			set
 			{
-				fpg = value; 
+				fpg = value;
+				FpgChanged?.Invoke(this, EventArgs.Empty);
 			}
 		}
 
