@@ -8,6 +8,7 @@ namespace FpgUI.Ui
 {
 	public partial class FpgEditorWindow
     {
+		/*
 		public event EventHandler FpgChanged;
 
 		public object WindowBackend => this;
@@ -62,7 +63,7 @@ namespace FpgUI.Ui
 
 		public bool IsNewFile => ((IFpgEditor)this).FileName == null;
 
-		public ApplicationContext Context => this.context;
+		public ApplicationContext Context => this.context;*/
     }
 }
 

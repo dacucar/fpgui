@@ -5,6 +5,8 @@ using FpgUI.Core.FpgEditor;
 using FpgUI.Core;
 using FpgUI.Ui;
 
+/*
+
 namespace FpgUI.Ui
 {
 	public class WindowsFactory : IWindowsFactory
@@ -70,3 +72,4 @@ namespace FpgUI.Ui
 	}
 }
 
+*/

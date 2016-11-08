@@ -4,8 +4,10 @@ using FenixLib.Core;
 using FenixLib.IO;
 using Xwt;
 
+/*
 namespace FpgUI
 {
+	
 	public class GraphicActionsHandler : IGraphicActionsHandler
     {
 		private static FileDialogFilter fpgFilesFilter = 
@@ -19,17 +21,17 @@ namespace FpgUI
 
 		#region IGraphicActionsHandler implementation
 
-		public void Rename(IFpgEditor editor)
+		public void Rename(IFpgEditorView editor)
 		{
 			throw new NotImplementedException();
 		}
 
-		public void Add(IFpgEditor editor)
+		public void Add(IFpgEditorView editor)
 		{
 			editor.Context.CreateAddGraphicDialog();
 		}
 
-		public void Delete(IFpgEditor editor)
+		public void Delete(IFpgEditorView editor)
 		{
 			foreach (var id in editor.SelectedGraphicsIds)
 			{
@@ -38,17 +40,17 @@ namespace FpgUI
 			editor.NotifyFpgChange();
 		}
 
-		public void View(IFpgEditor editor)
+		public void View(IFpgEditorView editor)
 		{
 			throw new NotImplementedException();
 		}
 
-		public void ExtratToPng(IFpgEditor editor)
+		public void ExtratToPng(IFpgEditorView editor)
 		{
 
 		}
 
-		public void ExtractToMap(IFpgEditor editor)
+		public void ExtractToMap(IFpgEditorView editor)
 		{
 			var w = (Window)editor.WindowBackend;
 			var dialog = new SaveFileDialog();
@@ -87,4 +89,4 @@ namespace FpgUI
 		#endregion
     }
 }
-
+*/

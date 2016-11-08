@@ -4,7 +4,7 @@ namespace FpgUI.Core.FpgEditor
 {
 	public interface ISystemActionsHandler
 	{
-		void NewWindow(IFpgEditor editor);
+		void NewWindow(IFpgEditorView editor);
 	}
 }
 

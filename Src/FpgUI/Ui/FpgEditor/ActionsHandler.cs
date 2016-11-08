@@ -1,7 +1,7 @@
 ﻿using System;
 using Xwt;
 using FpgUI.Core.FpgEditor;
-
+/*
 namespace FpgUI.Ui
 {
 	sealed class ActionsHandler : IFpgEditorActionsHandler
@@ -19,3 +19,4 @@ namespace FpgUI.Ui
 	}
 }
 
+*/

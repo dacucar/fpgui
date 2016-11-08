@@ -6,7 +6,7 @@ namespace FpgUI.Core
 {
 	public interface IWindowsFactory
 	{
-		IFpgEditor CreateFpgEditorWindow(ApplicationContext context, ISpriteAssortment fpg = null);
+		IFpgEditorView CreateFpgEditorWindow(ApplicationContext context, ISpriteAssortment fpg = null);
 
 		void CreatePaletteEditorWindow(ApplicationContext context, Palette pal = null);
 

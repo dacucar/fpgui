@@ -3,9 +3,10 @@ using Xwt;
 using FpgUI.Core.FpgEditor;
 using FenixLib.Core;
 using FenixLib.IO;
-
+/*
 namespace FpgUI.Ui
 {
+	
 	class FileActionsHandler : IFileActionsHandler
 	{
 		private static FileDialogFilter fpgFilesFilter = 
@@ -13,12 +14,12 @@ namespace FpgUI.Ui
 		private static FileDialogFilter allFilesFilter =
 			new FileDialogFilter("All Files (*.*)", "*.*");
 
-		void IFileActionsHandler.New(IFpgEditor editor)
+		void IFileActionsHandler.New()
 		{
-			editor.Context.CreateNewFpgDialog();
+			//editor.Context.CreateNewFpgDialog();
 		}
 
-		void IFileActionsHandler.Open(IFpgEditor editor)
+		void IFileActionsHandler.Open()
 		{
 			var w = (Window)editor.WindowBackend;
 			var dialog = new OpenFileDialog();
@@ -48,7 +49,7 @@ namespace FpgUI.Ui
 			}
 		}
 
-		void IFileActionsHandler.Save(IFpgEditor editor)
+		void IFileActionsHandler.Save(IFpgEditorView editor)
 		{
 			if (editor.IsNewFile)
 			{
@@ -70,7 +71,7 @@ namespace FpgUI.Ui
 			}
 		}
 
-		void IFileActionsHandler.SaveAs(IFpgEditor editor)
+		void IFileActionsHandler.SaveAs(IFpgEditorView editor)
 		{
 			var w = (Window)editor.WindowBackend;
 			var dialog = new SaveFileDialog();
@@ -95,7 +96,7 @@ namespace FpgUI.Ui
 			}
 		}
 
-		void IFileActionsHandler.Duplicate(IFpgEditor editor)
+		void IFileActionsHandler.Duplicate(IFpgEditorView editor)
 		{
 
 		}
@@ -103,3 +104,4 @@ namespace FpgUI.Ui
 
 }
 
+*/

@@ -4,15 +4,15 @@ namespace FpgUI.Core.FpgEditor
 {
 	public interface IFileActionsHandler
 	{
-		void New(IFpgEditor editor);
+		void New(IFpgEditorView editor);
 
-		void Open(IFpgEditor editor);
+		void Open(IFpgEditorView editor);
 
-		void Save(IFpgEditor editor);
+		void Save(IFpgEditorView editor);
 
-		void SaveAs(IFpgEditor editor);
+		void SaveAs(IFpgEditorView editor);
 
-		void Duplicate(IFpgEditor editor);
+		void Duplicate(IFpgEditorView editor);
 	}
 }
 

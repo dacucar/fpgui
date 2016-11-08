@@ -2,7 +2,7 @@
 using FpgUI.Core.FpgEditor;
 using Xwt;
 using FenixLib.IO;
-
+/*
 namespace FpgUI
 {
 	public class PaletteActionsHandler : IPaletteActionsHandler
@@ -19,12 +19,12 @@ namespace FpgUI
 
 		#region IPaletteActionsHandler implementation
 
-		public void ViewEdit(IFpgEditor editor)
+		public void ViewEdit(IFpgEditorView editor)
 		{
 			throw new NotImplementedException();
 		}
 
-		public void ExportToPal(IFpgEditor editor)
+		public void ExportToPal(IFpgEditorView editor)
 		{
 			var w = (Window)editor.WindowBackend;
 			var dialog = new SaveFileDialog();
@@ -53,3 +53,4 @@ namespace FpgUI
 	}
 }
 
+*/
