@@ -2,7 +2,7 @@
 
 namespace FpgUI.Core
 {
-	class PresenterBase<T> where T : IView
+	public class PresenterBase<T> where T : IView
 	{
 		private T view;
 		private ApplicationContext context;

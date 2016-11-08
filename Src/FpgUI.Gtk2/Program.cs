@@ -12,10 +12,8 @@ namespace FpgUI.Gtk2
 		{
 			Application.Initialize(ToolkitType.Gtk);
 
-			ApplicationContext context = 
-				new ApplicationContext(new WindowsFactory());
-
-			context.CreateNewFpgEditorWindow();
+			var context = 
+				new ApplicationContext();
 
 			Application.Run();
 

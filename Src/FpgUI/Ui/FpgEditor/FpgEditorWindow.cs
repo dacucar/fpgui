@@ -10,8 +10,6 @@ namespace FpgUI.Ui
 {
 	public partial class FpgEditorWindow : Window, IFpgEditorView
 	{
-		public event EventHandler FpgChanged;
-
 		public event EventHandler NewFpgClicked;
 		public event EventHandler OpenClicked;
 		public event EventHandler SaveClicked;
@@ -39,11 +37,8 @@ namespace FpgUI.Ui
 		protected Label statusLabel;
 		protected Label depthLabel;
 
-		private ApplicationContext context;
-
-		public FpgEditorWindow(ApplicationContext context)
+		public FpgEditorWindow()
 		{
-			this.context = context;
 			buildUI();
 		}
 
@@ -112,6 +107,8 @@ namespace FpgUI.Ui
 
 			var paletteMenu = new MenuItem("_Palette");
 			var viewEditPalette = new MenuItem("_View/Edit...");
+			viewEditPalette.Clicked += (sender, e) => 
+				ViewEditPaletteClicked?.Invoke(this, EventArgs.Empty);
 			var exportPalette = new MenuItem("_Export to PAL...");
 			exportPalette.Clicked += (sender, e) => 
 				ExtractToPalClicked?.Invoke(this, EventArgs.Empty);

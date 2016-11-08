@@ -4,17 +4,17 @@ using FpgUI.Core.FpgEditor;
 
 namespace FpgUI.Core
 {
-	public interface IWindowsFactory
+	public interface IViewFactory
 	{
-		IFpgEditorView CreateFpgEditorWindow(ApplicationContext context, ISpriteAssortment fpg = null);
+		IFpgEditorView CreateFpgEditorView();
 
-		void CreatePaletteEditorWindow(ApplicationContext context, Palette pal = null);
+		void CreatePaletteEditorView();
 
-		void CreateSpriteEditorWindow(ApplicationContext context, ISprite map = null );
+		void CreateSpriteEditorView();
 
-		void CreateNewFpgDialog(ApplicationContext context);
+		void CreateNewFpgView();
 
-		void CreateAddGraphicDialog(ApplicationContext context);
+		void CreateAddGraphicView();
 	}
 }
 

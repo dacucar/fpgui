@@ -5,12 +5,13 @@ namespace FpgUI.Core
 {
 	public class FpgEditorPresenter : PresenterBase<IFpgEditorView>
 	{
-		FpgEditorModel model;
+		private FpgEditorModel model;
 
-		public FpgEditorPresenter(IFpgEditorView view)
-			: base(view)
+		public FpgEditorPresenter(IFpgEditorView view, ApplicationContext context)
+			: base(view, context)
 		{
 			model = new FpgEditorModel();
+
 			// Subscribe to model state change events
 			model.FpgChanged += OnFpgChanged;
 
@@ -39,6 +40,10 @@ namespace FpgUI.Core
 			View.NewWindowClicked += OnNewWindowClicked;
 
 		}
+
+		bool IsNewFile => model.FileName == null;
+
+		string Title => ( model.FileName == null ? "untitled.fpg" : model.FileName );
 
 		protected virtual void OnFpgChanged(object sender, EventArgs e)
 		{

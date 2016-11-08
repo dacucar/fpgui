@@ -13,9 +13,10 @@ namespace FpgUI.Gtk3
 			Application.Initialize(ToolkitType.Gtk3);
 
 			ApplicationContext context = 
-				new ApplicationContext(new WindowsFactory());
+				new ApplicationContext();
 
-			context.CreateNewFpgEditorWindow();
+			var view = new FpgEditorWindow();
+			var presenter = new FpgEditorPresenter(view, context) ;
 
 			Application.Run();
 

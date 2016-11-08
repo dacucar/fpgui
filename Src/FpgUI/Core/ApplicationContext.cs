@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace FpgUI.Core
 {
-	class ApplicationContext
+	public class ApplicationContext
 	{
-		private IWindowsFactory windowsFactory;
+		private IViewFactory viewFactory;
 
 		public void LoadConfiguration()
 		{
