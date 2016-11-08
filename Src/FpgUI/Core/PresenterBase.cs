@@ -5,12 +5,17 @@ namespace FpgUI.Core
 	class PresenterBase<T> where T : IView
 	{
 		private T view;
-		public PresenterBase(T view)
+		private ApplicationContext context;
+
+		public PresenterBase(T view, ApplicationContext context)
 		{
 			this.view = view;
+			this.context = context;
 		}
 
-		public T View { get { return view; } }
+		public ApplicationContext Context => context;
+
+		public T View => view;
 
 		public void ShowView(IView owner)
 		{
