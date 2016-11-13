@@ -3,7 +3,7 @@ using FenixLib.Core;
 
 namespace FpgUI.Core
 {
-	public class FpgEditorPresenter : PresenterBase<IFpgEditorView>
+	public class FpgEditorPresenter : ViewController<IFpgEditorView>
 	{
 		private FpgEditorModel model;
 

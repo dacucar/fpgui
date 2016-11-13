@@ -2,12 +2,12 @@
 
 namespace FpgUI.Core
 {
-	public class PresenterBase<T> where T : IView
+	public class ViewController<T> where T : IView
 	{
 		private T view;
 		private ApplicationContext context;
 
-		public PresenterBase(T view, ApplicationContext context)
+		public ViewController(T view, ApplicationContext context)
 		{
 			this.view = view;
 			this.context = context;
