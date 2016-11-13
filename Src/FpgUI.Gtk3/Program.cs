@@ -16,7 +16,7 @@ namespace FpgUI.Gtk3
 				new ApplicationContext();
 
 			var view = new FpgEditorWindow();
-			var presenter = new FpgEditorPresenter(view, context) ;
+			var presenter = new FpgEditorController(view, context) ;
 
 			Application.Run();
 

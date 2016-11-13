@@ -52,9 +52,9 @@
     <Compile Include="Ui\AddGraphic\AddGraphicDialog.cs" />
     <Compile Include="Core\IFpgEditorView.cs" />
     <Compile Include="Core\IView.cs" />
-    <Compile Include="Core\FpgEditorPresenter.cs" />
     <Compile Include="Core\FpgEditorModel.cs" />
     <Compile Include="Core\ViewController.cs" />
+    <Compile Include="Core\FpgEditorController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
