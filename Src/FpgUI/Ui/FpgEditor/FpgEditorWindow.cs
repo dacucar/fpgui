@@ -180,7 +180,7 @@ namespace FpgUI.Ui
 			Content = vbox;
 		}
 
-		public FpgEditorModel Model
+		public FpgEditor Model
 		{
 			get
 			{

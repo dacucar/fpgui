@@ -3,13 +3,13 @@ using FenixLib.Core;
 
 namespace FpgUI
 {
-	public class FpgEditorModel
+	public class FpgEditor
 	{
 		#region state change events
 		public event EventHandler FpgChanged;
 		#endregion
 
-		public FpgEditorModel()
+		public FpgEditor()
 		{
 		}
 

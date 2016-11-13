@@ -5,12 +5,12 @@ namespace FpgUI.Core
 {
 	public class FpgEditorController : ViewController<IFpgEditorView>
 	{
-		private FpgEditorModel model;
+		private FpgEditor model;
 
 		public FpgEditorController(IFpgEditorView view, ApplicationContext context)
 			: base(view, context)
 		{
-			tihs.model = new FpgEditorModel();
+			tihs.model = new FpgEditor();
 			this.view = view;
 
 			// Subscribe to model state change events

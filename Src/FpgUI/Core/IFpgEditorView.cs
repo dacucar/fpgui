@@ -31,7 +31,7 @@ namespace FpgUI.Core
 		event EventHandler NewWindowClicked;
 		#endregion
 
-		FpgEditorModel Model { get; }
+		FpgEditor Model { get; }
 
 		//void UpdateEnabled(CommandFlags flags);
 
