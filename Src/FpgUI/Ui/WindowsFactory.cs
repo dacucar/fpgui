@@ -1,7 +1,7 @@
 ﻿using System;
 using FenixLib.Core;
 using Xwt;
-using FpgUI.Core.FpgEditor;
+using FpgUI.Core.FpgEditorActions;
 using FpgUI.Core;
 using FpgUI.Ui;
 

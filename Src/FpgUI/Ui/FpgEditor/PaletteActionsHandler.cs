@@ -1,5 +1,5 @@
 ﻿using System;
-using FpgUI.Core.FpgEditor;
+using FpgUI.Core.FpgEditorActions;
 using Xwt;
 using FenixLib.IO;
 /*

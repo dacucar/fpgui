@@ -4,7 +4,7 @@ using System.Linq;
 using FenixLib.Core;
 using System;
 using FpgUI.Core;
-using FpgUI.Core.FpgEditor;
+using FpgUI.Core.FpgEditorActions;
 
 namespace FpgUI.Ui
 {

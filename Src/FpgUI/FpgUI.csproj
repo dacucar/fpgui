@@ -32,12 +32,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Core\FpgEditor\IEditActionsHandler.cs" />
-    <Compile Include="Core\FpgEditor\IFileActionsHandler.cs" />
-    <Compile Include="Core\FpgEditor\IFpgEditorActionsHandler.cs" />
-    <Compile Include="Core\FpgEditor\IGraphicActionsHandler.cs" />
-    <Compile Include="Core\FpgEditor\IPaletteActionsHandler.cs" />
-    <Compile Include="Core\FpgEditor\ISystemActionsHandler.cs" />
     <Compile Include="Ui\FpgEditor\FpgEditorWindow.cs" />
     <Compile Include="Ui\FpgEditor\FileActionsHandler.cs" />
     <Compile Include="Ui\FpgEditor\ActionsHandler.cs" />
@@ -55,6 +49,12 @@
     <Compile Include="Core\ViewController.cs" />
     <Compile Include="Core\FpgEditorController.cs" />
     <Compile Include="Core\FpgEditor.cs" />
+    <Compile Include="Core\FpgEditorActions\IEditActionsHandler.cs" />
+    <Compile Include="Core\FpgEditorActions\IFileActionsHandler.cs" />
+    <Compile Include="Core\FpgEditorActions\IFpgEditorActionsHandler.cs" />
+    <Compile Include="Core\FpgEditorActions\IGraphicActionsHandler.cs" />
+    <Compile Include="Core\FpgEditorActions\IPaletteActionsHandler.cs" />
+    <Compile Include="Core\FpgEditorActions\ISystemActionsHandler.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -69,11 +69,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Core\" />
-    <Folder Include="Core\FpgEditor\" />
     <Folder Include="Ui\" />
     <Folder Include="Ui\FpgEditor\" />
     <Folder Include="Ui\NewFpg\" />
     <Folder Include="Ui\AddGraphic\" />
+    <Folder Include="Core\FpgEditorActions\" />
   </ItemGroup>
   <ProjectExtensions>
     <MonoDevelop>

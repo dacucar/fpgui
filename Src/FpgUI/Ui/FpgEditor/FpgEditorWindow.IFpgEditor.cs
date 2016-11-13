@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using FenixLib.Core;
 using FpgUI.Core;
-using FpgUI.Core.FpgEditor;
+using FpgUI.Core.FpgEditorActions;
 
 namespace FpgUI.Ui
 {

@@ -6,11 +6,12 @@ namespace FpgUI.Core
 	public class FpgEditorController : ViewController<IFpgEditorView>
 	{
 		private FpgEditor model;
-
+		private IFpgEditorView view;
+		
 		public FpgEditorController(IFpgEditorView view, ApplicationContext context)
 			: base(view, context)
 		{
-			tihs.model = new FpgEditor();
+			this.model = new FpgEditor();
 			this.view = view;
 
 			// Subscribe to model state change events
@@ -53,7 +54,7 @@ namespace FpgUI.Core
 			throw new NotImplementedException();
 		}
 
-		#endif
+		#endregion
 
 		#region user input events
 

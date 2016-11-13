@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FpgUI.Core.FpgEditor
+namespace FpgUI.Core.FpgEditorActions
 {
 	public interface IFileActionsHandler
 	{

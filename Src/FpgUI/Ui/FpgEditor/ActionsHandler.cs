@@ -1,6 +1,6 @@
 ﻿using System;
 using Xwt;
-using FpgUI.Core.FpgEditor;
+using FpgUI.Core.FpgEditorActions;
 /*
 namespace FpgUI.Ui
 {
