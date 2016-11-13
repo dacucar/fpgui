@@ -3,14 +3,15 @@ using FenixLib.Core;
 
 namespace FpgUI.Core
 {
-	public class FpgEditorPresenter : ViewController<IFpgEditorView>
+	public class FpgEditorController : ViewController<IFpgEditorView>
 	{
 		private FpgEditorModel model;
 
-		public FpgEditorPresenter(IFpgEditorView view, ApplicationContext context)
+		public FpgEditorController(IFpgEditorView view, ApplicationContext context)
 			: base(view, context)
 		{
-			model = new FpgEditorModel();
+			tihs.model = new FpgEditorModel();
+			this.view = view;
 
 			// Subscribe to model state change events
 			model.FpgChanged += OnFpgChanged;
@@ -41,43 +42,49 @@ namespace FpgUI.Core
 
 		}
 
-		bool IsNewFile => model.FileName == null;
+		protected bool IsNewFile => model.FileName == null;
 
-		string Title => ( model.FileName == null ? "untitled.fpg" : model.FileName );
+		protected string Title => ( model.FileName == null ? "untitled.fpg" : model.FileName );
+
+		#region data sync events
 
 		protected virtual void OnFpgChanged(object sender, EventArgs e)
 		{
-			
+			throw new NotImplementedException();
 		}
+
+		#endif
+
+		#region user input events
 
 		protected virtual void OnNewFpgClicked(object sender, EventArgs e)
 		{
-			
+			throw new NotImplementedException();
 		}
 
 		protected virtual void OnOpenClicked(object sender, EventArgs e)
 		{
-			
+			throw new NotImplementedException();
 		}
 
 		protected virtual void OnSaveClicked(object sender, EventArgs e)
 		{
-			
+			throw new NotImplementedException();
 		}
 
 		protected virtual void OnSaveAsClicked(object sender, EventArgs e)
 		{
-			
+			throw new NotImplementedException();
 		}
 
 		protected virtual void OnDuplicateFpgClicked(object sender, EventArgs e)
 		{
-			
+			throw new NotImplementedException();
 		}
 
 		protected virtual void OnCloseClicked(object sender, EventArgs e)
 		{
-			
+			throw new NotImplementedException();
 		}
 			
 		protected virtual void OnCopyClicked(object sender, EventArgs e)
@@ -139,6 +146,8 @@ namespace FpgUI.Core
 		{
 			throw new NotImplementedException();
 		}
+
+		#endregion
 	}
 }
 
