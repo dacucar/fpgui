@@ -6,13 +6,11 @@ namespace FpgUI.Core
 	public class FpgEditorController : ViewController<IFpgEditorView>
 	{
 		private FpgEditor model;
-		private IFpgEditorView view;
-		
+
 		public FpgEditorController(IFpgEditorView view, ApplicationContext context)
 			: base(view, context)
 		{
 			this.model = new FpgEditor();
-			this.view = view;
 
 			// Subscribe to model state change events
 			model.FpgChanged += OnFpgChanged;
