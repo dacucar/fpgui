@@ -13,7 +13,7 @@ namespace FpgUI
 
 		public ApplicationContext()
 		{
-			ViewFactory = new XwtViewFactory();
+			//ViewFactory = new XwtViewFactory();
 		}
 
 		public void LoadConfiguration()

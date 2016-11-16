@@ -2,13 +2,13 @@
 
 namespace FpgUI.Core.FpgEditorActions
 {
-	public interface IEditActionsHandler
+	/*public interface IEditActionsHandler
 	{
 		void Copy(IFpgEditorView editor);
 
 		void Paste(IFpgEditorView editor);
 
 		void Cut(IFpgEditorView editor);
-	}
+	}*/
 }
 

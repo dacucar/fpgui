@@ -2,7 +2,7 @@
 
 namespace FpgUI.Core.FpgEditorActions
 {
-	public interface IFpgEditorActionsHandler
+	/*public interface IFpgEditorActionsHandler
 	{
 		IFileActionsHandler FileActionsHandler { get; }
 
@@ -13,6 +13,6 @@ namespace FpgUI.Core.FpgEditorActions
 		IEditActionsHandler EditActionsHandler { get; }
 
 		IPaletteActionsHandler PaletteActionsHandler { get; }
-	}
+	}*/
 }
 

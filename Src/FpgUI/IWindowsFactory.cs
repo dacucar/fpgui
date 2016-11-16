@@ -1,6 +1,7 @@
 ﻿using System;
 using FenixLib.Core;
 using FpgUI.Core.FpgEditorActions;
+using FpgUI.FpgEditor;
 
 namespace FpgUI
 {

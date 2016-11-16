@@ -32,29 +32,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Ui\FpgEditor\FpgEditorWindow.cs" />
     <Compile Include="Ui\FpgEditor\FileActionsHandler.cs" />
     <Compile Include="Ui\FpgEditor\ActionsHandler.cs" />
-    <Compile Include="Ui\FpgEditor\FpgWidget.cs" />
     <Compile Include="Ui\FpgEditor\PaletteActionsHandler.cs" />
     <Compile Include="Ui\FpgEditor\GraphicActionsHandler.cs" />
-    <Compile Include="Ui\FpgEditor\FpgEditorWindow.IFpgEditor.cs" />
-    <Compile Include="Core\ApplicationContext.cs" />
-    <Compile Include="Core\IWindowsFactory.cs" />
-    <Compile Include="Ui\WindowsFactory.cs" />
-    <Compile Include="Ui\NewFpg\NewFpgDialog.cs" />
     <Compile Include="Ui\AddGraphic\AddGraphicDialog.cs" />
-    <Compile Include="Core\IFpgEditorView.cs" />
-    <Compile Include="Core\IView.cs" />
-    <Compile Include="Core\ViewController.cs" />
-    <Compile Include="Core\FpgEditorController.cs" />
-    <Compile Include="Core\FpgEditor.cs" />
     <Compile Include="Core\FpgEditorActions\IEditActionsHandler.cs" />
     <Compile Include="Core\FpgEditorActions\IFileActionsHandler.cs" />
     <Compile Include="Core\FpgEditorActions\IFpgEditorActionsHandler.cs" />
     <Compile Include="Core\FpgEditorActions\IGraphicActionsHandler.cs" />
     <Compile Include="Core\FpgEditorActions\IPaletteActionsHandler.cs" />
     <Compile Include="Core\FpgEditorActions\ISystemActionsHandler.cs" />
+    <Compile Include="FpgEditor\IFpgEditorView.cs" />
+    <Compile Include="FpgEditor\ViewController.cs" />
+    <Compile Include="ApplicationContext.cs" />
+    <Compile Include="IWindowsFactory.cs" />
+    <Compile Include="WindowsFactory.cs" />
+    <Compile Include="FpgEditor\Model.cs" />
+    <Compile Include="Ui\FpgEditor\FpgEditorView.IFpgEditor.cs" />
+    <Compile Include="FpgEditor\FpgEditorView.cs" />
+    <Compile Include="FpgEditor\Controller.cs" />
+    <Compile Include="Widgets\FpgWidget.cs" />
+    <Compile Include="IView.cs" />
+    <Compile Include="NewFpg\NewFpgDialog.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -71,9 +71,11 @@
     <Folder Include="Core\" />
     <Folder Include="Ui\" />
     <Folder Include="Ui\FpgEditor\" />
-    <Folder Include="Ui\NewFpg\" />
     <Folder Include="Ui\AddGraphic\" />
     <Folder Include="Core\FpgEditorActions\" />
+    <Folder Include="FpgEditor\" />
+    <Folder Include="Widgets\" />
+    <Folder Include="NewFpg\" />
   </ItemGroup>
   <ProjectExtensions>
     <MonoDevelop>

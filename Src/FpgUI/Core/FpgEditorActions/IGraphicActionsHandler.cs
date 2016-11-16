@@ -2,7 +2,7 @@
 
 namespace FpgUI.Core.FpgEditorActions
 {
-	public interface IGraphicActionsHandler
+	/*public interface IGraphicActionsHandler
 	{
 		void Rename(IFpgEditorView editor);
 
@@ -15,6 +15,6 @@ namespace FpgUI.Core.FpgEditorActions
 		void ExtratToPng(IFpgEditorView editor);
 
 		void ExtractToMap(IFpgEditorView editor);
-	}
+	}*/
 }
 

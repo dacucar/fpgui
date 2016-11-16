@@ -5,7 +5,7 @@ using Xwt;
 using Xwt.Drawing;
 using FenixLib.Core;
 
-namespace FpgUI.Ui
+namespace FpgUI.Widgets
 {
 	public class FpgWidget : ListView
 	{

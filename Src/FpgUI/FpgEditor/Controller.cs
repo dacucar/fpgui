@@ -1,16 +1,16 @@
 ﻿using System;
 using FenixLib.Core;
 
-namespace FpgUI
+namespace FpgUI.FpgEditor
 {
-	public class FpgEditorController : ViewController<IFpgEditorView>
+	public class Controller : ViewController<IFpgEditorView>
 	{
-		private FpgEditor editor;
+		private Model editor;
 
-		public FpgEditorController(IFpgEditorView view, ApplicationContext context)
+		public Controller(IFpgEditorView view, ApplicationContext context)
 			: base(view, context)
 		{
-			this.editor = new FpgEditor();
+			this.editor = new Model();
 
 			// Subscribe to model state change events
 			editor.FpgChanged += OnFpgChanged;
@@ -41,11 +41,11 @@ namespace FpgUI
 
 		}
 
-		protected bool IsNewFile => model.FileName == null;
+		protected bool IsNewFile => editor.FileName == null;
 
-		protected string Title => model.FileName == null 
+		protected string Title => editor.FileName == null 
 			? "untitled.fpg" 
-			: model.FileName ;
+			: editor.FileName ;
 
 		#region data sync events
 

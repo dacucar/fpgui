@@ -1,7 +1,6 @@
 ﻿using System;
 using Xwt;
 using FpgUI.Ui;
-using FpgUI.Core;
 
 namespace FpgUI.Gtk2
 {

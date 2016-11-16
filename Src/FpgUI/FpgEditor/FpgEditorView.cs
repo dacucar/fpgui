@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using FenixLib.Core;
 using System;
-using FpgUI.Core;
-using FpgUI.Core.FpgEditorActions;
+//using FpgUI.Core;
+//using FpgUI.Core.FpgEditorActions;
+using FpgUI.Widgets;
+using FpgUI.FpgEditor;
 
-namespace FpgUI.Ui
+namespace FpgUI.FpgEditor
 {
-	public partial class FpgEditorWindow : Window, IFpgEditorView
+	public partial class FpgEditorView : Window, IFpgEditorView
 	{
 		public event EventHandler NewFpgClicked;
 		public event EventHandler OpenClicked;
@@ -37,7 +39,7 @@ namespace FpgUI.Ui
 		protected Label statusLabel;
 		protected Label depthLabel;
 
-		public FpgEditorWindow()
+		public FpgEditorView()
 		{
 			buildUI();
 		}
@@ -78,7 +80,7 @@ namespace FpgUI.Ui
 				SaveAsClicked?.Invoke(this, EventArgs.Empty);
 			var duplicateFpg = new MenuItem("Duplicate Fpg...");
 			duplicateFpg.Clicked += (sender, e) => 
-				DuplicateFpgClicked.Invoke(this, EventArgs.Empty);
+				DuplicateFpgClicked?.Invoke(this, EventArgs.Empty);
 			var closeFile = new MenuItem("_Close");
 			closeFile.Clicked += (sender, e) =>
 				CloseClicked?.Invoke(this, EventArgs.Empty);

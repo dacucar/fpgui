@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FpgUI
+namespace FpgUI.FpgEditor
 {
 	public class ViewController<T> where T : IView
 	{

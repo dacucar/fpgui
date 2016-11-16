@@ -1,7 +1,6 @@
 ﻿using System;
 using Xwt;
-using FpgUI.Ui;
-using FpgUI.Core;
+using FpgUI.FpgEditor;
 
 namespace FpgUI.Gtk3
 {
@@ -15,8 +14,8 @@ namespace FpgUI.Gtk3
 			ApplicationContext context = 
 				new ApplicationContext();
 
-			var view = new FpgEditorWindow();
-			var presenter = new FpgEditorController(view, context) ;
+			var view = new FpgEditorView();
+			var controller = new Controller(view, context) ;
 
 			Application.Run();
 

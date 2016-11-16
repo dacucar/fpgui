@@ -2,7 +2,7 @@
 using Xwt;
 using FenixLib.Core;
 
-namespace FpgUI.Ui
+namespace FpgUI.NewFpg
 {
 	public class NewFpgDialog : Dialog
 	{

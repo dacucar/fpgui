@@ -1,15 +1,15 @@
 ﻿using System;
 using FenixLib.Core;
 
-namespace FpgUI
+namespace FpgUI.FpgEditor
 {
-	public class FpgEditor
+	public class Model
 	{
 		#region state change events
 		public event EventHandler FpgChanged;
 		#endregion
 
-		public FpgEditor()
+		public Model()
 		{
 		}
 

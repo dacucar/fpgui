@@ -2,7 +2,7 @@
 
 namespace FpgUI.Core.FpgEditorActions
 {
-	public interface IFileActionsHandler
+	/*public interface IFileActionsHandler
 	{
 		void New(IFpgEditorView editor);
 
@@ -13,6 +13,6 @@ namespace FpgUI.Core.FpgEditorActions
 		void SaveAs(IFpgEditorView editor);
 
 		void Duplicate(IFpgEditorView editor);
-	}
+	}*/
 }
 

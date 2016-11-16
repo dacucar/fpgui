@@ -6,7 +6,7 @@ using FpgUI.Core.FpgEditorActions;
 
 namespace FpgUI.Ui
 {
-	public partial class FpgEditorWindow
+	public partial class FpgEditorView
     {
 		/*
 		public event EventHandler FpgChanged;

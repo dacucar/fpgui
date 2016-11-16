@@ -2,9 +2,9 @@
 
 namespace FpgUI.Core.FpgEditorActions
 {
-	public interface ISystemActionsHandler
+	/*public interface ISystemActionsHandler
 	{
 		void NewWindow(IFpgEditorView editor);
-	}
+	}*/
 }
 
