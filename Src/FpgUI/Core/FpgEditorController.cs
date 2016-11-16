@@ -43,7 +43,9 @@ namespace FpgUI.Core
 
 		protected bool IsNewFile => model.FileName == null;
 
-		protected string Title => ( model.FileName == null ? "untitled.fpg" : model.FileName );
+		protected string Title => model.FileName == null 
+			? "untitled.fpg" 
+			: model.FileName ;
 
 		#region data sync events
 

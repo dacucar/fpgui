@@ -5,7 +5,16 @@ namespace FpgUI.Core
 {
 	public class ApplicationContext
 	{
-		private IViewFactory viewFactory;
+		//private IViewFactory viewFactory;
+		public ApplicationContext(IViewFactory factory)
+		{
+			ViewFactory = factory;
+		}
+
+		public ApplicationContext()
+		{
+			ViewFactory = new XwtViewFactory();
+		}
 
 		public void LoadConfiguration()
 		{
@@ -14,6 +23,8 @@ namespace FpgUI.Core
 		public void SaveConfiguration()
 		{
 		}
+
+		public IViewFactory ViewFactory { get; }
 	}
 }
 
