@@ -2,7 +2,7 @@
 using FenixLib.Core;
 using FpgUI.Core.FpgEditorActions;
 
-namespace FpgUI.Core
+namespace FpgUI
 {
 	public interface IViewFactory
 	{

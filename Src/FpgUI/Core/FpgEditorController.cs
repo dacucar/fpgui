@@ -1,19 +1,19 @@
 ﻿using System;
 using FenixLib.Core;
 
-namespace FpgUI.Core
+namespace FpgUI
 {
 	public class FpgEditorController : ViewController<IFpgEditorView>
 	{
-		private FpgEditor model;
+		private FpgEditor editor;
 
 		public FpgEditorController(IFpgEditorView view, ApplicationContext context)
 			: base(view, context)
 		{
-			this.model = new FpgEditor();
+			this.editor = new FpgEditor();
 
 			// Subscribe to model state change events
-			model.FpgChanged += OnFpgChanged;
+			editor.FpgChanged += OnFpgChanged;
 
 			// Suscribe to model user events
 			View.NewFpgClicked += OnNewFpgClicked;

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using FenixLib.Core;
 
-namespace FpgUI.Core
+namespace FpgUI
 {
 	public interface IFpgEditorView : IView
 	{

@@ -180,14 +180,6 @@ namespace FpgUI.Ui
 			Content = vbox;
 		}
 
-		public FpgEditor Model
-		{
-			get
-			{
-				throw new NotImplementedException();
-			}
-		}
-
 		public void ShowView(IView parent)
 		{
 			throw new NotImplementedException();

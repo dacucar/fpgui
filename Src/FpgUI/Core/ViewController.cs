@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FpgUI.Core
+namespace FpgUI
 {
 	public class ViewController<T> where T : IView
 	{

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace FpgUI.Core
+namespace FpgUI
 {
 	public class ApplicationContext
 	{
