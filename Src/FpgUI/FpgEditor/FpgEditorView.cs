@@ -196,7 +196,7 @@ namespace FpgUI.FpgEditor
 			mapCommand(UiCommand.AddGraphic, addGraphic);
 			mapCommand(UiCommand.Extract, extractGraphic);
 			mapCommand(UiCommand.Delete, deleteGraphic);
-			mapCommand(UiCommand.NewFpg, newWindowSystem);
+			mapCommand(UiCommand.NewWindow, newWindowSystem);
 
 			Content = vbox;
 		}
