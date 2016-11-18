@@ -23,17 +23,17 @@ namespace FpgUI.FpgEditor
 			}
 		}
 
-		public void ShowView(IView owner)
+		public virtual void ShowView(IView owner)
 		{
 			view.ShowView(owner);
 		}
 
-		public void ShowView()
+		public virtual void ShowView()
 		{
 			view.ShowView(null);
 		}
 
-		public void CloseView()
+		public virtual void CloseView()
 		{
 			view.CloseView();
 		}

@@ -48,14 +48,14 @@
     <Compile Include="FpgEditor\Model.cs" />
     <Compile Include="Ui\FpgEditor\FpgEditorView.IFpgEditor.cs" />
     <Compile Include="FpgEditor\FpgEditorView.cs" />
-    <Compile Include="Widgets\FpgWidget.cs" />
     <Compile Include="IView.cs" />
     <Compile Include="NewFpg\NewFpgDialog.cs" />
     <Compile Include="IViewFactory.cs" />
     <Compile Include="ViewFactory.cs" />
     <Compile Include="ViewController.cs" />
     <Compile Include="FpgEditor\FpgEditorController.cs" />
-    <Compile Include="Ui\FpgEditor\UiCommand.cs" />
+    <Compile Include="FpgEditor\UiCommand.cs" />
+    <Compile Include="FpgEditor\FpgWidget.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

@@ -38,8 +38,8 @@ namespace FpgUI.FpgEditor
 		protected FpgWidget fpgWidget;
 		protected Label statusLabel;
 		protected Label depthLabel;
-		private IDictionary<UiCommand, ISensitive> commands = 
-			new Dictionary<UiCommand, ISensitive>();
+		private IDictionary<UiControl, ISensitive> commands = 
+			new Dictionary<UiControl, ISensitive>();
 
 		public FpgEditorView()
 		{
@@ -84,7 +84,7 @@ namespace FpgUI.FpgEditor
 			var duplicateFpg = new MenuItem("Duplicate Fpg...");
 			duplicateFpg.Clicked += (sender, e) => 
 				DuplicateFpgClicked?.Invoke(this, EventArgs.Empty);
-			var closeFile = new MenuItem("_Close");
+			var closeFile = new MenuItem("_Close Fpg");
 			closeFile.Clicked += (sender, e) =>
 				CloseClicked?.Invoke(this, EventArgs.Empty);
 
@@ -182,21 +182,24 @@ namespace FpgUI.FpgEditor
 			vbox.PackStart(fpgWidget, true);
 			vbox.PackStart(statusContainer);
 
-			mapCommand(UiCommand.NewFpg, newFile);
-			mapCommand(UiCommand.OpenFpg, openFile);
-			mapCommand(UiCommand.SaveFpg, saveFile);
-			mapCommand(UiCommand.SaveAsFpg, saveFileAs);
-			mapCommand(UiCommand.Close, closeFile);
-			mapCommand(UiCommand.Cut, cutEdit);
-			mapCommand(UiCommand.Copy, copyEdit);
-			mapCommand(UiCommand.Paste, pasteEdit);
-			mapCommand(UiCommand.DuplicateFpg, duplicateFpg);
-			mapCommand(UiCommand.ViewEditPalette, viewEditPalette);
-			mapCommand(UiCommand.ExportToPal, exportPalette);
-			mapCommand(UiCommand.AddGraphic, addGraphic);
-			mapCommand(UiCommand.Extract, extractGraphic);
-			mapCommand(UiCommand.Delete, deleteGraphic);
-			mapCommand(UiCommand.NewWindow, newWindowSystem);
+			mapCommand(UiControl.NewFpg, newFile);
+			mapCommand(UiControl.OpenFpg, openFile);
+			mapCommand(UiControl.SaveFpg, saveFile);
+			mapCommand(UiControl.SaveAsFpg, saveFileAs);
+			mapCommand(UiControl.Close, closeFile);
+			mapCommand(UiControl.Cut, cutEdit);
+			mapCommand(UiControl.Copy, copyEdit);
+			mapCommand(UiControl.Paste, pasteEdit);
+			mapCommand(UiControl.DuplicateFpg, duplicateFpg);
+			mapCommand(UiControl.PaletteControls, paletteMenu);
+			mapCommand(UiControl.ViewEditPalette, viewEditPalette);
+			mapCommand(UiControl.ExportToPal, exportPalette);
+			mapCommand(UiControl.GraphicControls, graphicMenu);
+			mapCommand(UiControl.AddGraphic, addGraphic);
+			mapCommand(UiControl.ExportGraphic, extractGraphic);
+			mapCommand(UiControl.ViewEditGraphic, editGraphic);
+			mapCommand(UiControl.Delete, deleteGraphic);
+			mapCommand(UiControl.NewWindow, newWindowSystem);
 
 			Content = vbox;
 		}
@@ -219,14 +222,9 @@ namespace FpgUI.FpgEditor
 			this.Close();
 		}
 
-		public void DisableCommand(UiCommand command)
+		public void SetControlEnabled(UiControl control, bool value)
 		{
-			commands[command].Sensitive = false;
-		}
-
-		public void EnableCommand(UiCommand command)
-		{
-			commands[command].Sensitive = true;
+			commands[control].Sensitive = value;
 		}
 
 		public string LetUserSelectFileToOpen()
@@ -264,17 +262,25 @@ namespace FpgUI.FpgEditor
 		private static FileDialogFilter allFilesFilter =
 			new FileDialogFilter("All Files (*.*)", "*.*");
 
+		public int SelectedGraphicsCount
+		{
+			get
+			{
+				return fpgWidget.SelectedRows.Count();
+			}
+		}
+
 		protected interface ISensitive
 		{
 			bool Sensitive { get; set; }
 		}
 
-		private void mapCommand(UiCommand command, Widget widget)
+		private void mapCommand(UiControl command, Widget widget)
 		{
 			this.commands.Add(command, new SensitiveWidgetAdapter(widget));
 		}
 
-		private void mapCommand(UiCommand command, MenuItem menuItem)
+		private void mapCommand(UiControl command, MenuItem menuItem)
 		{
 			this.commands.Add(command, new SensitiveMenuItemAdapter(menuItem));
 		}

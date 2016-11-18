@@ -2,7 +2,7 @@
 
 namespace FpgUI
 {
-	public enum UiCommand
+	public enum UiControl
 	{
 		NewFpg,
 		OpenFpg,
@@ -13,13 +13,16 @@ namespace FpgUI
 		Cut,
 		Copy,
 		Paste,
+		PaletteControls,
 		ViewEditPalette,
 		ExportToPal,
 		AddGraphic,
+		GraphicControls,
 		ViewEditGraphic,
-		Extract,
+		ExportGraphic,
 		Delete,
 		NewWindow
+
 	}
 }
 

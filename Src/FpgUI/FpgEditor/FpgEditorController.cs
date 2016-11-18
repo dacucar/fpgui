@@ -43,6 +43,12 @@ namespace FpgUI.FpgEditor
 
 		}
 
+		public override void ShowView()
+		{
+			base.ShowView();
+			UpdateEnabledControls();
+		}
+
 		protected bool IsNewFile => editor.FileName == null;
 
 		protected string Title => editor.FileName == null 
@@ -181,6 +187,33 @@ namespace FpgUI.FpgEditor
 
 		#endregion
 
+		protected virtual void UpdateEnabledControls()
+		{
+			bool fpgIsNull = editor.Fpg != null;
+			bool canPaste = false;
+			bool fpgIs8bpp = fpgIsNull
+			                 && editor.Fpg.GraphicFormat == GraphicFormat.Format8bppIndexed;
+			bool somethingSelected = View.SelectedGraphicsCount > 0;
+			bool multipleSelection = View.SelectedGraphicsCount > 1;
+
+			View.SetControlEnabled(UiControl.SaveFpg, fpgIsNull);
+			View.SetControlEnabled(UiControl.SaveAsFpg, fpgIsNull);
+			View.SetControlEnabled(UiControl.DuplicateFpg, fpgIsNull);
+			View.SetControlEnabled(UiControl.AddGraphic, fpgIsNull);
+			View.SetControlEnabled(UiControl.Close, fpgIsNull);
+
+			View.SetControlEnabled(UiControl.Paste, fpgIsNull && canPaste);
+
+			// Todo: Contextual menus
+
+			View.SetControlEnabled(UiControl.PaletteControls, fpgIs8bpp);
+
+			View.SetControlEnabled(UiControl.Cut, somethingSelected);
+			View.SetControlEnabled(UiControl.Copy, somethingSelected);
+			View.SetControlEnabled(UiControl.ViewEditGraphic, somethingSelected);
+			View.SetControlEnabled(UiControl.ExportGraphic, somethingSelected);
+			View.SetControlEnabled(UiControl.Delete, somethingSelected);
+		}
 		#region Data mapping
 
 		// TODO: Encapsulate in helper service?
@@ -202,6 +235,7 @@ namespace FpgUI.FpgEditor
 		public void Load(string filename)
 		{
 			Load(filename, new FpgSpriteAssortmentDecoder());
+			UpdateEnabledControls();
 		}
 
 		public void Save(string filename, IEncoder<ISpriteAssortment> encoder)
