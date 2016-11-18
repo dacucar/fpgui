@@ -36,7 +36,8 @@ namespace FpgUI.FpgEditor
 
 		ISpriteAssortment Fpg { set; }
 
-		//void UpdateEnabled(CommandFlags flags);
+		void DisableCommand(UiCommand command);
+		void EnableCommand(UiCommand command);
 
 		//ApplicationContext Context { get; }
 	}

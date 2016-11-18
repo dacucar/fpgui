@@ -38,6 +38,8 @@ namespace FpgUI.FpgEditor
 		protected FpgWidget fpgWidget;
 		protected Label statusLabel;
 		protected Label depthLabel;
+		private IDictionary<UiCommand, ISensitive> commands = 
+			new Dictionary<UiCommand, ISensitive>();
 
 		public FpgEditorView()
 		{
@@ -68,6 +70,7 @@ namespace FpgUI.FpgEditor
 			var newFile = new MenuItem("_New");
 			newFile.Clicked += (sender, e) => 
 				NewFpgClicked?.Invoke(this, EventArgs.Empty);
+
 			var openFile = new MenuItem("_Open");
 			openFile.Clicked += (sender, e) => 
 				OpenClicked?.Invoke(this, EventArgs.Empty);
@@ -179,6 +182,17 @@ namespace FpgUI.FpgEditor
 			vbox.PackStart(fpgWidget, true);
 			vbox.PackStart(statusContainer);
 
+			mapCommand(UiCommand.NewFpg, newFile);
+			mapCommand(UiCommand.OpenFpg, openFile);
+			mapCommand(UiCommand.SaveFpg, saveFile);
+			mapCommand(UiCommand.SaveAsFpg, saveFileAs);
+			mapCommand(UiCommand.Close, closeFile);
+			mapCommand(UiCommand.Cut, cutEdit);
+			mapCommand(UiCommand.Copy, copyEdit);
+			mapCommand(UiCommand.Paste, pasteEdit);
+			mapCommand(UiCommand.DuplicateFpg, duplicateFpg);
+
+
 			Content = vbox;
 		}
 
@@ -198,6 +212,16 @@ namespace FpgUI.FpgEditor
 		public void CloseView()
 		{
 			this.Close();
+		}
+
+		public void DisableCommand(UiCommand command)
+		{
+			commands[command].Sensitive = false;
+		}
+
+		public void EnableCommand(UiCommand command)
+		{
+			commands[command].Sensitive = true;
 		}
 
 		public string LetUserSelectFileToOpen()
@@ -234,6 +258,71 @@ namespace FpgUI.FpgEditor
 			new FileDialogFilter("Fpg Files (*.fpg)", "*.fpg");
 		private static FileDialogFilter allFilesFilter =
 			new FileDialogFilter("All Files (*.*)", "*.*");
+
+		protected interface ISensitive
+		{
+			bool Sensitive { get; set; }
+		}
+
+		private void mapCommand(UiCommand command, Widget widget)
+		{
+			this.commands.Add(command, new SensitiveWidgetAdapter(widget));
+		}
+
+		private void mapCommand(UiCommand command, MenuItem menuItem)
+		{
+			this.commands.Add(command, new SensitiveMenuItemAdapter(menuItem));
+		}
+
+		private sealed class SensitiveMenuItemAdapter : ISensitive
+		{
+			private readonly MenuItem menuItem;
+
+			public SensitiveMenuItemAdapter(MenuItem menuItem)
+			{
+				this.menuItem = menuItem;
+			}
+				
+			#region ISensitive implementation
+
+			public bool Sensitive
+			{
+				get
+				{
+					return menuItem.Sensitive;
+				}
+				set
+				{
+					menuItem.Sensitive = value;
+				}
+			}
+			#endregion
+		}
+
+		private sealed class SensitiveWidgetAdapter : ISensitive
+		{
+			private Widget widget;
+
+			public SensitiveWidgetAdapter(Widget widget)
+			{
+				this.widget = widget;
+			}
+
+			#region ISensitive implementation
+			public bool Sensitive
+			{
+				get
+				{
+					return widget.Sensitive;
+				}
+				set
+				{
+					widget.Sensitive = value;
+				}
+			}
+			#endregion
+			
+		}
 	}
 }
 

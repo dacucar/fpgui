@@ -55,6 +55,7 @@
     <Compile Include="ViewFactory.cs" />
     <Compile Include="ViewController.cs" />
     <Compile Include="FpgEditor\FpgEditorController.cs" />
+    <Compile Include="Ui\FpgEditor\UiCommand.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
