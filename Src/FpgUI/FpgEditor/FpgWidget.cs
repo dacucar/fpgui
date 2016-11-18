@@ -27,13 +27,16 @@ namespace FpgUI.Widgets
 			{
 				fpg = value;
 				store.Clear();
-				foreach (var s in fpg)
+				if (fpg != null)
 				{
-					var r = store.AddRow();
-					store.SetValue(r, id, s.Id);
-					store.SetValue(r, name, s.Description);
-					store.SetValue(r, size, $"{s.Width}x{s.Height}");
-					store.SetValue(r, center, $"{s.Center.X}x{s.Center.Y}");
+					foreach (var s in fpg)
+					{
+						var r = store.AddRow();
+						store.SetValue(r, id, s.Id);
+						store.SetValue(r, name, s.Description);
+						store.SetValue(r, size, $"{s.Width}x{s.Height}");
+						store.SetValue(r, center, $"{s.Center.X}x{s.Center.Y}");
+					}
 				}
 			}
 		}

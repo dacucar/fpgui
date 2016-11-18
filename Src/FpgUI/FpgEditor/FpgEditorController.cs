@@ -122,7 +122,10 @@ namespace FpgUI.FpgEditor
 
 		protected virtual void OnCloseClicked(object sender, EventArgs e)
 		{
-			throw new NotImplementedException();
+			View.Fpg = null;
+			editor.Fpg = null;
+			editor.FileName = "";
+			UpdateEnabledControls();
 		}
 			
 		protected virtual void OnCopyClicked(object sender, EventArgs e)
