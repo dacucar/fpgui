@@ -15,7 +15,13 @@ namespace FpgUI.FpgEditor
 
 		public ApplicationContext Context => context;
 
-		public T View => view;
+		public T View
+		{
+			get
+			{
+				return view;
+			}
+		}
 
 		public void ShowView(IView owner)
 		{

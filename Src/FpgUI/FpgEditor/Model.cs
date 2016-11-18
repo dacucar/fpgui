@@ -1,5 +1,7 @@
 ﻿using System;
 using FenixLib.Core;
+using FenixLib.IO;
+using System.IO;
 
 namespace FpgUI.FpgEditor
 {

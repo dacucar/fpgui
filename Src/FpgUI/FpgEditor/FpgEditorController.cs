@@ -1,13 +1,15 @@
 ﻿using System;
+using System.IO;
 using FenixLib.Core;
+using FenixLib.IO;
 
 namespace FpgUI.FpgEditor
 {
-	public class Controller : ViewController<IFpgEditorView>
+	public class FpgEditorController : ViewController<IFpgEditorView>
 	{
 		private Model editor;
 
-		public Controller(IFpgEditorView view, ApplicationContext context)
+		public FpgEditorController(IFpgEditorView view, ApplicationContext context)
 			: base(view, context)
 		{
 			this.editor = new Model();
@@ -17,7 +19,7 @@ namespace FpgUI.FpgEditor
 
 			// Suscribe to model user events
 			View.NewFpgClicked += OnNewFpgClicked;
-			View.OpenClicked += OnNewFpgClicked;
+			View.OpenClicked += OnOpenClicked;
 			View.SaveClicked += OnOpenClicked;
 			View.SaveAsClicked += OnSaveAsClicked;
 			View.DuplicateFpgClicked += OnDuplicateFpgClicked;
@@ -47,7 +49,7 @@ namespace FpgUI.FpgEditor
 			? "untitled.fpg" 
 			: editor.FileName ;
 
-		#region data sync events
+		#region model sync events
 
 		protected virtual void OnFpgChanged(object sender, EventArgs e)
 		{
@@ -65,17 +67,46 @@ namespace FpgUI.FpgEditor
 
 		protected virtual void OnOpenClicked(object sender, EventArgs e)
 		{
-			throw new NotImplementedException();
+			var filename = View.LetUserSelectFileToOpen();
+			if (filename != null)
+			{
+				try
+				{
+					Load(filename);
+				}
+				catch
+				{
+					// TODO: Show Error
+				}
+			}
 		}
 
 		protected virtual void OnSaveClicked(object sender, EventArgs e)
 		{
-			throw new NotImplementedException();
+			if (IsNewFile)
+			{
+				OnSaveAsClicked(sender, e);
+			}
+			else
+			{
+				Save(editor.FileName);
+			}
 		}
 
 		protected virtual void OnSaveAsClicked(object sender, EventArgs e)
 		{
-			throw new NotImplementedException();
+			var filename = View.LetUserSelectFileToSave("untitled.fpg");
+			if (filename != null)
+			{
+				try
+				{
+					Save(filename);
+				}
+				catch
+				{
+					// TODO: Show Error
+				}
+			}
 		}
 
 		protected virtual void OnDuplicateFpgClicked(object sender, EventArgs e)
@@ -149,6 +180,51 @@ namespace FpgUI.FpgEditor
 		}
 
 		#endregion
+
+		#region Data mapping
+
+		// TODO: Encapsulate in helper service?
+
+		public void Load(string filename,  IDecoder<ISpriteAssortment> decoder)
+		{
+			using (var stream = File.Open(
+				filename, 
+				FileMode.Open, 
+				FileAccess.Read, 
+				FileShare.None))
+			{
+				var fpg = decoder.Decode(stream);
+				editor.FileName = filename;
+				editor.Fpg = fpg;
+			}
+		}
+
+		public void Load(string filename)
+		{
+			Load(filename, new FpgSpriteAssortmentDecoder());
+		}
+
+		public void Save(string filename, IEncoder<ISpriteAssortment> encoder)
+		{
+			using (var stream = File.Open(
+				filename, 
+				FileMode.Create, 
+				FileAccess.Write,
+				FileShare.None))
+			{
+				encoder.Encode(editor.Fpg, stream);
+				editor.FileName = filename;
+			}
+		}
+
+		public void Save(string filename)
+		{
+			Save(filename, new FpgSpriteAssortmentEncoder());
+		}
+
+		#endregion
+
+
 	}
 }
 

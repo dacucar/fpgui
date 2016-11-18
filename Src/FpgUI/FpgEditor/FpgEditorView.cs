@@ -10,7 +10,7 @@ using FpgUI.FpgEditor;
 
 namespace FpgUI.FpgEditor
 {
-	public partial class FpgEditorView : Window, IFpgEditorView
+	public class FpgEditorView : Window, IFpgEditorView
 	{
 		public event EventHandler NewFpgClicked;
 		public event EventHandler OpenClicked;
@@ -184,13 +184,48 @@ namespace FpgUI.FpgEditor
 
 		public void ShowView(IView parent)
 		{
-			throw new NotImplementedException();
+			this.Show();
 		}
 
 		public void CloseView()
 		{
-			throw new NotImplementedException();
+			this.Close();
 		}
+
+		public string LetUserSelectFileToOpen()
+		{
+			var dialog = new OpenFileDialog();
+			dialog.Filters.Add(fpgFilesFilter);
+			dialog.Filters.Add(allFilesFilter);
+			dialog.Multiselect = false;
+			if (dialog.Run(this))
+			{
+				return dialog.FileName;
+			}
+
+			return null;
+		}
+
+		public string LetUserSelectFileToSave(string initialFileName)
+		{
+			var dialog = new SaveFileDialog();
+			dialog.Filters.Add(fpgFilesFilter);
+			dialog.Filters.Add(allFilesFilter);
+			dialog.Multiselect = false;
+			dialog.InitialFileName = initialFileName;
+			if (dialog.Run(this))
+			{
+				return dialog.FileName;
+			}
+
+			return null;
+		}
+
+		// TODO: Shouldn't the filter information be part of the controller?
+		private static FileDialogFilter fpgFilesFilter = 
+			new FileDialogFilter("Fpg Files (*.fpg)", "*.fpg");
+		private static FileDialogFilter allFilesFilter =
+			new FileDialogFilter("All Files (*.*)", "*.*");
 	}
 }
 

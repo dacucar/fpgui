@@ -15,10 +15,10 @@ namespace FpgUI.Gtk3
 				new ApplicationContext();
 
 			var view = new FpgEditorView();
-			var controller = new Controller(view, context) ;
+			var controller = new FpgEditorController(view, context);
 
+			controller.ShowView();
 			Application.Run();
-
 			//w.Dispose();
 			Application.Dispose();
 		}

@@ -44,17 +44,17 @@
     <Compile Include="Core\FpgEditorActions\IPaletteActionsHandler.cs" />
     <Compile Include="Core\FpgEditorActions\ISystemActionsHandler.cs" />
     <Compile Include="FpgEditor\IFpgEditorView.cs" />
-    <Compile Include="FpgEditor\ViewController.cs" />
     <Compile Include="ApplicationContext.cs" />
-    <Compile Include="IWindowsFactory.cs" />
-    <Compile Include="WindowsFactory.cs" />
     <Compile Include="FpgEditor\Model.cs" />
     <Compile Include="Ui\FpgEditor\FpgEditorView.IFpgEditor.cs" />
     <Compile Include="FpgEditor\FpgEditorView.cs" />
-    <Compile Include="FpgEditor\Controller.cs" />
     <Compile Include="Widgets\FpgWidget.cs" />
     <Compile Include="IView.cs" />
     <Compile Include="NewFpg\NewFpgDialog.cs" />
+    <Compile Include="IViewFactory.cs" />
+    <Compile Include="ViewFactory.cs" />
+    <Compile Include="ViewController.cs" />
+    <Compile Include="FpgEditor\FpgEditorController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

@@ -31,6 +31,9 @@ namespace FpgUI.FpgEditor
 		event EventHandler NewWindowClicked;
 		#endregion
 
+		string LetUserSelectFileToOpen();
+		string LetUserSelectFileToSave(string initialFileName);
+
 		//void UpdateEnabled(CommandFlags flags);
 
 		//ApplicationContext Context { get; }
