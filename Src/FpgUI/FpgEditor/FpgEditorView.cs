@@ -191,7 +191,12 @@ namespace FpgUI.FpgEditor
 			mapCommand(UiCommand.Copy, copyEdit);
 			mapCommand(UiCommand.Paste, pasteEdit);
 			mapCommand(UiCommand.DuplicateFpg, duplicateFpg);
-
+			mapCommand(UiCommand.ViewEditPalette, viewEditPalette);
+			mapCommand(UiCommand.ExportToPal, exportPalette);
+			mapCommand(UiCommand.AddGraphic, addGraphic);
+			mapCommand(UiCommand.Extract, extractGraphic);
+			mapCommand(UiCommand.Delete, deleteGraphic);
+			mapCommand(UiCommand.NewFpg, newWindowSystem);
 
 			Content = vbox;
 		}
