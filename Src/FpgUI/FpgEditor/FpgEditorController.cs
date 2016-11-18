@@ -53,7 +53,7 @@ namespace FpgUI.FpgEditor
 
 		protected virtual void OnFpgChanged(object sender, EventArgs e)
 		{
-			throw new NotImplementedException();
+			View.Fpg = editor.Fpg;
 		}
 
 		#endregion

@@ -182,6 +182,14 @@ namespace FpgUI.FpgEditor
 			Content = vbox;
 		}
 
+		public ISpriteAssortment Fpg
+		{
+			set
+			{
+				fpgWidget.Fpg = value;
+			}
+		}
+
 		public void ShowView(IView parent)
 		{
 			this.Show();

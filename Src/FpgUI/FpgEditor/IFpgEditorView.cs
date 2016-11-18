@@ -34,6 +34,8 @@ namespace FpgUI.FpgEditor
 		string LetUserSelectFileToOpen();
 		string LetUserSelectFileToSave(string initialFileName);
 
+		ISpriteAssortment Fpg { set; }
+
 		//void UpdateEnabled(CommandFlags flags);
 
 		//ApplicationContext Context { get; }
