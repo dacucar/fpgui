@@ -55,7 +55,8 @@
     <Compile Include="ViewController.cs" />
     <Compile Include="FpgEditor\FpgEditorController.cs" />
     <Compile Include="FpgEditor\UiCommand.cs" />
-    <Compile Include="FpgEditor\FpgWidget.cs" />
+    <Compile Include="FpgWidget\FpgWidget.cs" />
+    <Compile Include="FpgWidget\IFpgWidget.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -77,6 +78,7 @@
     <Folder Include="FpgEditor\" />
     <Folder Include="Widgets\" />
     <Folder Include="NewFpg\" />
+    <Folder Include="FpgWidget\" />
   </ItemGroup>
   <ProjectExtensions>
     <MonoDevelop>
