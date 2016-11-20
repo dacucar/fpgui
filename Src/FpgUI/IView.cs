@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FpgUI.FpgEditor
+namespace FpgUI
 {
 	public interface IView
 	{

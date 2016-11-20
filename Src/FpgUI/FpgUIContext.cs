@@ -3,17 +3,17 @@ using System.Collections.Generic;
 
 namespace FpgUI
 {
-	public class ApplicationContext
+	public class FpgUIContext
 	{
 		//private IViewFactory viewFactory;
-		public ApplicationContext(IViewFactory factory)
+		public FpgUIContext(IViewFactory factory)
 		{
 			ViewFactory = factory;
 		}
 
-		public ApplicationContext()
+		public FpgUIContext()
 		{
-			//ViewFactory = new XwtViewFactory();
+			ViewFactory = new ViewFactory();
 		}
 
 		public void LoadConfiguration()

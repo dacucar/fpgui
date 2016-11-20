@@ -1,19 +1,19 @@
 ﻿using System;
 
-namespace FpgUI.FpgEditor
+namespace FpgUI
 {
 	public class ViewController<T> where T : IView
 	{
 		private T view;
-		private ApplicationContext context;
+		private FpgUIContext context;
 
-		public ViewController(T view, ApplicationContext context)
+		public ViewController(T view, FpgUIContext context)
 		{
 			this.view = view;
 			this.context = context;
 		}
 
-		public ApplicationContext Context => context;
+		public FpgUIContext Context => context;
 
 		public T View
 		{

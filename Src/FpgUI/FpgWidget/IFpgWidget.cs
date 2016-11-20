@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using FenixLib.Core;
 
-namespace FpgUI.Widgets
+namespace FpgUI
 {
     public interface IFpgWidget
     {
-		IEnumerable<ISprite> SelectedSprites { get; }
+		IReadOnlyCollection<ISprite> SelectedSprites { get; }
 		ISpriteAssortment Fpg { get; set; }
     }
 }

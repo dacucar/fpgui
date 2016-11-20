@@ -3,7 +3,7 @@ using FenixLib.Core;
 using FenixLib.IO;
 using System.IO;
 
-namespace FpgUI.FpgEditor
+namespace FpgUI
 {
 	public class Model
 	{

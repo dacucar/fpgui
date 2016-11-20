@@ -5,10 +5,8 @@ using FenixLib.Core;
 using System;
 //using FpgUI.Core;
 //using FpgUI.Core.FpgEditorActions;
-using FpgUI.Widgets;
-using FpgUI.FpgEditor;
 
-namespace FpgUI.FpgEditor
+namespace FpgUI
 {
 	public class FpgEditorView : Window, IFpgEditorView
 	{
@@ -204,6 +202,14 @@ namespace FpgUI.FpgEditor
 			Content = vbox;
 		}
 
+		public IFpgWidget FpgWidget
+		{
+			get
+			{
+				return fpgWidget;
+			}
+		}
+
 		public ISpriteAssortment Fpg
 		{
 			set
@@ -261,14 +267,6 @@ namespace FpgUI.FpgEditor
 			new FileDialogFilter("Fpg Files (*.fpg)", "*.fpg");
 		private static FileDialogFilter allFilesFilter =
 			new FileDialogFilter("All Files (*.*)", "*.*");
-
-		public int SelectedGraphicsCount
-		{
-			get
-			{
-				return fpgWidget.SelectedRows.Count();
-			}
-		}
 
 		protected interface ISensitive
 		{

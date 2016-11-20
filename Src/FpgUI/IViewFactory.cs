@@ -1,7 +1,6 @@
 ﻿using System;
 using FenixLib.Core;
 using FpgUI.Core.FpgEditorActions;
-using FpgUI.FpgEditor;
 
 namespace FpgUI
 {
@@ -9,13 +8,14 @@ namespace FpgUI
 	{
 		IFpgEditorView CreateFpgEditorView();
 
+		/*
 		void CreatePaletteEditorView();
 
 		void CreateSpriteEditorView();
 
 		void CreateNewFpgView();
 
-		void CreateAddGraphicView();
+		void CreateAddGraphicView();*/
 	}
 }
 

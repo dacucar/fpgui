@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using Xwt;
 using Xwt.Drawing;
 using FenixLib.Core;
 
-namespace FpgUI.Widgets
+namespace FpgUI
 {
 	public class FpgWidget : ListView, IFpgWidget
 	{
@@ -52,11 +53,13 @@ namespace FpgUI.Widgets
 			}
 		}
 
-		public IEnumerable<ISprite> SelectedSprites
+		public IReadOnlyCollection<ISprite> SelectedSprites
 		{
 			get
 			{
-				return this.SelectedRows.Select(r => Fpg[store.GetValue(r, id)]);
+				var collection = new List<ISprite>(this.SelectedRows.Select(
+						                 r => Fpg[store.GetValue(r, id)])).AsReadOnly();
+				return collection;
 			}
 		}
 	}

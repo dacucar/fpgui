@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using FenixLib.Core;
 
-namespace FpgUI.FpgEditor
+namespace FpgUI
 {
 	public interface IFpgEditorView : IView
 	{
+		IFpgWidget FpgWidget { get; }
+
 		#region user events
 		event EventHandler NewFpgClicked;
 		event EventHandler OpenClicked;
@@ -38,7 +40,6 @@ namespace FpgUI.FpgEditor
 
 		void SetControlEnabled(UiControl control, bool value);
 
-		int SelectedGraphicsCount { get; }
 
 		//ApplicationContext Context { get; }
 	}

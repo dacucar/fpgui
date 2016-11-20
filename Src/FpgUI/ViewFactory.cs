@@ -1,30 +1,24 @@
 ﻿using System;
 using FenixLib.Core;
 using Xwt;
-using FpgUI.Core.FpgEditorActions;
-using FpgUI.Core;
-using FpgUI.Ui;
 
-/*
-
-namespace FpgUI.Ui
+namespace FpgUI
 {
-	public class WindowsFactory : IWindowsFactory
+	public class ViewFactory : IViewFactory
 	{
-		public WindowsFactory()
+		public ViewFactory()
 		{
 		}
 
 		#region IWindowsFactory implementation
 
-		public IFpgEditor CreateFpgEditorWindow(ApplicationContext context, 
-		                                        ISpriteAssortment fpg = null)
+		public IFpgEditorView CreateFpgEditorView()
 		{
-			var w = new FpgEditorWindow(context);
-			w.Show();
-			return w;
+			var v = new FpgEditorView();
+			return v;
 		}
 
+		/*
 		public void CreateNewFpgDialog(ApplicationContext context)
 		{
 			var w = new NewFpgDialog();
@@ -67,9 +61,8 @@ namespace FpgUI.Ui
 		{
 			throw new NotImplementedException();
 		}
-
+*/
 		#endregion
 	}
 }
-
-*/
+	

@@ -12,7 +12,7 @@ namespace FpgUI.Gtk2
 			Application.Initialize(ToolkitType.Gtk);
 
 			var context = 
-				new ApplicationContext();
+				new FpgUIContext();
 
 			Application.Run();
 

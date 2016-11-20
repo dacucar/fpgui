@@ -3,16 +3,18 @@ using System.IO;
 using FenixLib.Core;
 using FenixLib.IO;
 
-namespace FpgUI.FpgEditor
+namespace FpgUI
 {
 	public class FpgEditorController : ViewController<IFpgEditorView>
 	{
 		private Model editor;
+		private FpgUIContext context;
 
-		public FpgEditorController(IFpgEditorView view, ApplicationContext context)
+		public FpgEditorController(IFpgEditorView view, FpgUIContext context)
 			: base(view, context)
 		{
 			this.editor = new Model();
+			this.context = context;
 
 			// Subscribe to model state change events
 			editor.FpgChanged += OnFpgChanged;
@@ -185,7 +187,9 @@ namespace FpgUI.FpgEditor
 
 		protected virtual void OnNewWindowClicked(object sender, EventArgs e)
 		{
-			throw new NotImplementedException();
+			var view = context.ViewFactory.CreateFpgEditorView();
+			var controller = new FpgEditorController(view, context);
+			controller.ShowView();
 		}
 
 		#endregion
@@ -196,8 +200,8 @@ namespace FpgUI.FpgEditor
 			bool canPaste = false;
 			bool fpgIs8bpp = fpgIsNull
 			                 && editor.Fpg.GraphicFormat == GraphicFormat.Format8bppIndexed;
-			bool somethingSelected = View.SelectedGraphicsCount > 0;
-			bool multipleSelection = View.SelectedGraphicsCount > 1;
+			bool somethingSelected = View.FpgWidget.SelectedSprites.Count > 0;
+			bool multipleSelection = View.FpgWidget.SelectedSprites.Count > 1;
 
 			View.SetControlEnabled(UiControl.SaveFpg, fpgIsNull);
 			View.SetControlEnabled(UiControl.SaveAsFpg, fpgIsNull);
