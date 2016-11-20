@@ -5,7 +5,6 @@ namespace FpgUI
 {
 	public class FpgUIContext
 	{
-		//private IViewFactory viewFactory;
 		public FpgUIContext(IViewFactory factory)
 		{
 			ViewFactory = factory;
