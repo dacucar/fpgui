@@ -32,14 +32,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Ui\FpgEditor\FileActionsHandler.cs" />
-    <Compile Include="Ui\FpgEditor\ActionsHandler.cs" />
     <Compile Include="Ui\FpgEditor\PaletteActionsHandler.cs" />
     <Compile Include="Ui\FpgEditor\GraphicActionsHandler.cs" />
     <Compile Include="Ui\AddGraphic\AddGraphicDialog.cs" />
     <Compile Include="FpgEditor\IFpgEditorView.cs" />
     <Compile Include="FpgEditor\Model.cs" />
-    <Compile Include="Ui\FpgEditor\FpgEditorView.IFpgEditor.cs" />
     <Compile Include="FpgEditor\FpgEditorView.cs" />
     <Compile Include="IView.cs" />
     <Compile Include="NewFpg\NewFpgDialog.cs" />
