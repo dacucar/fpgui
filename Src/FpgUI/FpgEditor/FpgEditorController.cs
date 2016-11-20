@@ -5,7 +5,7 @@ using FenixLib.IO;
 
 namespace FpgUI
 {
-	public class FpgEditorController : ViewController<IFpgEditorView>
+	public partial class FpgEditorController : ViewController<IFpgEditorView>
 	{
 		private Model editor;
 		private FpgUIContext context;
@@ -59,155 +59,7 @@ namespace FpgUI
 
 		protected string Title => editor.FileName == null 
 			? "untitled.fpg" 
-			: editor.FileName ;
-
-		#region model sync events
-
-		protected virtual void OnFpgChanged(object sender, EventArgs e)
-		{
-			View.Fpg = editor.Fpg;
-		}
-
-		#endregion
-
-		#region user input events
-
-		protected virtual void OnNewFpgClicked(object sender, EventArgs e)
-		{
-			throw new NotImplementedException();
-		}
-
-		protected virtual void OnOpenClicked(object sender, EventArgs e)
-		{
-			var filename = View.LetUserSelectFileToOpen();
-			if (filename != null)
-			{
-				try
-				{
-					Load(filename);
-				}
-				catch
-				{
-					// TODO: Show Error
-				}
-			}
-		}
-
-		protected virtual void OnSaveClicked(object sender, EventArgs e)
-		{
-			if (IsNewFile)
-			{
-				OnSaveAsClicked(sender, e);
-			}
-			else
-			{
-				Save(editor.FileName);
-			}
-		}
-
-		protected virtual void OnSaveAsClicked(object sender, EventArgs e)
-		{
-			var filename = View.LetUserSelectFileToSave("untitled.fpg");
-			if (filename != null)
-			{
-				try
-				{
-					Save(filename);
-				}
-				catch
-				{
-					// TODO: Show Error
-				}
-			}
-		}
-
-		protected virtual void OnDuplicateFpgClicked(object sender, EventArgs e)
-		{
-			throw new NotImplementedException();
-		}
-
-		protected virtual void OnCloseClicked(object sender, EventArgs e)
-		{
-			View.Fpg = null;
-			editor.Fpg = null;
-			editor.FileName = "";
-			UpdateEnabledControls();
-		}
-			
-		protected virtual void OnCopyClicked(object sender, EventArgs e)
-		{
-			throw new NotImplementedException();
-		}
-
-		protected virtual void OnCutClicked(object sender, EventArgs e)
-		{
-			throw new NotImplementedException();
-		}
-
-		protected virtual void OnPasteClicked(object sender, EventArgs e)
-		{
-			throw new NotImplementedException();
-		}
-
-		protected virtual void OnAddGraphicClicked(object sender, EventArgs e)
-		{
-			throw new NotImplementedException();
-		}
-
-		protected virtual void OnRemoveGraphicClicked(object sender, EventArgs e)
-		{
-			throw new NotImplementedException();
-		}
-
-		protected virtual void OnRenameGraphicClicked(object sender, EventArgs e)
-		{
-			throw new NotImplementedException();
-		}
-
-		protected virtual void OnViewEditGraphicClicked(object sender, EventArgs e)
-		{
-			throw new NotImplementedException();
-		}
-
-		protected virtual void OnExtractToPngClicked(object sender, EventArgs e)
-		{
-			throw new NotImplementedException();
-		}
-
-		protected virtual void OnExtractToMapClicked(object sender, EventArgs e)
-		{
-			throw new NotImplementedException();
-		}
-
-		protected virtual void OnViewEditPaletteClicked(object sender, EventArgs e)
-		{
-			throw new NotImplementedException();
-		}
-
-		protected virtual void OnExtractToPalClicked(object sender, EventArgs e)
-		{
-			string filename = View.LetUserSelectPaletteToExtract("untitled.pal");
-			if (filename != null)
-			{
-				try
-				{
-					ExtractPalette(filename);
-				}
-				catch
-				{
-					// TODO
-				}
-			}
-		}
-
-		protected virtual void OnNewWindowClicked(object sender, EventArgs e)
-		{
-			var view = context.ViewFactory.CreateFpgEditorView();
-			var controller = new FpgEditorController(view, context);
-			controller.ShowView();
-		}
-
-		#endregion
+			: editor.FileName;
 
 		protected virtual void UpdateEnabledControls()
 		{
@@ -236,9 +88,8 @@ namespace FpgUI
 			View.SetControlEnabled(UiControl.ExportGraphic, somethingSelected);
 			View.SetControlEnabled(UiControl.Delete, somethingSelected);
 		}
+			
 		#region Data mapping
-
-		// TODO: Encapsulate in helper service?
 
 		public void Load(string filename,  IDecoder<ISpriteAssortment> decoder)
 		{
@@ -294,9 +145,8 @@ namespace FpgUI
 		{
 			ExtractPalette(filename, new PalPaletteEncoder());
 		}
+
 		#endregion
-
-
 	}
 }
 

@@ -58,6 +58,11 @@
     <Compile Include="FpgWidget\IFpgWidget.cs" />
     <Compile Include="FpgUIContext.cs" />
     <Compile Include="FpgEditor\ClosingEventArgs.cs" />
+    <Compile Include="FpgEditor\FpgEditorView.EventDefinitions.cs" />
+    <Compile Include="FpgEditor\FpgEditorView.Ui.cs" />
+    <Compile Include="FpgEditor\YesNoCancel.cs" />
+    <Compile Include="FpgEditor\FpgEditorController.UserInput.cs" />
+    <Compile Include="FpgEditor\FpgEditorController.ModelSyncEvents.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
