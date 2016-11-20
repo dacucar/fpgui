@@ -61,6 +61,8 @@ namespace FpgUI
 			? "untitled.fpg" 
 			: editor.FileName;
 
+		public bool HasChanged { get; protected set; }
+
 		protected virtual void UpdateEnabledControls()
 		{
 			bool fpgIsNull = editor.Fpg != null;
@@ -103,6 +105,7 @@ namespace FpgUI
 				editor.FileName = filename;
 				editor.Fpg = fpg;
 			}
+			HasChanged = false;
 		}
 
 		public void Load(string filename)
@@ -122,6 +125,7 @@ namespace FpgUI
 				encoder.Encode(editor.Fpg, stream);
 				editor.FileName = filename;
 			}
+			HasChanged = false;
 		}
 
 		public void Save(string filename)
