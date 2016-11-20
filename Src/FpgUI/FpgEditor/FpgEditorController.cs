@@ -19,7 +19,11 @@ namespace FpgUI
 			// Subscribe to model state change events
 			editor.FpgChanged += OnFpgChanged;
 
-			// Suscribe to model user events
+			// Suscribe to window input events
+			View.Closing += (sender, e) => {
+				e.Cancel = true;
+			};
+
 			View.NewFpgClicked += OnNewFpgClicked;
 			View.OpenClicked += OnOpenClicked;
 			View.SaveClicked += OnOpenClicked;
@@ -182,7 +186,18 @@ namespace FpgUI
 
 		protected virtual void OnExtractToPalClicked(object sender, EventArgs e)
 		{
-			throw new NotImplementedException();
+			string filename = View.LetUserSelectPaletteToExtract("untitled.pal");
+			if (filename != null)
+			{
+				try
+				{
+					ExtractPalette(filename);
+				}
+				catch
+				{
+					// TODO
+				}
+			}
 		}
 
 		protected virtual void OnNewWindowClicked(object sender, EventArgs e)
@@ -263,6 +278,22 @@ namespace FpgUI
 			Save(filename, new FpgSpriteAssortmentEncoder());
 		}
 
+		public void ExtractPalette(string filename, IEncoder<Palette> encoder)
+		{
+			using (var stream = File.Open(
+				                    filename,
+				                    FileMode.Create,
+				                    FileAccess.Write,
+				                    FileShare.None))
+			{
+				encoder.Encode(editor.Fpg.Palette, stream);
+			}
+		}
+
+		public void ExtractPalette(string filename)
+		{
+			ExtractPalette(filename, new PalPaletteEncoder());
+		}
 		#endregion
 
 

@@ -10,6 +10,8 @@ namespace FpgUI
 {
 	public class FpgEditorView : Window, IFpgEditorView
 	{
+		public event EventHandler<ClosingEventArgs> Closing;
+
 		public event EventHandler NewFpgClicked;
 		public event EventHandler OpenClicked;
 		public event EventHandler SaveClicked;
@@ -46,11 +48,11 @@ namespace FpgUI
 
 		protected override bool OnCloseRequested()
 		{
-			var allow_close = MessageDialog.Confirm(
-				                  "FpgUI will be closed", Command.Ok);
-			if (allow_close)
-				Application.Exit();
-			return allow_close;
+			/*var allow_close = MessageDialog.Confirm(
+				                  "FpgUI will be closed", Command.Ok);*/
+			var args = new ClosingEventArgs();
+			Closing?.Invoke(this, args);
+			return !args.Cancel;
 		}
 
 
@@ -262,11 +264,27 @@ namespace FpgUI
 			return null;
 		}
 
+		public string LetUserSelectPaletteToExtract(string initialFilename)
+		{
+			var dialog = new OpenFileDialog();
+			dialog.Filters.Add(palFilesFilter);
+			dialog.Filters.Add(allFilesFilter);
+			dialog.Multiselect = false;
+			if (dialog.Run(this))
+			{
+				return dialog.FileName;
+			}
+
+			return null;
+		}
+
 		// TODO: Shouldn't the filter information be part of the controller?
 		private static FileDialogFilter fpgFilesFilter = 
 			new FileDialogFilter("Fpg Files (*.fpg)", "*.fpg");
 		private static FileDialogFilter allFilesFilter =
 			new FileDialogFilter("All Files (*.*)", "*.*");
+		private static FileDialogFilter palFilesFilter = 
+			new FileDialogFilter("Pal Files (*.pal)", "*.pal");		
 
 		protected interface ISensitive
 		{

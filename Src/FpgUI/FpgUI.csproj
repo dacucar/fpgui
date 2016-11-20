@@ -57,6 +57,7 @@
     <Compile Include="FpgWidget\FpgWidget.cs" />
     <Compile Include="FpgWidget\IFpgWidget.cs" />
     <Compile Include="FpgUIContext.cs" />
+    <Compile Include="FpgEditor\ClosingEventArgs.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

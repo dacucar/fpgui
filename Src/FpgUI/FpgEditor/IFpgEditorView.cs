@@ -8,6 +8,8 @@ namespace FpgUI
 	{
 		IFpgWidget FpgWidget { get; }
 
+		event EventHandler<ClosingEventArgs> Closing;
+
 		#region user events
 		event EventHandler NewFpgClicked;
 		event EventHandler OpenClicked;
@@ -35,6 +37,7 @@ namespace FpgUI
 
 		string LetUserSelectFileToOpen();
 		string LetUserSelectFileToSave(string initialFileName);
+		string LetUserSelectPaletteToExtract(string initialFilename);
 
 		ISpriteAssortment Fpg { set; }
 
