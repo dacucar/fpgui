@@ -37,12 +37,6 @@
     <Compile Include="Ui\FpgEditor\PaletteActionsHandler.cs" />
     <Compile Include="Ui\FpgEditor\GraphicActionsHandler.cs" />
     <Compile Include="Ui\AddGraphic\AddGraphicDialog.cs" />
-    <Compile Include="Core\FpgEditorActions\IEditActionsHandler.cs" />
-    <Compile Include="Core\FpgEditorActions\IFileActionsHandler.cs" />
-    <Compile Include="Core\FpgEditorActions\IFpgEditorActionsHandler.cs" />
-    <Compile Include="Core\FpgEditorActions\IGraphicActionsHandler.cs" />
-    <Compile Include="Core\FpgEditorActions\IPaletteActionsHandler.cs" />
-    <Compile Include="Core\FpgEditorActions\ISystemActionsHandler.cs" />
     <Compile Include="FpgEditor\IFpgEditorView.cs" />
     <Compile Include="FpgEditor\Model.cs" />
     <Compile Include="Ui\FpgEditor\FpgEditorView.IFpgEditor.cs" />
@@ -76,11 +70,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Core\" />
     <Folder Include="Ui\" />
     <Folder Include="Ui\FpgEditor\" />
     <Folder Include="Ui\AddGraphic\" />
-    <Folder Include="Core\FpgEditorActions\" />
     <Folder Include="FpgEditor\" />
     <Folder Include="Widgets\" />
     <Folder Include="NewFpg\" />
