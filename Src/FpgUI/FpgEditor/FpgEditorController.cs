@@ -105,62 +105,6 @@ namespace FpgUI
 			
 		#region Data mapping
 
-		public void Load(string filename,  IDecoder<ISpriteAssortment> decoder)
-		{
-			using (var stream = File.Open(
-				filename, 
-				FileMode.Open, 
-				FileAccess.Read, 
-				FileShare.None))
-			{
-				var fpg = decoder.Decode(stream);
-				editor.FileName = filename;
-				editor.Fpg = fpg;
-			}
-			HasChanged = false;
-		}
-
-		public void Load(string filename)
-		{
-			Load(filename, new FpgSpriteAssortmentDecoder());
-			UpdateEnabledControls();
-		}
-
-		public void Save(string filename, IEncoder<ISpriteAssortment> encoder)
-		{
-			using (var stream = File.Open(
-				filename, 
-				FileMode.Create, 
-				FileAccess.Write,
-				FileShare.None))
-			{
-				encoder.Encode(editor.Fpg, stream);
-				editor.FileName = filename;
-			}
-			HasChanged = false;
-		}
-
-		public void Save(string filename)
-		{
-			Save(filename, new FpgSpriteAssortmentEncoder());
-		}
-
-		public void ExtractPalette(string filename, IEncoder<Palette> encoder)
-		{
-			using (var stream = File.Open(
-				                    filename,
-				                    FileMode.Create,
-				                    FileAccess.Write,
-				                    FileShare.None))
-			{
-				encoder.Encode(editor.Fpg.Palette, stream);
-			}
-		}
-
-		public void ExtractPalette(string filename)
-		{
-			ExtractPalette(filename, new PalPaletteEncoder());
-		}
 
 		#endregion
 	}

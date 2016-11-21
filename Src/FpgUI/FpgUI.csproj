@@ -54,6 +54,7 @@
     <Compile Include="FpgEditor\FpgEditorController.ViewEventHandlers.cs" />
     <Compile Include="FpgEditor\FpgEditor.cs" />
     <Compile Include="FpgEditor\FpgEditorController.EditorEventHandlers.cs" />
+    <Compile Include="FpgEditor\FpgEditorController.DataMapping.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
