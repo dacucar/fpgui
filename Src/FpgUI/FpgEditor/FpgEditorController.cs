@@ -16,9 +16,11 @@ namespace FpgUI
 			this.editor = new FpgEditor();
 			this.context = context;
 
-			// Subscribe to model state change events
+			// Subscribe to model update events
 			editor.FpgChanged += Editor_FpgChanged;
+			editor.FileNameChanged += Editor_FileNameChanged;
 
+			// Subscribe to View events
 			View.Closing += (sender, e) => {
 				if (editor.Fpg != null && HasChanged)
 				{
@@ -102,11 +104,6 @@ namespace FpgUI
 			View.SetControlEnabled(UiControl.ExportGraphic, somethingSelected);
 			View.SetControlEnabled(UiControl.Delete, somethingSelected);
 		}
-			
-		#region Data mapping
-
-
-		#endregion
 	}
 }
 

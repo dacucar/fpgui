@@ -7,15 +7,16 @@ namespace FpgUI
 {
 	public class FpgEditor
 	{
-		#region state change events
-		public event EventHandler FpgChanged;
-		#endregion
+		public event EventHandler<ISpriteAssortment> FpgChanged;
+		public event EventHandler<string> FileNameChanged;
+
+		private ISpriteAssortment fpg;
+		private string fileName;
 
 		public FpgEditor()
 		{
 		}
-
-		private ISpriteAssortment fpg;
+			
 		public ISpriteAssortment Fpg
 		{ 
 			get
@@ -25,11 +26,32 @@ namespace FpgUI
 			set
 			{
 				fpg = value;
-				FpgChanged?.Invoke(this, EventArgs.Empty);
+				OnFpgChanged(fpg);
 			}
 		}
 
-		public string FileName { get; set; }
+		public string FileName 
+		{ 
+			get
+			{
+				return fileName;
+			}
+			set
+			{
+				fileName = value;
+				OnFileNameChanged(fileName);
+			}
+		}
+
+		protected virtual void OnFpgChanged(ISpriteAssortment fpg)
+		{
+			FpgChanged?.Invoke(this, fpg);
+		}
+
+		protected virtual void OnFileNameChanged(string fileName)
+		{
+			FileNameChanged?.Invoke(this, fileName);
+		}
 	}
 }
 
