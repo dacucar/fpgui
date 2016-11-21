@@ -19,9 +19,21 @@ namespace FpgUI
 			// Subscribe to model state change events
 			editor.FpgChanged += OnFpgChanged;
 
-			// Suscribe to window input events
 			View.Closing += (sender, e) => {
-				e.Cancel = true;
+				if (editor.Fpg != null && HasChanged)
+				{
+					string m = "There are unsaved changes in the Fpg. "
+						+ "Save before closing?";
+					var response = View.AskUserIfChangesShouldBeSaved(m);
+					if (response == YesNoCancel.Yes)
+					{
+						OnSaveClicked(this, e);
+					}
+					else if (response == YesNoCancel.Cancel)
+					{
+						e.Cancel = true;
+					}	
+				}
 			};
 
 			View.NewFpgClicked += OnNewFpgClicked;
