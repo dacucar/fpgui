@@ -17,7 +17,7 @@ namespace FpgUI
 			this.context = context;
 
 			// Subscribe to model state change events
-			editor.FpgChanged += OnFpgChanged;
+			editor.FpgChanged += Editor_FpgChanged;
 
 			View.Closing += (sender, e) => {
 				if (editor.Fpg != null && HasChanged)
@@ -27,7 +27,7 @@ namespace FpgUI
 					var response = View.AskUserIfChangesShouldBeSaved(m);
 					if (response == YesNoCancel.Yes)
 					{
-						View_OnSaveClicked(this, e);
+						View_SaveClicked(this, e);
 					}
 					else if (response == YesNoCancel.Cancel)
 					{
@@ -36,28 +36,28 @@ namespace FpgUI
 				}
 			};
 
-			View.NewFpgClicked += View_OnNewFpgClicked;
-			View.OpenClicked += View_OnOpenClicked;
-			View.SaveClicked += View_OnOpenClicked;
-			View.SaveAsClicked += View_OnSaveAsClicked;
-			View.DuplicateFpgClicked += View_OnDuplicateFpgClicked;
-			View.CloseClicked += View_OnCloseClicked;
+			View.NewFpgClicked += View_NewFpgClicked;
+			View.OpenClicked += View_OpenClicked;
+			View.SaveClicked += View_OpenClicked;
+			View.SaveAsClicked += View_SaveAsClicked;
+			View.DuplicateFpgClicked += View_DuplicateFpgClicked;
+			View.CloseClicked += View_CloseClicked;
 
-			View.CopyClicked += View_OnCopyClicked;
-			View.CutClicked += View_OnCutClicked;
-			View.PasteClicked += View_OnPasteClicked;
+			View.CopyClicked += View_CopyClicked;
+			View.CutClicked += View_CutClicked;
+			View.PasteClicked += View_PasteClicked;
 
-			View.AddGraphicClicked += View_OnAddGraphicClicked;
-			View.RemoveGraphicClicked += View_OnRemoveGraphicClicked;
-			View.RenameGraphicClicked += OnRenameGraphicClicked;
-			View.ViewEditGraphicClicked += View_OnViewEditGraphicClicked;
-			View.ExtractToPngClicked += View_OnExtractToPngClicked;
-			View.ExtractToMapClicked += View_OnExtractToMapClicked;
+			View.AddGraphicClicked += View_AddGraphicClicked;
+			View.RemoveGraphicClicked += View_RemoveGraphicClicked;
+			View.RenameGraphicClicked += View_RenameGraphicClicked;
+			View.ViewEditGraphicClicked += View_ViewEditGraphicClicked;
+			View.ExtractToPngClicked += View_ExtractToPngClicked;
+			View.ExtractToMapClicked += View_ExtractToMapClicked;
 
-			View.ViewEditPaletteClicked += View_OnViewEditPaletteClicked;
-			View.ExtractToPalClicked += View_OnExtractToPalClicked;
+			View.ViewEditPaletteClicked += View_ViewEditPaletteClicked;
+			View.ExtractToPalClicked += View_ExtractToPalClicked;
 
-			View.NewWindowClicked += View_OnNewWindowClicked;
+			View.NewWindowClicked += View_NewWindowClicked;
 
 		}
 
