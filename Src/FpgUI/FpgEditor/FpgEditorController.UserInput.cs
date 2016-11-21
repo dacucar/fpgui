@@ -4,12 +4,12 @@ namespace FpgUI
 {
 	public partial class FpgEditorController
 	{
-		protected virtual void OnNewFpgClicked(object sender, EventArgs e)
+		protected virtual void View_OnNewFpgClicked(object sender, EventArgs e)
 		{
 			throw new NotImplementedException();
 		}
 
-		protected virtual void OnOpenClicked(object sender, EventArgs e)
+		protected virtual void View_OnOpenClicked(object sender, EventArgs e)
 		{
 			var filename = View.LetUserSelectFileToOpen();
 			if (filename != null)
@@ -25,11 +25,11 @@ namespace FpgUI
 			}
 		}
 
-		protected virtual void OnSaveClicked(object sender, EventArgs e)
+		protected virtual void View_OnSaveClicked(object sender, EventArgs e)
 		{
 			if (IsNewFile)
 			{
-				OnSaveAsClicked(sender, e);
+				View_OnSaveAsClicked(sender, e);
 			}
 			else
 			{
@@ -37,7 +37,7 @@ namespace FpgUI
 			}
 		}
 
-		protected virtual void OnSaveAsClicked(object sender, EventArgs e)
+		protected virtual void View_OnSaveAsClicked(object sender, EventArgs e)
 		{
 			var filename = View.LetUserSelectFileToSave("untitled.fpg");
 			if (filename != null)
@@ -53,12 +53,12 @@ namespace FpgUI
 			}
 		}
 
-		protected virtual void OnDuplicateFpgClicked(object sender, EventArgs e)
+		protected virtual void View_OnDuplicateFpgClicked(object sender, EventArgs e)
 		{
 			throw new NotImplementedException();
 		}
 
-		protected virtual void OnCloseClicked(object sender, EventArgs e)
+		protected virtual void View_OnCloseClicked(object sender, EventArgs e)
 		{
 			View.Fpg = null;
 			editor.Fpg = null;
@@ -66,27 +66,27 @@ namespace FpgUI
 			UpdateEnabledControls();
 		}
 
-		protected virtual void OnCopyClicked(object sender, EventArgs e)
+		protected virtual void View_OnCopyClicked(object sender, EventArgs e)
 		{
 			throw new NotImplementedException();
 		}
 
-		protected virtual void OnCutClicked(object sender, EventArgs e)
+		protected virtual void View_OnCutClicked(object sender, EventArgs e)
 		{
 			throw new NotImplementedException();
 		}
 
-		protected virtual void OnPasteClicked(object sender, EventArgs e)
+		protected virtual void View_OnPasteClicked(object sender, EventArgs e)
 		{
 			throw new NotImplementedException();
 		}
 
-		protected virtual void OnAddGraphicClicked(object sender, EventArgs e)
+		protected virtual void View_OnAddGraphicClicked(object sender, EventArgs e)
 		{
 			throw new NotImplementedException();
 		}
 
-		protected virtual void OnRemoveGraphicClicked(object sender, EventArgs e)
+		protected virtual void View_OnRemoveGraphicClicked(object sender, EventArgs e)
 		{
 			throw new NotImplementedException();
 		}
@@ -96,27 +96,27 @@ namespace FpgUI
 			throw new NotImplementedException();
 		}
 
-		protected virtual void OnViewEditGraphicClicked(object sender, EventArgs e)
+		protected virtual void View_OnViewEditGraphicClicked(object sender, EventArgs e)
 		{
 			throw new NotImplementedException();
 		}
 
-		protected virtual void OnExtractToPngClicked(object sender, EventArgs e)
+		protected virtual void View_OnExtractToPngClicked(object sender, EventArgs e)
 		{
 			throw new NotImplementedException();
 		}
 
-		protected virtual void OnExtractToMapClicked(object sender, EventArgs e)
+		protected virtual void View_OnExtractToMapClicked(object sender, EventArgs e)
 		{
 			throw new NotImplementedException();
 		}
 
-		protected virtual void OnViewEditPaletteClicked(object sender, EventArgs e)
+		protected virtual void View_OnViewEditPaletteClicked(object sender, EventArgs e)
 		{
 			throw new NotImplementedException();
 		}
 
-		protected virtual void OnExtractToPalClicked(object sender, EventArgs e)
+		protected virtual void View_OnExtractToPalClicked(object sender, EventArgs e)
 		{
 			string filename = View.LetUserSelectPaletteToExtract("untitled.pal");
 			if (filename != null)
@@ -132,7 +132,7 @@ namespace FpgUI
 			}
 		}
 
-		protected virtual void OnNewWindowClicked(object sender, EventArgs e)
+		protected virtual void View_OnNewWindowClicked(object sender, EventArgs e)
 		{
 			var view = context.ViewFactory.CreateFpgEditorView();
 			var controller = new FpgEditorController(view, context);

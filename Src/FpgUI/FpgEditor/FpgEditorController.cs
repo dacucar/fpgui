@@ -27,7 +27,7 @@ namespace FpgUI
 					var response = View.AskUserIfChangesShouldBeSaved(m);
 					if (response == YesNoCancel.Yes)
 					{
-						OnSaveClicked(this, e);
+						View_OnSaveClicked(this, e);
 					}
 					else if (response == YesNoCancel.Cancel)
 					{
@@ -36,28 +36,28 @@ namespace FpgUI
 				}
 			};
 
-			View.NewFpgClicked += OnNewFpgClicked;
-			View.OpenClicked += OnOpenClicked;
-			View.SaveClicked += OnOpenClicked;
-			View.SaveAsClicked += OnSaveAsClicked;
-			View.DuplicateFpgClicked += OnDuplicateFpgClicked;
-			View.CloseClicked += OnCloseClicked;
+			View.NewFpgClicked += View_OnNewFpgClicked;
+			View.OpenClicked += View_OnOpenClicked;
+			View.SaveClicked += View_OnOpenClicked;
+			View.SaveAsClicked += View_OnSaveAsClicked;
+			View.DuplicateFpgClicked += View_OnDuplicateFpgClicked;
+			View.CloseClicked += View_OnCloseClicked;
 
-			View.CopyClicked += OnCopyClicked;
-			View.CutClicked += OnCutClicked;
-			View.PasteClicked += OnPasteClicked;
+			View.CopyClicked += View_OnCopyClicked;
+			View.CutClicked += View_OnCutClicked;
+			View.PasteClicked += View_OnPasteClicked;
 
-			View.AddGraphicClicked += OnAddGraphicClicked;
-			View.RemoveGraphicClicked += OnRemoveGraphicClicked;
+			View.AddGraphicClicked += View_OnAddGraphicClicked;
+			View.RemoveGraphicClicked += View_OnRemoveGraphicClicked;
 			View.RenameGraphicClicked += OnRenameGraphicClicked;
-			View.ViewEditGraphicClicked += OnViewEditGraphicClicked;
-			View.ExtractToPngClicked += OnExtractToPngClicked;
-			View.ExtractToMapClicked += OnExtractToMapClicked;
+			View.ViewEditGraphicClicked += View_OnViewEditGraphicClicked;
+			View.ExtractToPngClicked += View_OnExtractToPngClicked;
+			View.ExtractToMapClicked += View_OnExtractToMapClicked;
 
-			View.ViewEditPaletteClicked += OnViewEditPaletteClicked;
-			View.ExtractToPalClicked += OnExtractToPalClicked;
+			View.ViewEditPaletteClicked += View_OnViewEditPaletteClicked;
+			View.ExtractToPalClicked += View_OnExtractToPalClicked;
 
-			View.NewWindowClicked += OnNewWindowClicked;
+			View.NewWindowClicked += View_OnNewWindowClicked;
 
 		}
 
