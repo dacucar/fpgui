@@ -7,13 +7,13 @@ namespace FpgUI
 {
 	public partial class FpgEditorController : ViewController<IFpgEditorView>
 	{
-		private Model editor;
+		private FpgEditor editor;
 		private FpgUIContext context;
 
 		public FpgEditorController(IFpgEditorView view, FpgUIContext context)
 			: base(view, context)
 		{
-			this.editor = new Model();
+			this.editor = new FpgEditor();
 			this.context = context;
 
 			// Subscribe to model state change events

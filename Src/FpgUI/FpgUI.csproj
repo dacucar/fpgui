@@ -36,7 +36,6 @@
     <Compile Include="Ui\FpgEditor\GraphicActionsHandler.cs" />
     <Compile Include="Ui\AddGraphic\AddGraphicDialog.cs" />
     <Compile Include="FpgEditor\IFpgEditorView.cs" />
-    <Compile Include="FpgEditor\Model.cs" />
     <Compile Include="FpgEditor\FpgEditorView.cs" />
     <Compile Include="IView.cs" />
     <Compile Include="NewFpg\NewFpgDialog.cs" />
@@ -52,8 +51,9 @@
     <Compile Include="FpgEditor\FpgEditorView.EventDefinitions.cs" />
     <Compile Include="FpgEditor\FpgEditorView.Ui.cs" />
     <Compile Include="FpgEditor\YesNoCancel.cs" />
-    <Compile Include="FpgEditor\FpgEditorController.UserInput.cs" />
-    <Compile Include="FpgEditor\FpgEditorController.ModelSyncEvents.cs" />
+    <Compile Include="FpgEditor\FpgEditorController.ViewEventHandlers.cs" />
+    <Compile Include="FpgEditor\FpgEditor.cs" />
+    <Compile Include="FpgEditor\FpgEditorController.EditorEventHandlers.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

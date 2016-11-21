@@ -5,13 +5,13 @@ using System.IO;
 
 namespace FpgUI
 {
-	public class Model
+	public class FpgEditor
 	{
 		#region state change events
 		public event EventHandler FpgChanged;
 		#endregion
 
-		public Model()
+		public FpgEditor()
 		{
 		}
 
