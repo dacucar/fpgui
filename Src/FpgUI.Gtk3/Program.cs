@@ -16,7 +16,7 @@ namespace FpgUI.Gtk3
 
 			controller.ShowView();
 			Application.Run();
-			//w.Dispose();
+			((Window)view).Dispose();
 			Application.Dispose();
 		}
 	}
