@@ -72,7 +72,6 @@
     <Folder Include="Ui\FpgEditor\" />
     <Folder Include="Ui\AddGraphic\" />
     <Folder Include="FpgEditor\" />
-    <Folder Include="Widgets\" />
     <Folder Include="NewFpg\" />
     <Folder Include="FpgWidget\" />
   </ItemGroup>
