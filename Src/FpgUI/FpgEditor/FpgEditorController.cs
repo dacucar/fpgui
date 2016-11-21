@@ -21,22 +21,7 @@ namespace FpgUI
 			editor.FileNameChanged += Editor_FileNameChanged;
 
 			// Subscribe to View events
-			View.Closing += (sender, e) => {
-				if (editor.Fpg != null && HasChanged)
-				{
-					string m = "There are unsaved changes in the Fpg. "
-						+ "Save before closing?";
-					var response = View.AskUserIfChangesShouldBeSaved(m);
-					if (response == YesNoCancel.Yes)
-					{
-						View_SaveClicked(this, e);
-					}
-					else if (response == YesNoCancel.Cancel)
-					{
-						e.Cancel = true;
-					}	
-				}
-			};
+			View.Closing += View_Closing;
 
 			View.NewFpgClicked += View_NewFpgClicked;
 			View.OpenClicked += View_OpenClicked;

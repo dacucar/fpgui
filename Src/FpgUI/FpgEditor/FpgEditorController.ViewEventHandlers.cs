@@ -4,6 +4,24 @@ namespace FpgUI
 {
 	public partial class FpgEditorController
 	{
+		protected virtual void View_Closing(object sender, ClosingEventArgs e)
+		{
+			if (editor.Fpg != null && HasChanged)
+			{
+				string m = "There are unsaved changes in the Fpg. "
+					+ "Save before closing?";
+				var response = View.AskUserIfChangesShouldBeSaved(m);
+				if (response == YesNoCancel.Yes)
+				{
+					View_SaveClicked(this, e);
+				}
+				else if (response == YesNoCancel.Cancel)
+				{
+					e.Cancel = true;
+				}	
+			}		
+		}
+
 		protected virtual void View_NewFpgClicked(object sender, EventArgs e)
 		{
 			throw new NotImplementedException();
