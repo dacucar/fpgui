@@ -2,10 +2,13 @@
 using Xwt;
 using FenixLib.Core;
 
-namespace FpgUI.NewFpg
+namespace FpgUI
 {
-	public class NewFpgDialog : Dialog
+	public class NewFpgDialog : Dialog, INewFpgDialog
 	{
+		public event EventHandler ViewClosed;
+		public event EventHandler<bool> DialogAction;
+
 		public NewFpgDialog()
 		{
 			var bpp1Radio = new RadioButton("1bpp");
@@ -48,6 +51,25 @@ namespace FpgUI.NewFpg
 		{
 			get;
 			private set;
+		}
+
+		public void ShowView(IView parent)
+		{
+			this.Show();
+		}
+
+		public void CloseView()
+		{
+			this.Close();
+			ViewClosed?.Invoke(this, EventArgs.Empty);
+		}
+
+		protected override void OnCommandActivated(Command cmd)
+		{
+			base.OnCommandActivated(cmd);
+			bool ok = cmd == Command.Ok;
+			DialogAction?.Invoke(this, ok);
+			CloseView();
 		}
 	}
 }

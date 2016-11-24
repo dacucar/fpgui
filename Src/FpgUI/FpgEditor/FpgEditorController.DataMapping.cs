@@ -18,6 +18,13 @@ namespace FpgUI
 	 */
 	public partial class FpgEditorController
 	{
+		public void New(GraphicFormat f, Palette p)
+		{
+			editor.Fpg = new SpriteAssortment(f, p);
+			editor.FileName = null;
+			UpdateEnabledControls();
+		}
+
 		public void Load(string filename,  IDecoder<ISpriteAssortment> decoder)
 		{
 			using (var stream = File.Open(

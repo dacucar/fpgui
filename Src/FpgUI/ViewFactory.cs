@@ -10,8 +10,6 @@ namespace FpgUI
 		{
 		}
 
-		#region IWindowsFactory implementation
-
 		public IFpgEditorView CreateFpgEditorView()
 		{
 			var v = new FpgEditorView();
@@ -23,51 +21,13 @@ namespace FpgUI
 			var v = new AddGraphicDialog();
 			return v;
 		}
-		/*
-		public void CreateNewFpgDialog(ApplicationContext context)
-		{
-			var w = new NewFpgDialog();
 
-			w.CommandActivated += (sender, e) =>
-			{
-				if (e.Command == Command.Ok)
-				{
-					var editor = CreateFpgEditorWindow(context);
-					editor.Fpg = new SpriteAssortment(w.GraphicFormat, 
-						w.Palette);
-				}
-				w.Close();
-			};
-				
-			w.Show();
+		public INewFpgDialog CreateDialogNewFpg()
+		{
+			var v = new NewFpgDialog();
+			return v;
 		}
 
-		public void CreateAddGraphicDialog(ApplicationContext context)
-		{
-			var w = new AddGraphicDialog();
-
-			w.CommandActivated += (sender, e) =>
-			{
-				if (e.Command == Command.Ok)
-				{
-				}
-				w.Close();
-			};
-
-			w.Show();
-		}
-
-		public void CreatePaletteEditorWindow(ApplicationContext context, Palette pal = null)
-		{
-			throw new NotImplementedException();
-		}
-
-		public void CreateSpriteEditorWindow(ApplicationContext context, ISprite map = null)
-		{
-			throw new NotImplementedException();
-		}
-*/
-		#endregion
 	}
 }
 	

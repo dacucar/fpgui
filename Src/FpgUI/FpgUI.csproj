@@ -57,6 +57,8 @@
     <Compile Include="FpgEditor\AddGraphic\IAddGraphicDialog.cs" />
     <Compile Include="XwtDefaults.cs" />
     <Compile Include="FpgEditor\NewFpg\NewFpgDialog.cs" />
+    <Compile Include="FpgEditor\NewFpg\INewFpgDialog.cs" />
+    <Compile Include="FpgEditor\NewFpg\NewFpgDialogController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

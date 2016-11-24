@@ -1,4 +1,5 @@
 ﻿using System;
+using FenixLib.Core;
 
 namespace FpgUI
 {
@@ -24,7 +25,13 @@ namespace FpgUI
 
 		protected virtual void View_NewFpgClicked(object sender, EventArgs e)
 		{
-			throw new NotImplementedException();
+			var v = context.ViewFactory.CreateDialogNewFpg();
+			var c = new NewFpgDialogController(v, context);
+			c.ShowView(View);
+			c.OkAction = (f, p) =>
+				{
+					New(f, p);
+				};
 		}
 
 		protected virtual void View_OpenClicked(object sender, EventArgs e)

@@ -9,6 +9,8 @@ namespace FpgUI
 
 		IAddGraphicDialog CreateAddGraphicDialog();
 
+		INewFpgDialog CreateDialogNewFpg();
+
 		/*
 		void CreatePaletteEditorView();
 
