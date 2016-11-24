@@ -46,6 +46,14 @@ namespace FpgUI
 
 			View.NewWindowClicked += View_NewWindowClicked;
 
+			// Subscribe to events of the IFpgEditorView
+			View.FpgWidget.SelectionChanged += View_FpgWidget_SelectionChanged;
+
+		}
+
+		void View_FpgWidget_SelectionChanged (object sender, EventArgs e)
+		{
+			UpdateEnabledControls();
 		}
 
 		public override void ShowView()
