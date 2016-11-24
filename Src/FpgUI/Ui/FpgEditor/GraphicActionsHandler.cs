@@ -9,26 +9,6 @@ namespace FpgUI
 	
 	public class GraphicActionsHandler : IGraphicActionsHandler
     {
-		private static FileDialogFilter fpgFilesFilter = 
-			new FileDialogFilter("Map Files (*.map)", "*.map");
-		private static FileDialogFilter allFilesFilter =
-			new FileDialogFilter("All Files (*.*)", "*.*");
-		
-        public GraphicActionsHandler()
-        {
-        }
-
-		#region IGraphicActionsHandler implementation
-
-		public void Rename(IFpgEditorView editor)
-		{
-			throw new NotImplementedException();
-		}
-
-		public void Add(IFpgEditorView editor)
-		{
-			editor.Context.CreateAddGraphicDialog();
-		}
 
 		public void Delete(IFpgEditorView editor)
 		{
@@ -37,16 +17,6 @@ namespace FpgUI
 				editor.Fpg.Remove(id);
 			}
 			editor.NotifyFpgChange();
-		}
-
-		public void View(IFpgEditorView editor)
-		{
-			throw new NotImplementedException();
-		}
-
-		public void ExtratToPng(IFpgEditorView editor)
-		{
-
 		}
 
 		public void ExtractToMap(IFpgEditorView editor)
