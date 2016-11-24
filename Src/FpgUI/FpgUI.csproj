@@ -59,6 +59,7 @@
     <Compile Include="FpgEditor\NewFpg\NewFpgDialog.cs" />
     <Compile Include="FpgEditor\NewFpg\INewFpgDialog.cs" />
     <Compile Include="FpgEditor\NewFpg\NewFpgDialogController.cs" />
+    <Compile Include="FpgEditor\ObservableFpg.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
