@@ -113,7 +113,12 @@ namespace FpgUI
 
 		protected virtual void View_RemoveGraphicClicked(object sender, EventArgs e)
 		{
-			throw new NotImplementedException();
+			foreach (var s in View.FpgWidget.SelectedSprites)
+			{
+				editor.Fpg.Remove(s.Id);
+			}
+			// TODO: Temporal hack to force an update of the FpgEditorView
+			View.FpgWidget.Fpg = View.FpgWidget.Fpg;
 		}
 
 		protected virtual void View_RenameGraphicClicked(object sender, EventArgs e)

@@ -6,7 +6,7 @@ namespace FpgUI
 {
 	public interface IFpgWidget
 	{
-		IReadOnlyCollection<ISprite> SelectedSprites { get; }
+		IReadOnlyCollection<SpriteAssortmentSprite> SelectedSprites { get; }
 
 		ISpriteAssortment Fpg { get; set; }
 	}

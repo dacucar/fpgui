@@ -53,12 +53,13 @@ namespace FpgUI
 			}
 		}
 
-		public IReadOnlyCollection<ISprite> SelectedSprites
+		public IReadOnlyCollection<SpriteAssortmentSprite> SelectedSprites
 		{
 			get
 			{
-				var collection = new List<ISprite>(this.SelectedRows.Select(
-						                 r => Fpg[store.GetValue(r, id)])).AsReadOnly();
+				var collection = new List<SpriteAssortmentSprite>(
+					this.SelectedRows.Select(
+						r => Fpg[store.GetValue(r, id)])).AsReadOnly();
 				return collection;
 			}
 		}
