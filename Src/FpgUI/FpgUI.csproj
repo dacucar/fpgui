@@ -34,7 +34,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ui\FpgEditor\PaletteActionsHandler.cs" />
     <Compile Include="Ui\FpgEditor\GraphicActionsHandler.cs" />
-    <Compile Include="Ui\AddGraphic\AddGraphicDialog.cs" />
     <Compile Include="FpgEditor\IFpgEditorView.cs" />
     <Compile Include="FpgEditor\FpgEditorView.cs" />
     <Compile Include="IView.cs" />
@@ -55,6 +54,8 @@
     <Compile Include="FpgEditor\FpgEditor.cs" />
     <Compile Include="FpgEditor\FpgEditorController.EditorEventHandlers.cs" />
     <Compile Include="FpgEditor\FpgEditorController.DataMapping.cs" />
+    <Compile Include="FpgEditor\AddGraphic\AddGraphicDialog.cs" />
+    <Compile Include="FpgEditor\AddGraphic\IAddGraphicDialog.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -70,10 +71,10 @@
   <ItemGroup>
     <Folder Include="Ui\" />
     <Folder Include="Ui\FpgEditor\" />
-    <Folder Include="Ui\AddGraphic\" />
     <Folder Include="FpgEditor\" />
     <Folder Include="NewFpg\" />
     <Folder Include="FpgWidget\" />
+    <Folder Include="FpgEditor\AddGraphic\" />
   </ItemGroup>
   <ProjectExtensions>
     <MonoDevelop>

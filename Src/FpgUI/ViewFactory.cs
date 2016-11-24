@@ -18,6 +18,11 @@ namespace FpgUI
 			return v;
 		}
 
+		public IAddGraphicDialog CreateAddGraphicDialog()
+		{
+			var v = new AddGraphicDialog();
+			return v;
+		}
 		/*
 		public void CreateNewFpgDialog(ApplicationContext context)
 		{

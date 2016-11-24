@@ -1,10 +1,13 @@
 ﻿using System;
 using Xwt;
+using FenixLib.Core;
 
 namespace FpgUI
 {
-	public class AddGraphicDialog : Dialog
+	public class AddGraphicDialog : Dialog, IAddGraphicDialog
 	{
+		public event EventHandler<ISprite> OkActivated;
+
 		public AddGraphicDialog()
 		{
 			var vbox1 = new VBox();
@@ -49,6 +52,21 @@ namespace FpgUI
 			Buttons.Add(new DialogButton(Command.Cancel));
 
 			Content = vboxLeft;
+		}
+
+		protected override void OnCommandActivated(Command cmd)
+		{
+			if (cmd == Command.Ok)
+			{
+				OnOkActivated(null); // TODO: Feed the sprite...
+			}
+
+			base.OnCommandActivated(cmd);
+		}
+
+		protected virtual void OnOkActivated(ISprite sprite)
+		{
+			OkActivated?.Invoke(sprite);
 		}
 	}
 }
