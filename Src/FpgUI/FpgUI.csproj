@@ -34,20 +34,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ui\FpgEditor\PaletteActionsHandler.cs" />
     <Compile Include="Ui\FpgEditor\GraphicActionsHandler.cs" />
-    <Compile Include="FpgEditor\IFpgEditorView.cs" />
     <Compile Include="FpgEditor\FpgEditorView.cs" />
     <Compile Include="IView.cs" />
     <Compile Include="IViewFactory.cs" />
-    <Compile Include="ViewFactory.cs" />
     <Compile Include="ViewController.cs" />
     <Compile Include="FpgEditor\FpgEditorController.cs" />
     <Compile Include="FpgEditor\UiCommand.cs" />
-    <Compile Include="FpgWidget\FpgWidget.cs" />
     <Compile Include="FpgWidget\IFpgWidget.cs" />
     <Compile Include="FpgUIContext.cs" />
     <Compile Include="FpgEditor\ClosingEventArgs.cs" />
-    <Compile Include="FpgEditor\FpgEditorView.EventDefinitions.cs" />
-    <Compile Include="FpgEditor\FpgEditorView.Ui.cs" />
     <Compile Include="FpgEditor\YesNoCancel.cs" />
     <Compile Include="FpgEditor\FpgEditorController.ViewEventHandlers.cs" />
     <Compile Include="FpgEditor\FpgEditor.cs" />
@@ -55,11 +50,16 @@
     <Compile Include="FpgEditor\FpgEditorController.DataMapping.cs" />
     <Compile Include="FpgEditor\AddGraphic\AddGraphicDialog.cs" />
     <Compile Include="FpgEditor\AddGraphic\IAddGraphicDialog.cs" />
-    <Compile Include="XwtDefaults.cs" />
-    <Compile Include="FpgEditor\NewFpg\NewFpgDialog.cs" />
     <Compile Include="FpgEditor\NewFpg\INewFpgDialog.cs" />
     <Compile Include="FpgEditor\NewFpg\NewFpgDialogController.cs" />
     <Compile Include="FpgEditor\ObservableFpg.cs" />
+    <Compile Include="Xwt\FpgEditorView.EventDefinitions.cs" />
+    <Compile Include="Xwt\FpgEditorView.Ui.cs" />
+    <Compile Include="Xwt\IFpgEditorView.cs" />
+    <Compile Include="Xwt\NewFpgDialog.cs" />
+    <Compile Include="Xwt\XwtDefaults.cs" />
+    <Compile Include="Xwt\FpgWidget.cs" />
+    <Compile Include="Xwt\ViewFactory.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -79,6 +79,7 @@
     <Folder Include="FpgWidget\" />
     <Folder Include="FpgEditor\AddGraphic\" />
     <Folder Include="FpgEditor\NewFpg\" />
+    <Folder Include="Xwt\" />
   </ItemGroup>
   <ProjectExtensions>
     <MonoDevelop>
