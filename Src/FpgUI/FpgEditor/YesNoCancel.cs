@@ -2,11 +2,11 @@
 
 namespace FpgUI
 {
-    public enum YesNoCancel
-    {
+	public enum YesNoCancel
+	{
 		Yes,
 		No,
 		Cancel
-    }
+	}
 }
 
