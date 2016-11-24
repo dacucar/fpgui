@@ -4,10 +4,11 @@ using FenixLib.Core;
 
 namespace FpgUI
 {
-    public interface IFpgWidget
-    {
+	public interface IFpgWidget
+	{
 		IReadOnlyCollection<ISprite> SelectedSprites { get; }
+
 		ISpriteAssortment Fpg { get; set; }
-    }
+	}
 }
 
