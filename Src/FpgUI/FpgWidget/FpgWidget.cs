@@ -10,6 +10,20 @@ namespace FpgUI
 {
 	public class FpgWidget : ListView, IFpgWidget
 	{
+		private event EventHandler selectionChanged;
+
+		event EventHandler IFpgWidget.SelectionChanged
+		{
+			add
+			{
+				selectionChanged += value;
+			}
+			remove
+			{
+				selectionChanged -= value;
+			}
+		}
+
 		private DataField<int> id = new DataField<int>();
 		private DataField<string> name = new DataField<string>();
 		private DataField<string> size = new DataField<string>();
@@ -62,6 +76,11 @@ namespace FpgUI
 						r => Fpg[store.GetValue(r, id)])).AsReadOnly();
 				return collection;
 			}
+		}
+
+		protected override void OnSelectionChanged(EventArgs a)
+		{
+			selectionChanged?.Invoke(this, EventArgs.Empty);
 		}
 	}
 }
