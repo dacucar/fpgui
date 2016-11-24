@@ -9,16 +9,6 @@ namespace FpgUI
 	
 	public class GraphicActionsHandler : IGraphicActionsHandler
     {
-
-		public void Delete(IFpgEditorView editor)
-		{
-			foreach (var id in editor.SelectedGraphicsIds)
-			{
-				editor.Fpg.Remove(id);
-			}
-			editor.NotifyFpgChange();
-		}
-
 		public void ExtractToMap(IFpgEditorView editor)
 		{
 			var w = (Window)editor.WindowBackend;
