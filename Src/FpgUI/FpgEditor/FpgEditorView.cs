@@ -20,6 +20,8 @@ namespace FpgUI
 
 		public FpgEditorView()
 		{
+			// IView events
+
 			buildUI();
 		}
 
@@ -116,6 +118,11 @@ namespace FpgUI
 			var args = new ClosingEventArgs();
 			Closing?.Invoke(this, args);
 			return !args.Cancel;
+		}
+
+		protected override void OnClosed()
+		{
+			viewClosed?.Invoke(this, EventArgs.Empty);
 		}
 
 		private void mapCommand(UiControl command, Widget widget)

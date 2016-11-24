@@ -4,6 +4,22 @@ namespace FpgUI
 {
 	public partial class FpgEditorView
 	{
+		// Xwt.WindowFrame has already a ViewClosed event
+		// Explicit IView.ViewClosed implementation required
+		private EventHandler viewClosed;
+
+		event EventHandler IView.ViewClosed 
+		{ 
+			add
+			{
+				viewClosed += value;
+			}
+			remove
+			{
+				viewClosed -= value;
+			}
+		}
+
 		public event EventHandler<ClosingEventArgs> Closing;
 
 		public event EventHandler NewFpgClicked;

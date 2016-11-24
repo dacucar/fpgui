@@ -7,6 +7,8 @@ namespace FpgUI
 	{
 		IFpgEditorView CreateFpgEditorView();
 
+		IAddGraphicDialog CreateAddGraphicDialog();
+
 		/*
 		void CreatePaletteEditorView();
 

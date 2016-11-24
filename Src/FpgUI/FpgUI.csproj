@@ -56,6 +56,7 @@
     <Compile Include="FpgEditor\FpgEditorController.DataMapping.cs" />
     <Compile Include="FpgEditor\AddGraphic\AddGraphicDialog.cs" />
     <Compile Include="FpgEditor\AddGraphic\IAddGraphicDialog.cs" />
+    <Compile Include="XwtDefaults.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

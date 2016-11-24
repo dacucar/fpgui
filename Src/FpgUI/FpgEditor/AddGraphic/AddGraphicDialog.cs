@@ -66,7 +66,7 @@ namespace FpgUI
 
 		protected virtual void OnOkActivated(ISprite sprite)
 		{
-			OkActivated?.Invoke(sprite);
+			OkActivated?.Invoke(this, sprite);
 		}
 	}
 }
