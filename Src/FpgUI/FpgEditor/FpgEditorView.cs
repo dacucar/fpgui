@@ -14,6 +14,8 @@ namespace FpgUI
 			new FileDialogFilter("All Files (*.*)", "*.*");
 		private static FileDialogFilter palFilesFilter = 
 			new FileDialogFilter("Pal Files (*.pal)", "*.pal");	
+		private static FileDialogFilter mapFilesFilter = 
+			new FileDialogFilter("Map Files (*.map)", "*.map");			
 
 		private IDictionary<UiControl, ISensitive> commands = 
 			new Dictionary<UiControl, ISensitive>();
@@ -111,6 +113,21 @@ namespace FpgUI
 				return YesNoCancel.No;
 			else
 				return YesNoCancel.Cancel;
+		}
+
+		public string LetUserSelectWhereToExtractGraphic(string initialFileName)
+		{
+			var dialog = new SaveFileDialog();
+			dialog.Filters.Add(mapFilesFilter);
+			dialog.Filters.Add(allFilesFilter);
+			dialog.Multiselect = false;
+			dialog.InitialFileName = initialFileName;
+			if (dialog.Run(this))
+			{
+				return dialog.FileName;
+			}
+
+			return null;
 		}
 
 		protected override bool OnCloseRequested()

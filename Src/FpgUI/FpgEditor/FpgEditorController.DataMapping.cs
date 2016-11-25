@@ -15,6 +15,9 @@ namespace FpgUI
 	 * overload invokes the two-parameter version.
 	 * 
 	 * Only the two-parameter version need to be tested.
+	 * 
+	 * TODO: Some of this methods could make more sense in a Helper object
+	 * 
 	 */
 	public partial class FpgEditorController
 	{
@@ -26,13 +29,13 @@ namespace FpgUI
 			UpdateEnabledControls();
 		}
 
-		public void Load(string filename,  IDecoder<ISpriteAssortment> decoder)
+		public void Load(string filename, IDecoder<ISpriteAssortment> decoder)
 		{
 			using (var stream = File.Open(
-				filename, 
-				FileMode.Open, 
-				FileAccess.Read, 
-				FileShare.None))
+				                    filename, 
+				                    FileMode.Open, 
+				                    FileAccess.Read, 
+				                    FileShare.None))
 			{
 				var fpg = decoder.Decode(stream);
 				editor.FileName = filename;
@@ -50,10 +53,10 @@ namespace FpgUI
 		public void Save(string filename, IEncoder<ISpriteAssortment> encoder)
 		{
 			using (var stream = File.Open(
-				filename, 
-				FileMode.Create, 
-				FileAccess.Write,
-				FileShare.None))
+				                    filename, 
+				                    FileMode.Create, 
+				                    FileAccess.Write,
+				                    FileShare.None))
 			{
 				encoder.Encode(editor.Fpg, stream);
 				editor.FileName = filename;
@@ -69,10 +72,10 @@ namespace FpgUI
 		public void ExtractPalette(string filename, IEncoder<Palette> encoder)
 		{
 			using (var stream = File.Open(
-				filename,
-				FileMode.Create,
-				FileAccess.Write,
-				FileShare.None))
+				                    filename,
+				                    FileMode.Create,
+				                    FileAccess.Write,
+				                    FileShare.None))
 			{
 				encoder.Encode(editor.Fpg.Palette, stream);
 			}
@@ -82,6 +85,22 @@ namespace FpgUI
 		{
 			ExtractPalette(filename, new PalPaletteEncoder());
 		}
+
+		public void ExportMap(ISprite sprite, string filename, IEncoder<ISprite> encoder)
+		{
+			using (var stream = File.Open(
+				                    filename,
+				                    FileMode.Create,
+				                    FileAccess.Write,
+				                    FileShare.None))
+			{
+				encoder.Encode(sprite, stream);
+			}
+		}
+
+		public void ExportMap(ISprite sprite, string filename)
+		{
+			ExportMap(sprite, filename, new MapSpriteEncoder());
+		}
 	}
 }
-

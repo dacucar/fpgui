@@ -37,15 +37,16 @@ namespace FpgUI
 		event EventHandler NewWindowClicked;
 		#endregion
 
+		// TODO: This urges some refractoring...
 		string LetUserSelectFileToOpen();
 		string LetUserSelectFileToSave(string initialFileName);
 		string LetUserSelectPaletteToExtract(string initialFilename);
+		string LetUserSelectWhereToExtractGraphic(string initialFileName);
 		YesNoCancel AskUserIfChangesShouldBeSaved(string message);
 
 		ISpriteAssortment Fpg { set; }
 
 		void SetControlEnabled(UiControl control, bool value);
-
 
 		//ApplicationContext Context { get; }
 	}

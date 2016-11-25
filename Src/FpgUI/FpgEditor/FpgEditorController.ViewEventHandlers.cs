@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using FenixLib.Core;
 
 namespace FpgUI
@@ -10,7 +11,7 @@ namespace FpgUI
 			if (editor.Fpg != null && HasChanged)
 			{
 				string m = "There are unsaved changes in the Fpg. "
-					+ "Save before closing?";
+				           + "Save before closing?";
 				var response = View.AskUserIfChangesShouldBeSaved(m);
 				if (response == YesNoCancel.Yes)
 				{
@@ -29,9 +30,9 @@ namespace FpgUI
 			var c = new NewFpgDialogController(v, context);
 			c.ShowView(View);
 			c.OkAction = (f, p) =>
-				{
-					New(f, p);
-				};
+			{
+				New(f, p);
+			};
 		}
 
 		protected virtual void View_OpenClicked(object sender, EventArgs e)
@@ -138,7 +139,21 @@ namespace FpgUI
 
 		protected virtual void View_ExtractToMapClicked(object sender, EventArgs e)
 		{
-			throw new NotImplementedException();
+			// TODO: Handle multiple selection...
+
+			string filename = View.LetUserSelectWhereToExtractGraphic("untitled.map");
+			if (filename != null)
+			{
+				try
+				{
+					ExportMap(View.FpgWidget.SelectedSprites.First(), 
+						filename);
+				}
+				catch
+				{
+					// TODO
+				}
+			}
 		}
 
 		protected virtual void View_ViewEditPaletteClicked(object sender, EventArgs e)
