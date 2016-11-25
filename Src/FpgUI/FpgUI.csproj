@@ -55,11 +55,11 @@
     <Compile Include="FpgEditor\ObservableFpg.cs" />
     <Compile Include="Xwt\FpgEditorView.EventDefinitions.cs" />
     <Compile Include="Xwt\FpgEditorView.Ui.cs" />
-    <Compile Include="Xwt\IFpgEditorView.cs" />
     <Compile Include="Xwt\NewFpgDialog.cs" />
     <Compile Include="Xwt\XwtDefaults.cs" />
     <Compile Include="Xwt\FpgWidget.cs" />
     <Compile Include="Xwt\ViewFactory.cs" />
+    <Compile Include="FpgEditor\IFpgEditorView.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
