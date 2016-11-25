@@ -22,6 +22,7 @@ namespace FpgUI
 		{
 			editor.Fpg = new SpriteAssortment(f, p);
 			editor.FileName = null;
+			HasChanged = false;
 			UpdateEnabledControls();
 		}
 
