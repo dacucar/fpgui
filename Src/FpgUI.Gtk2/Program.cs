@@ -10,8 +10,11 @@ namespace FpgUI.Gtk2
 		{
 			Application.Initialize(ToolkitType.Gtk);
 
-			var context = 
-				new FpgUIContext();
+			var context = new FpgUIContext();
+			var view = context.ViewFactory.CreateFpgEditorView();
+			var controller = new FpgEditorController(view, context);
+
+			controller.ShowView();
 
 			Application.Run();
 
