@@ -26,7 +26,7 @@ namespace FpgUI
 
 		protected virtual void View_NewFpgClicked(object sender, EventArgs e)
 		{
-			var v = context.ViewFactory.CreateDialogNewFpg();
+			var v = context.ViewFactory.NewFpgDialog();
 			var c = new NewFpgDialogController(v, context);
 			c.ShowView(View);
 			c.OkAction = (f, p) =>
@@ -179,7 +179,7 @@ namespace FpgUI
 
 		protected virtual void View_NewWindowClicked(object sender, EventArgs e)
 		{
-			var view = context.ViewFactory.CreateFpgEditorView();
+			var view = context.ViewFactory.FpgEditorView();
 			var controller = new FpgEditorController(view, context);
 			controller.ShowView();
 		}

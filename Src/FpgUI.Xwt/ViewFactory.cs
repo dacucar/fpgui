@@ -6,19 +6,19 @@
 		{
 		}
 
-		public IFpgEditorView CreateFpgEditorView()
+		public IFpgEditorView FpgEditorView()
 		{
 			var v = new FpgEditorView();
 			return v;
 		}
 
-		public IAddGraphicDialog CreateAddGraphicDialog()
+		public IAddGraphicDialog AddGraphicDialog()
 		{
 			var v = new AddGraphicDialog();
 			return v;
 		}
 
-		public INewFpgDialog CreateDialogNewFpg()
+		public INewFpgDialog NewFpgDialog()
 		{
 			var v = new NewFpgDialog();
 			return v;

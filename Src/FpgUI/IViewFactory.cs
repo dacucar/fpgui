@@ -5,11 +5,11 @@ namespace FpgUI
 {
 	public interface IViewFactory
 	{
-		IFpgEditorView CreateFpgEditorView();
+		IFpgEditorView FpgEditorView();
 
-		IAddGraphicDialog CreateAddGraphicDialog();
+		IAddGraphicDialog AddGraphicDialog();
 
-		INewFpgDialog CreateDialogNewFpg();
+		INewFpgDialog NewFpgDialog();
 	}
 }
 
