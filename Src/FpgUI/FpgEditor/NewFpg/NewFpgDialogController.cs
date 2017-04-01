@@ -7,7 +7,7 @@ namespace FpgUI
 	{
 		public Action<GraphicFormat, Palette> OkAction { get; set; }
 
-		public NewFpgDialogController(INewFpgDialog v, FpgUIContext c) : base(v, c)
+		public NewFpgDialogController(INewFpgDialog v, FpgUiContext c) : base(v, c)
 		{
 			v.DialogAction += (sender, e) => {
 				if (e == true)

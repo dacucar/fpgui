@@ -4,20 +4,20 @@ using System.Linq;
 using Xwt;
 using FenixLib.Core;
 
-namespace FpgUI
+namespace FpgUI.Xwt
 {
 	public partial class FpgEditorView : Window, IFpgEditorView
 	{
-		private static FileDialogFilter fpgFilesFilter = 
+		private static readonly FileDialogFilter fpgFilesFilter =
 			new FileDialogFilter("Fpg Files (*.fpg)", "*.fpg");
-		private static FileDialogFilter allFilesFilter =
+		private static readonly FileDialogFilter allFilesFilter =
 			new FileDialogFilter("All Files (*.*)", "*.*");
-		private static FileDialogFilter palFilesFilter = 
+		private static readonly FileDialogFilter palFilesFilter =
 			new FileDialogFilter("Pal Files (*.pal)", "*.pal");	
-		private static FileDialogFilter mapFilesFilter = 
+		private static readonly FileDialogFilter mapFilesFilter =
 			new FileDialogFilter("Map Files (*.map)", "*.map");			
 
-		private IDictionary<UiControl, ISensitive> commands = 
+		private readonly IDictionary<UiControl, ISensitive> commands =
 			new Dictionary<UiControl, ISensitive>();
 
 		public FpgEditorView()
@@ -184,7 +184,7 @@ namespace FpgUI
 
 		private sealed class SensitiveWidgetAdapter : ISensitive
 		{
-			private Widget widget;
+			private readonly Widget widget;
 
 			public SensitiveWidgetAdapter(Widget widget)
 			{

@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using Xwt;
-using FenixLib.Core;
 
-namespace FpgUI
+namespace FpgUI.Xwt
 {
 	public partial class FpgEditorView
 	{

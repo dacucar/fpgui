@@ -1,8 +1,4 @@
-﻿using System;
-using FenixLib.Core;
-using Xwt;
-
-namespace FpgUI
+﻿namespace FpgUI.Xwt
 {
 	public class ViewFactory : IViewFactory
 	{

@@ -1,4 +1,5 @@
 ﻿using System;
+using FpgUI.Xwt;
 using Xwt;
 
 namespace FpgUI.Wpf
@@ -8,15 +9,16 @@ namespace FpgUI.Wpf
         [STAThread]
         public static void Main ( string [] args )
         {
-            Application.Initialize ( ToolkitType.Wpf );
+			Application.Initialize(ToolkitType.Wpf);
 
-            MainWindow w = new MainWindow ();
-            w.Show ();
+			var context = new FpgUiContext(new ViewFactory(), XwtDefaults.LastViewClosedHandler);
+			var view = context.ViewFactory.CreateFpgEditorView();
+			var controller = new FpgEditorController(view, context);
 
-            Application.Run ();
-
-            w.Dispose ();
-            Application.Dispose ();
+			controller.ShowView();
+			Application.Run();
+			((Window)view).Dispose();
+			Application.Dispose();
         }
     }
 }

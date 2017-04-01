@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
-using Xwt;
-using Xwt.Drawing;
 using FenixLib.Core;
+using Xwt;
 
-namespace FpgUI
+namespace FpgUI.Xwt
 {
 	public class FpgWidget : ListView, IFpgWidget
 	{

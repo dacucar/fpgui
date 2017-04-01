@@ -8,9 +8,9 @@ namespace FpgUI
 	public partial class FpgEditorController : ViewController<IFpgEditorView>
 	{
 		private FpgEditor editor;
-		private FpgUIContext context;
+		private FpgUiContext context;
 
-		public FpgEditorController(IFpgEditorView view, FpgUIContext context)
+		public FpgEditorController(IFpgEditorView view, FpgUiContext context)
 			: base(view, context)
 		{
 			this.editor = new FpgEditor();

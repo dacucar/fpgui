@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -31,15 +31,14 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FpgUIContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="FpgEditor\FpgEditorView.cs" />
     <Compile Include="IView.cs" />
     <Compile Include="IViewFactory.cs" />
     <Compile Include="ViewController.cs" />
     <Compile Include="FpgEditor\FpgEditorController.cs" />
     <Compile Include="FpgEditor\UiCommand.cs" />
     <Compile Include="FpgWidget\IFpgWidget.cs" />
-    <Compile Include="FpgUIContext.cs" />
     <Compile Include="FpgEditor\ClosingEventArgs.cs" />
     <Compile Include="FpgEditor\YesNoCancel.cs" />
     <Compile Include="FpgEditor\FpgEditorController.ViewEventHandlers.cs" />
@@ -51,12 +50,6 @@
     <Compile Include="FpgEditor\NewFpg\INewFpgDialog.cs" />
     <Compile Include="FpgEditor\NewFpg\NewFpgDialogController.cs" />
     <Compile Include="FpgEditor\ObservableFpg.cs" />
-    <Compile Include="Xwt\FpgEditorView.EventDefinitions.cs" />
-    <Compile Include="Xwt\FpgEditorView.Ui.cs" />
-    <Compile Include="Xwt\NewFpgDialog.cs" />
-    <Compile Include="Xwt\XwtDefaults.cs" />
-    <Compile Include="Xwt\FpgWidget.cs" />
-    <Compile Include="Xwt\ViewFactory.cs" />
     <Compile Include="FpgEditor\IFpgEditorView.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
@@ -75,6 +68,7 @@
     <Folder Include="FpgWidget\" />
     <Folder Include="FpgEditor\AddGraphic\" />
     <Folder Include="FpgEditor\NewFpg\" />
+    <Folder Include="Xwt" />
     <Folder Include="Xwt\" />
   </ItemGroup>
   <ProjectExtensions>

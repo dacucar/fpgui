@@ -8,8 +8,8 @@ namespace FpgUI
 		/// Occurs when the controlled view is closed.
 		/// 
 		/// The controller will auto-register the 
-		/// <see cref="FpgUIContext"/> as a listener to this event.
-		/// See <see cref="ViewController(T, FpgUIContext)"/> .
+		/// <see cref="FpgUiContext"/> as a listener to this event.
+		/// See <see cref="ViewController(T, FpgUiContext)"/> .
 		/// </summary>
 		public event EventHandler<IView> ViewClosed;
 		/// <summary>
@@ -18,17 +18,17 @@ namespace FpgUI
 		public event EventHandler<IView> ViewShown;
 
 		private T view;
-		private FpgUIContext context;
+		private FpgUiContext context;
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="FpgUI.ViewController`1"/> class.
 		/// 
-		/// The <see cref="FpgUIContext"/> is registered as an observer of the
+		/// The <see cref="FpgUiContext"/> is registered as an observer of the
 		/// <see cref="ViewClosed"/> event.
 		/// </summary>
 		/// <param name="view">View.</param>
 		/// <param name="context">Context.</param>
-		public ViewController(T view, FpgUIContext context)
+		public ViewController(T view, FpgUiContext context)
 		{
 			this.view = view;
 			this.context = context;
@@ -41,7 +41,7 @@ namespace FpgUI
 			ViewShown += context.OnViewShown;
 		}
 
-		public FpgUIContext Context => context;
+		public FpgUiContext Context => context;
 
 		public T View
 		{

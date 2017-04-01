@@ -3,25 +3,20 @@ using System.Collections.Generic;
 
 namespace FpgUI
 {
-	public class FpgUIContext
+	public class FpgUiContext
 	{
 		public delegate void LastViewClosedHandler();
 
 		private readonly LastViewClosedHandler lastViewClosed;
 		private readonly ICollection<IView> views = new List<IView>();
 
-		public FpgUIContext(IViewFactory factory, 
+		public FpgUiContext(IViewFactory factory,
 			LastViewClosedHandler handler)
 		{
 			ViewFactory = factory;
 			lastViewClosed = handler;
 		}
-
-		public FpgUIContext()
-		{
-			ViewFactory = new ViewFactory();
-			lastViewClosed = XwtDefaults.LastViewClosedHandler;
-		}
+		    //lastViewClosed = XwtDefaults.LastViewClosedHandler;
 
 		public IViewFactory ViewFactory { get; }
 

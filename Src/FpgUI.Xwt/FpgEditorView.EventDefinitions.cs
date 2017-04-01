@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FpgUI
+namespace FpgUI.Xwt
 {
 	public partial class FpgEditorView
 	{

@@ -1,7 +1,6 @@
-﻿using System;
-using Xwt;
+﻿using Xwt;
 
-namespace FpgUI
+namespace FpgUI.Xwt
 {
 	public static class XwtDefaults
 	{
