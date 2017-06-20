@@ -1,11 +1,11 @@
 ﻿using System;
-using Xwt;
 using FpgUI.Xwt;
+using Xwt;
 
-namespace FpgUI.Gtk3
+namespace FpgUI.Gtk
 {
-	public class Program
-	{
+    internal class Program
+    {
 		[STAThread]
 		public static void Main(string[] args)
 		{
@@ -20,6 +20,6 @@ namespace FpgUI.Gtk3
 			((Window)view).Dispose();
 			Application.Dispose();
 		}
-	}
-}
 
+    }
+}
