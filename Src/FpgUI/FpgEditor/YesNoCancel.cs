@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace FpgUI
+﻿namespace FpgUI.FpgEditor
 {
 	public enum YesNoCancel
 	{

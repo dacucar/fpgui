@@ -1,9 +1,8 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using FenixLib.Core;
 using FenixLib.IO;
 
-namespace FpgUI
+namespace FpgUI.FpgEditor
 {
 	/*
 	 * Methods to load or to save data from the model. 

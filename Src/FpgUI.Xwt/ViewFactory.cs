@@ -1,4 +1,8 @@
-﻿namespace FpgUI.Xwt
+﻿using FpgUI.FpgEditor;
+using FpgUI.FpgEditor.AddGraphic;
+using FpgUI.FpgEditor.NewFpg;
+
+namespace FpgUI.Xwt
 {
 	public class ViewFactory : IViewFactory
 	{

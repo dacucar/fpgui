@@ -1,7 +1,6 @@
-﻿using System;
-using FenixLib.Core;
+﻿using FenixLib.Core;
 
-namespace FpgUI
+namespace FpgUI.FpgEditor
 {
 	public partial class FpgEditorController
 	{

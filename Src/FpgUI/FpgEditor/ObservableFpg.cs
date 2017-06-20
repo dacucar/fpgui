@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using FenixLib.Core;
 
-namespace FpgUI
+namespace FpgUI.FpgEditor
 {
 	public class ObservableFpg : ISpriteAssortment
 	{

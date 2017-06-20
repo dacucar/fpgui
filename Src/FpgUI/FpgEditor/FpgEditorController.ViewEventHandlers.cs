@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq;
-using FenixLib.Core;
+using FpgUI.FpgEditor.NewFpg;
 
-namespace FpgUI
+namespace FpgUI.FpgEditor
 {
 	public partial class FpgEditorController
 	{

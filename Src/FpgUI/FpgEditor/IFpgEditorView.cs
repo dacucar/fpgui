@@ -1,8 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using FenixLib.Core;
+using FpgUI.FpgWidget;
 
-namespace FpgUI
+namespace FpgUI.FpgEditor
 {
 	public interface IFpgEditorView : IView
 	{

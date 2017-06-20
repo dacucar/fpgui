@@ -1,8 +1,8 @@
 ﻿using System;
-using Xwt;
 using FenixLib.Core;
+using Xwt;
 
-namespace FpgUI
+namespace FpgUI.FpgEditor.AddGraphic
 {
 	public class AddGraphicDialog : Dialog, IAddGraphicDialog
 	{

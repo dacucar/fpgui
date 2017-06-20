@@ -1,4 +1,5 @@
 ﻿using System;
+using FpgUI.FpgEditor;
 using Xwt;
 
 namespace FpgUI.Xwt

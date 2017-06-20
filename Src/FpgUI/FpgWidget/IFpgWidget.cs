@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using FenixLib.Core;
 
-namespace FpgUI
+namespace FpgUI.FpgWidget
 {
 	public interface IFpgWidget
 	{

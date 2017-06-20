@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using FenixLib.Core;
+using FpgUI.FpgWidget;
 using Xwt;
 
 namespace FpgUI.Xwt

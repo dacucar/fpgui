@@ -1,5 +1,6 @@
 ﻿using System;
 using FenixLib.Core;
+using FpgUI.FpgEditor.NewFpg;
 using Xwt;
 
 namespace FpgUI.Xwt

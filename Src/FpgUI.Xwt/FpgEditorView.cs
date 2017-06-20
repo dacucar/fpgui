@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Xwt;
 using FenixLib.Core;
+using FpgUI.FpgEditor;
+using FpgUI.FpgWidget;
 
 namespace FpgUI.Xwt
 {

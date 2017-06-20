@@ -1,8 +1,7 @@
 using System;
-using Xwt;
 using FenixLib.Core;
 
-namespace FpgUI
+namespace FpgUI.FpgEditor.NewFpg
 {
 	public interface INewFpgDialog: IView
 	{

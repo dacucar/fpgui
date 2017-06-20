@@ -1,9 +1,7 @@
 ﻿using System;
-using System.IO;
 using FenixLib.Core;
-using FenixLib.IO;
 
-namespace FpgUI
+namespace FpgUI.FpgEditor
 {
 	public partial class FpgEditorController : ViewController<IFpgEditorView>
 	{
