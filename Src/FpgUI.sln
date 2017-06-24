@@ -3,10 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FpgUI", "FpgUI\FpgUI.csproj", "{8D8666EE-60E3-4106-8829-F591F4656C44}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{EDB6FE31-DE9E-486E-AF4D-22A8F436E804}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FenixLib", "..\Lib\fenixlib\FenixLib\FenixLib\FenixLib.csproj", "{E110DF41-CAE8-4DCC-9A41-09864E5651DD}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FpgUI.Xwt", "FpgUI.Xwt\FpgUI.Xwt.csproj", "{BAB08A8D-EF06-45E2-9F94-75F07D71337F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FpgUI.Gtk", "FpgUI.Gtk\FpgUI.Gtk.csproj", "{A47081EE-AC1A-43F9-A66F-276C1CCA18EC}"
@@ -27,14 +23,6 @@ Global
 		{8D8666EE-60E3-4106-8829-F591F4656C44}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8D8666EE-60E3-4106-8829-F591F4656C44}.Release|x86.ActiveCfg = Release|Any CPU
 		{8D8666EE-60E3-4106-8829-F591F4656C44}.Release|x86.Build.0 = Release|Any CPU
-		{E110DF41-CAE8-4DCC-9A41-09864E5651DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E110DF41-CAE8-4DCC-9A41-09864E5651DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E110DF41-CAE8-4DCC-9A41-09864E5651DD}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{E110DF41-CAE8-4DCC-9A41-09864E5651DD}.Debug|x86.Build.0 = Debug|Any CPU
-		{E110DF41-CAE8-4DCC-9A41-09864E5651DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E110DF41-CAE8-4DCC-9A41-09864E5651DD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E110DF41-CAE8-4DCC-9A41-09864E5651DD}.Release|x86.ActiveCfg = Release|Any CPU
-		{E110DF41-CAE8-4DCC-9A41-09864E5651DD}.Release|x86.Build.0 = Release|Any CPU
 		{BAB08A8D-EF06-45E2-9F94-75F07D71337F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BAB08A8D-EF06-45E2-9F94-75F07D71337F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BAB08A8D-EF06-45E2-9F94-75F07D71337F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -53,7 +41,6 @@ Global
 		{A47081EE-AC1A-43F9-A66F-276C1CCA18EC}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{E110DF41-CAE8-4DCC-9A41-09864E5651DD} = {EDB6FE31-DE9E-486E-AF4D-22A8F436E804}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		Policies = $0
